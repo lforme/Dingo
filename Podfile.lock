@@ -1,0 +1,80 @@
+PODS:
+  - Action (4.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - AVOSCloud (11.6.2)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Differentiator (4.0.1)
+  - IQKeyboardManagerSwift (6.3.0)
+  - paper-onboarding (6.1.3)
+  - PKHUD (5.2.1)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - SnapKit (5.0.0)
+  - SwiftDate (6.0.2)
+
+DEPENDENCIES:
+  - Action (~> 4.0.0)
+  - AVOSCloud
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - IQKeyboardManagerSwift (= 6.3.0)
+  - paper-onboarding
+  - PKHUD (~> 5.2.1)
+  - RxCocoa (~> 5.0.0)
+  - RxDataSources
+  - RxSwift (~> 5.0.0)
+  - SnapKit (~> 5.0.0)
+  - SwiftDate
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Action
+    - AVOSCloud
+    - Differentiator
+    - IQKeyboardManagerSwift
+    - paper-onboarding
+    - PKHUD
+    - RxCocoa
+    - RxDataSources
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftDate
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  Action: 0d14986aad0f1330aa27ce65d0cdeaacbb63d91c
+  AVOSCloud: b5ddb67d1823e7af59b3fc14ddecf3cddf1f4bf1
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  paper-onboarding: 47ded9ede6ae9dd7ec135dddd8bd3e170b79d799
+  PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SwiftDate: bbed9b23bfec599bd62b9a305afc554f7bd0eb6f
+
+PODFILE CHECKSUM: 601382955284dbf0e63b8b612a27ff892d3cb17c
+
+COCOAPODS: 1.5.3
