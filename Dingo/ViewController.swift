@@ -18,6 +18,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showLoginVC()
+        observeLoginUser()
+    }
+    
+    func observeLoginUser() {
+        
     }
     
     func showLoginVC() {

@@ -9,7 +9,7 @@
 import Foundation
 import IQKeyboardManagerSwift
 import ChameleonFramework
-
+import EasyAnimation
 
 enum LaunchTheme: Int {
     case dark = 0
@@ -48,7 +48,10 @@ struct LaunchThemeManager {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
         
+        EasyAnimation.enable()
+        
         AVOSCloud.setApplicationId("fI1sUJD8N9y9VgmmSV0OL1PB-gzGzoHsz", clientKey: "3qqQwnHfMSFj3soa8q4b9sYr")
+    
     }
     
     static func currentTheme() -> LaunchTheme {
@@ -65,9 +68,9 @@ struct LaunchThemeManager {
         switch theme {
         case .dark:
             UserDefaults.standard.set(0, forKey: selectedThemeKey)
-            Chameleon.setGlobalThemeUsingPrimaryColor(theme.mainColor, with: .dark)
+//            Chameleon.setGlobalThemeUsingPrimaryColor(theme.mainColor, with: .dark)
         case .light:
-            Chameleon.setGlobalThemeUsingPrimaryColor(theme.mainColor, with: .light)
+//            Chameleon.setGlobalThemeUsingPrimaryColor(theme.mainColor, with: .light)
             UserDefaults.standard.set(1, forKey: selectedThemeKey)
         }
         UserDefaults.standard.synchronize()
@@ -76,6 +79,7 @@ struct LaunchThemeManager {
         let sharedApplication = UIApplication.shared
         sharedApplication.delegate?.window??.tintColor = theme.mainColor
         UINavigationBar.appearance().tintColor = theme.mainColor
+        UIApplication.shared.statusBarStyle = .lightContent
         
     }
 }

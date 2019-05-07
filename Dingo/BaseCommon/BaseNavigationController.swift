@@ -76,6 +76,11 @@ extension BaseNavigationController: UINavigationControllerDelegate {
 extension BaseNavigationController: UIGestureRecognizerDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+//        if viewControllers.last is LoginAndRegisterController {
+//            return false
+//        }
+        
         return viewControllers.count > 1
     }
 }

@@ -13,12 +13,21 @@
 		9C67D989227E896800C05161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67D987227E896800C05161 /* Main.storyboard */; };
 		9C67D98B227E896900C05161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C67D98A227E896900C05161 /* Assets.xcassets */; };
 		9C67D98E227E896900C05161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67D98C227E896900C05161 /* LaunchScreen.storyboard */; };
+		9C6D5FE42281259E0090EE87 /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FE22281259E0090EE87 /* HasDisposeBag.swift */; };
+		9C6D5FE52281259E0090EE87 /* NSObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FE32281259E0090EE87 /* NSObject+Rx.swift */; };
+		9C6D5FE72281289C0090EE87 /* UITextField+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FE62281289C0090EE87 /* UITextField+Ex.swift */; };
+		9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */; };
+		9C6D5FEC22817AE90090EE87 /* String+tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FEB22817AE90090EE87 /* String+tools.swift */; };
+		9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FED228181730090EE87 /* PKHud+Rx.swift */; };
 		9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92218E227ECB0900763D35 /* LaunchTheme.swift */; };
 		9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38AB227FCEFA00F73298 /* UIViewController+Navigation.swift */; };
 		9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38AD227FD08A00F73298 /* ObjectAssociation.swift */; };
 		9C9D38B1227FD7FE00F73298 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9D38B0227FD7FD00F73298 /* Login.storyboard */; };
 		9C9D38B3227FD83100F73298 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B2227FD83100F73298 /* LoginViewController.swift */; };
 		9C9D38B5227FD8C300F73298 /* ViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B4227FD8C300F73298 /* ViewLoader.swift */; };
+		9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B622802A4300F73298 /* LoginAndRegisterController.swift */; };
+		9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B9228040B900F73298 /* UIButton+Ex.swift */; };
+		9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */; };
 		9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +41,12 @@
 		9C67D98A227E896900C05161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C67D98D227E896900C05161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C67D98F227E896900C05161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C6D5FE22281259E0090EE87 /* HasDisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
+		9C6D5FE32281259E0090EE87 /* NSObject+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Rx.swift"; sourceTree = "<group>"; };
+		9C6D5FE62281289C0090EE87 /* UITextField+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ex.swift"; sourceTree = "<group>"; };
+		9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		9C6D5FEB22817AE90090EE87 /* String+tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+tools.swift"; sourceTree = "<group>"; };
+		9C6D5FED228181730090EE87 /* PKHud+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PKHud+Rx.swift"; sourceTree = "<group>"; };
 		9C922189227EC64100763D35 /* Dingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dingo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C92218E227ECB0900763D35 /* LaunchTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTheme.swift; sourceTree = "<group>"; };
 		9C9D38AB227FCEFA00F73298 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
@@ -39,6 +54,9 @@
 		9C9D38B0227FD7FD00F73298 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9C9D38B2227FD83100F73298 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C9D38B4227FD8C300F73298 /* ViewLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoader.swift; sourceTree = "<group>"; };
+		9C9D38B622802A4300F73298 /* LoginAndRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterController.swift; sourceTree = "<group>"; };
+		9C9D38B9228040B900F73298 /* UIButton+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ex.swift"; sourceTree = "<group>"; };
+		9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		DAB430A7E72E0807825A0D6F /* Pods-Dingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dingo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dingo/Pods-Dingo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +103,7 @@
 		9C67D982227E896800C05161 /* Dingo */ = {
 			isa = PBXGroup;
 			children = (
+				9C9D38B8228040A200F73298 /* Extension */,
 				9C9D38AF227FD7C200F73298 /* Login */,
 				9C92218D227ECADF00763D35 /* BaseCommon */,
 				9C67D983227E896800C05161 /* AppDelegate.swift */,
@@ -96,6 +115,14 @@
 				9C922189227EC64100763D35 /* Dingo-Bridging-Header.h */,
 			);
 			path = Dingo;
+			sourceTree = "<group>";
+		};
+		9C6D5FE8228179900090EE87 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9C92218D227ECADF00763D35 /* BaseCommon */ = {
@@ -113,10 +140,26 @@
 		9C9D38AF227FD7C200F73298 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9C6D5FE8228179900090EE87 /* ViewModel */,
 				9C9D38B0227FD7FD00F73298 /* Login.storyboard */,
 				9C9D38B2227FD83100F73298 /* LoginViewController.swift */,
+				9C9D38B622802A4300F73298 /* LoginAndRegisterController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		9C9D38B8228040A200F73298 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C6D5FEB22817AE90090EE87 /* String+tools.swift */,
+				9C6D5FE22281259E0090EE87 /* HasDisposeBag.swift */,
+				9C6D5FE32281259E0090EE87 /* NSObject+Rx.swift */,
+				9C9D38B9228040B900F73298 /* UIButton+Ex.swift */,
+				9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */,
+				9C6D5FE62281289C0090EE87 /* UITextField+Ex.swift */,
+				9C6D5FED228181730090EE87 /* PKHud+Rx.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E968BD4DDF1F33EABD56638E /* Frameworks */ = {
@@ -209,6 +252,7 @@
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/EasyAnimation/EasyAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -225,6 +269,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -265,12 +310,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6D5FEC22817AE90090EE87 /* String+tools.swift in Sources */,
+				9C6D5FE52281259E0090EE87 /* NSObject+Rx.swift in Sources */,
+				9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */,
+				9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */,
 				9C9D38B3227FD83100F73298 /* LoginViewController.swift in Sources */,
+				9C6D5FE72281289C0090EE87 /* UITextField+Ex.swift in Sources */,
+				9C6D5FE42281259E0090EE87 /* HasDisposeBag.swift in Sources */,
+				9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */,
 				9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */,
+				9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */,
 				9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */,
 				9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */,
 				9C67D986227E896800C05161 /* ViewController.swift in Sources */,
 				9C9D38B5227FD8C300F73298 /* ViewLoader.swift in Sources */,
+				9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */,
 				9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */,
 				9C67D984227E896800C05161 /* AppDelegate.swift in Sources */,
 			);
@@ -424,7 +478,10 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";
@@ -444,7 +501,10 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";

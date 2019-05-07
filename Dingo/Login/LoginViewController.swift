@@ -13,26 +13,22 @@ import ChameleonFramework
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var skipButton: UIButton!
-    let onboarding = PaperOnboarding()
+    @IBOutlet weak var onboarding: PaperOnboarding!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        skipButton.isHidden = true
-        setStatusBarStyle(.lightContent)
+
         interactiveNavigationBarHidden = true
         setupOnboarding()
+        
     }
     
     func setupOnboarding() {
         onboarding.dataSource = self
         onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(onboarding)
-        
-        onboarding.snp.makeConstraints { (maker) in
-            maker.edges.equalTo(self.view)
-        }
     }
 }
 
@@ -82,9 +78,9 @@ extension LoginViewController: PaperOnboardingDelegate {
     
     @objc(onboardingDidTransitonToIndex:) func onboardingDidTransitonToIndex(_ index: Int) {
         if index == 2 {
-            skipButton.isHidden = false
+            onboarding.bringSubviewToFront(skipButton)
         } else {
-            skipButton.isHidden = true
+            onboarding.sendSubviewToBack(skipButton)
         }
     }
 }

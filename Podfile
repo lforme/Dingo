@@ -10,6 +10,7 @@ target 'Dingo' do
   pod 'SwiftDate'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'paper-onboarding'
+  pod 'EasyAnimation'
 
   pod 'RxSwift', '~> 5.0.0'
   pod 'RxCocoa', '~> 5.0.0'
@@ -19,5 +20,6 @@ target 'Dingo' do
   pod 'IQKeyboardManagerSwift', '6.3.0'
   pod 'PKHUD', '~> 5.2.1'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'AVOSCloudLiveQuery'
   
 end

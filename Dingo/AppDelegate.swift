@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LaunchThemeManager.launchInit()
         LaunchThemeManager.applyTheme(theme: .light)
         
+        
         return true
     }
 
