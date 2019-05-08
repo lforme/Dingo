@@ -24,8 +24,12 @@ enum LaunchTheme: Int {
         }
     }
     
-    var textColor: UIColor {
+    var textWhiteColor: UIColor {
         return UIColor.white
+    }
+    
+    var textBlackColor: UIColor {
+        return #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
     }
     
     var iconColor: UIColor {

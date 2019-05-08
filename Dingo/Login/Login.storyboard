@@ -211,6 +211,7 @@
                         <viewLayoutGuide key="safeArea" id="3vt-gU-s8B"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionLabel" destination="lAH-Wm-5iF" id="gRS-jG-rdg"/>
                         <outlet property="emailTf" destination="VMT-DI-Rfl" id="AeD-ZY-9B5"/>
                         <outlet property="loginButton" destination="T75-uI-8OO" id="3PB-Lp-B6W"/>
                         <outlet property="loginContainer" destination="vvQ-Sd-V98" id="QfB-XY-vb0"/>

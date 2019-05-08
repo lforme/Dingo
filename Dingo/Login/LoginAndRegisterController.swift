@@ -31,6 +31,7 @@ class LoginAndRegisterController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var emailTf: UITextField!
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     let observeableSwitchButtonType:BehaviorSubject<SwitchButtonType> = BehaviorSubject(value: .register)
     
@@ -74,10 +75,12 @@ class LoginAndRegisterController: UIViewController {
                 self.switchButton.underlineButton(text: "登录")
                 self.switchButton.tag = type.rawValue
                 self.displayRegisterContainer()
+                self.descriptionLabel.text = "注册您的 [ 叮咚 ] 账户"
             case .register:
                 self.switchButton.underlineButton(text: "注册")
                 self.switchButton.tag = type.rawValue
                 self.displayLoginContainer()
+                self.descriptionLabel.text = "开始探索 [ 叮咚 ]"
             }
         }).disposed(by: rx.disposeBag)
         
@@ -105,6 +108,9 @@ class LoginAndRegisterController: UIViewController {
         vm.loginAction.elements.subscribe(onNext: { (user) in
             
             HUD.flash(.label("登录成功"), delay: 2)
+            user?.setObject(UIDevice.current.identifierForVendor?.uuidString, forKey: "uuid")
+            AVUser.changeCurrentUser(user, save: true)
+            AVUser.current()?.saveInBackground()
             
         }).disposed(by: rx.disposeBag)
         
