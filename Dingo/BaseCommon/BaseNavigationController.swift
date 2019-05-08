@@ -31,6 +31,11 @@ class BaseNavigationController: UINavigationController {
     
     override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         controlClearBackTitle()
+        
+        if self.viewControllers.count == 1 {
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        
         super.pushViewController(viewController, animated: animated)
     }
     
@@ -46,7 +51,7 @@ private extension BaseNavigationController {
     
     func commonInit() {
         navigationBar.prefersLargeTitles = true
-        navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black,
+        navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : LaunchThemeManager.currentTheme().textBlackColor,
                                                   NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 26)]
         
         navigationBar.shadowImage = UIImage()
@@ -59,7 +64,7 @@ private extension BaseNavigationController {
     
     func controlClearBackTitle() {
         if clearBackTitle {
-            topViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+//            topViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
     }
 }
@@ -77,9 +82,9 @@ extension BaseNavigationController: UIGestureRecognizerDelegate {
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         
-//        if viewControllers.last is LoginAndRegisterController {
-//            return false
-//        }
+        if viewControllers.last is LoginAndRegisterController {
+            return false
+        }
         
         return viewControllers.count > 1
     }

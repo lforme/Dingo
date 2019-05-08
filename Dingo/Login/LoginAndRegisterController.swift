@@ -109,6 +109,7 @@ class LoginAndRegisterController: UIViewController {
             
             HUD.flash(.label("登录成功"), delay: 2)
             user?.setObject(UIDevice.current.identifierForVendor?.uuidString, forKey: "uuid")
+            user?.setObject(true, forKey: "isLogin")
             AVUser.changeCurrentUser(user, save: true)
             AVUser.current()?.saveInBackground()
             

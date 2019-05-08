@@ -18,6 +18,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-     
+        title = "日常任务"
     }
 }

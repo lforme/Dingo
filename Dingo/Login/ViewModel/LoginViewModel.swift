@@ -54,7 +54,7 @@ struct LoginViewModel {
             return a.isNotNilNotEmpty && b.isNotNilNotEmpty && c.isNotNilNotEmpty
         }
         
-        registerAction = Action<RegisterInput, Bool>.init(enabledIf: registerEnable, workFactory: { (inputs) -> Observable<Bool> in
+        registerAction = Action<RegisterInput, Bool>(enabledIf: registerEnable, workFactory: { (inputs) -> Observable<Bool> in
             
             return Observable<Bool>.create({ (obs) -> Disposable in
                 

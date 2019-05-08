@@ -55,6 +55,7 @@ struct LaunchThemeManager {
         EasyAnimation.enable()
         
         AVOSCloud.setApplicationId("fI1sUJD8N9y9VgmmSV0OL1PB-gzGzoHsz", clientKey: "3qqQwnHfMSFj3soa8q4b9sYr")
+        
     
     }
     
@@ -72,17 +73,17 @@ struct LaunchThemeManager {
         switch theme {
         case .dark:
             UserDefaults.standard.set(0, forKey: selectedThemeKey)
-//            Chameleon.setGlobalThemeUsingPrimaryColor(theme.mainColor, with: .dark)
+//            let sharedApplication = UIApplication.shared
+//            sharedApplication.delegate?.window??.tintColor = theme.textBlackColor
+//            UINavigationBar.appearance().tintColor = theme.textBlackColor
+            
         case .light:
-//            Chameleon.setGlobalThemeUsingPrimaryColor(theme.mainColor, with: .light)
             UserDefaults.standard.set(1, forKey: selectedThemeKey)
+//            let sharedApplication = UIApplication.shared
+//            sharedApplication.delegate?.window??.tintColor = theme.mainColor
+//            UINavigationBar.appearance().tintColor = theme.mainColor
         }
         UserDefaults.standard.synchronize()
-        
-        // 2
-        let sharedApplication = UIApplication.shared
-        sharedApplication.delegate?.window??.tintColor = theme.mainColor
-        UINavigationBar.appearance().tintColor = theme.mainColor
         UIApplication.shared.statusBarStyle = .lightContent
         
     }
