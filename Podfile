@@ -22,4 +22,7 @@ target 'Dingo' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'AVOSCloudLiveQuery'
   
+  pod 'TextFieldEffects'
+  pod 'LTMorphingLabel'
+  
 end

@@ -90,9 +90,9 @@ extension UIViewController {
             var img: UIImage?
             switch LaunchThemeManager.currentTheme() {
             case .dark:
-                img = UIImage(named: "back_button_icon")
+                img = UIImage(named: "back_button_icon")?.filled(withColor: LaunchThemeManager.currentTheme().mainColor)
             case .light:
-                img = UIImage(named: "leftbackitem_icon")?.filled(withColor: LaunchThemeManager.currentTheme().mainColor)
+                img = UIImage(named: "back_button_icon")
             }
             
             button.setImage(img, for: .normal)

@@ -17,8 +17,10 @@ extension Reactive where Base: PKHUD {
         return Binder(self.base, scheduler: MainScheduler.instance, binding: { (_, show) in
             if show {
                 HUD.show(.progress)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
             } else {
                 HUD.hide(afterDelay: 0.8)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         })
     }

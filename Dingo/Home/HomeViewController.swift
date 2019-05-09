@@ -9,15 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    override func viewWillAppear(_ animated: Bool) {
-        UIApplication.shared.statusBarStyle = .default
-        super.viewWillAppear(animated)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "日常任务"
+        LaunchThemeManager.changeStatusBarStyle(.default)
     }
 }

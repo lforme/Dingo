@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import IQKeyboardManagerSwift
 import ChameleonFramework
 import EasyAnimation
@@ -56,7 +57,7 @@ struct LaunchThemeManager {
         
         AVOSCloud.setApplicationId("fI1sUJD8N9y9VgmmSV0OL1PB-gzGzoHsz", clientKey: "3qqQwnHfMSFj3soa8q4b9sYr")
         
-    
+        
     }
     
     static func currentTheme() -> LaunchTheme {
@@ -73,18 +74,15 @@ struct LaunchThemeManager {
         switch theme {
         case .dark:
             UserDefaults.standard.set(0, forKey: selectedThemeKey)
-//            let sharedApplication = UIApplication.shared
-//            sharedApplication.delegate?.window??.tintColor = theme.textBlackColor
-//            UINavigationBar.appearance().tintColor = theme.textBlackColor
-            
         case .light:
             UserDefaults.standard.set(1, forKey: selectedThemeKey)
-//            let sharedApplication = UIApplication.shared
-//            sharedApplication.delegate?.window??.tintColor = theme.mainColor
-//            UINavigationBar.appearance().tintColor = theme.mainColor
         }
         UserDefaults.standard.synchronize()
-        UIApplication.shared.statusBarStyle = .lightContent
-        
+    }
+    
+    static func changeStatusBarStyle(_ style: UIStatusBarStyle) {
+        NotificationCenter.default.post(name: .statuBarDidChnage, object: style)
     }
 }
+
+

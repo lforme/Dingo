@@ -28,7 +28,7 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         commonInit()
     }
-    
+ 
     override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         controlClearBackTitle()
         
@@ -52,7 +52,7 @@ private extension BaseNavigationController {
     func commonInit() {
         navigationBar.prefersLargeTitles = true
         navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : LaunchThemeManager.currentTheme().textBlackColor,
-                                                  NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 26)]
+                                                  NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30)]
         
         navigationBar.shadowImage = UIImage()
         navigationBar.layer.shadowColor  = UIColor.clear.cgColor

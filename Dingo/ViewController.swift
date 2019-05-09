@@ -8,36 +8,76 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
 class ViewController: UIViewController {
     
-    var loginVC: LoginViewController?
-    var homeTab: UITabBarController?
-    var baseNavigationVC: BaseNavigationController?
-    var doingLiveQuery: AVLiveQuery?
-    var userId: String = ""
+    static let share = ViewController()
+    
+    fileprivate var loginVC: LoginViewController?
+    fileprivate var homeTab: UITabBarController?
+    fileprivate var baseNavigationVC: BaseNavigationController?
+    fileprivate var doingLiveQuery: AVLiveQuery?
+    fileprivate let userQuery = AVQuery(className: "_User")
+    fileprivate var _statusBarStyle: UIStatusBarStyle = .default {
+        didSet {
+            self.setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return self._statusBarStyle
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showLoginVC()
-        observeLoginUser()
+        checkedLogin()
+        UITabBar.appearance().tintColor = LaunchThemeManager.currentTheme().textBlackColor
+        observeLoginStatu()
+        
+        NotificationCenter.default.rx.notification(.statuBarDidChnage)
+            .takeUntil(rx.deallocated)
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (noti) in
+                if let style = noti.object as? UIStatusBarStyle {
+                    self?._statusBarStyle = style
+                }
+            }).disposed(by: rx.disposeBag)
     }
     
-    func observeLoginUser() {
-        let userQuery = AVQuery(className: "_User")
-        self.doingLiveQuery = AVLiveQuery(query: userQuery)
-        self.doingLiveQuery?.delegate = self
-        self.doingLiveQuery?.subscribe(callback: { (s, error) in
-            
-        })
-        if let user = AVUser.current(), let id = user.objectId {
+    func checkedLogin() {
+        if let _ = AVUser.current() {
             showHomeVC()
-            
-            // live data
-            self.userId = id
         } else {
             showLoginVC()
         }
+    }
+    
+    
+    func observeLoginStatu() {
+        UserInfoLiveData.shared.liveDataHasChanged.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (notification) in
+            guard let block = notification else { return }
+            let (liveQuery, object, _) = block
+            guard let this = self else { return }
+            if this.userQuery.className == liveQuery.query.className {
+                guard let user = object as? AVUser else { return }
+                guard let isLogin = user.object(forKey: DatabaseKey.isLogin) as? Bool else { return }
+                guard let uuid = user.object(forKey: DatabaseKey.uuid) as? String else { return }
+                guard let currentUUID = AVUser.current()?.object(forKey: DatabaseKey.uuid) as? String else { return }
+                
+                if !isLogin || uuid != currentUUID {
+                    AVUser.current()?.setObject(false, forKey: DatabaseKey.isLogin)
+                    AVUser.current()?.saveInBackground({ (success, error) in
+                        if success {
+                            AVUser.logOut()
+                        }
+                    })
+                    this.showLoginVC()
+                } 
+            }
+        }).disposed(by: rx.disposeBag)
     }
     
     func showLoginVC() {
@@ -69,21 +109,21 @@ class ViewController: UIViewController {
         
         let homeVC: HomeViewController = ViewLoader.Storyboard.controller(from: "Home")
         let homeItemIconNormal = UIImage(named: "denglu_icon")
-        let homeItemIconSelected = UIImage(named: "denglu_selected_icon")
         
         let myVC: MyViewController = ViewLoader.Storyboard.controller(from: "User")
         let myItemIconNormal = UIImage(named: "rili_icon")
-        let myItemIconSelected = UIImage(named: "rili_selected_icon")
         
-        let tabItems: [(UIViewController, String, UIImage?, UIImage?)] = [
-            (homeVC, "日常任务", homeItemIconNormal, homeItemIconSelected),
-            (myVC, "我的设置", myItemIconNormal, myItemIconSelected)
+        let tabItems: [(UIViewController, String, UIImage?)] = [
+            (homeVC, "日常任务", homeItemIconNormal),
+            (myVC, "我的设置", myItemIconNormal)
         ]
         
-        let navigationsVC = tabItems.map { (vc, title, normalIcon, selectedIcon) -> BaseNavigationController in
-            let item = UITabBarItem(title: title, image: normalIcon, selectedImage: selectedIcon)
-            item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.541682303, green: 0.5421096683, blue: 0.5417484641, alpha: 1), NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)], for: .normal)
-            item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : LaunchThemeManager.currentTheme().mainColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)], for: .selected)
+        var tag = 0
+        let navigationsVC = tabItems.map { (vc, title, normalIcon) -> BaseNavigationController in
+            let item = UITabBarItem(title: title, image: normalIcon, tag: tag)
+            tag += 1
+            
+            item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : LaunchThemeManager.currentTheme().textBlackColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)], for: .selected)
             vc.tabBarItem = item
             
             let navigationVC = BaseNavigationController(rootViewController: vc)
@@ -95,33 +135,4 @@ class ViewController: UIViewController {
         self.addChild(tabBarVC)
     }
     
-}
-
-
-extension ViewController: AVLiveQueryDelegate {
-    
-    func liveQuery(_ liveQuery: AVLiveQuery, objectDidUpdate object: Any, updatedKeys: [String]) {
-       
-        guard let dict = object as? AnyObject else {
-            return
-        }
-        
-        guard let isLogin = dict["isLogin"] as? Bool else { return }
-        guard let uuid = dict["uuid"] as? String else { return }
-        guard let currentUUID = AVUser.current()?.object(forKey: "uuid") as? String else { return }
-        
-        if !isLogin || uuid != currentUUID {
-            AVUser.logOut()
-            AVUser.current()?.setObject(false, forKey: "isLogin")
-            AVUser.current()?.saveInBackground()
-
-            self.doingLiveQuery?.unsubscribe(callback: { (_, _) in
-            })
-            showLoginVC()
-        } else {
-            showHomeVC()
-        }
-
-        
-    }
 }

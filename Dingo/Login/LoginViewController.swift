@@ -15,16 +15,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var onboarding: PaperOnboarding!
     
-    override func viewWillAppear(_ animated: Bool) {
-        UIApplication.shared.statusBarStyle = .lightContent
-        super.viewWillAppear(animated)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         interactiveNavigationBarHidden = true
         setupOnboarding()
+        LaunchThemeManager.changeStatusBarStyle(.lightContent)
         
     }
     

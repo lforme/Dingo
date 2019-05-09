@@ -21,6 +21,7 @@ PODS:
   - Differentiator (4.0.1)
   - EasyAnimation (2.2.1)
   - IQKeyboardManagerSwift (6.3.0)
+  - LTMorphingLabel (0.7.0)
   - paper-onboarding (6.1.3)
   - PKHUD (5.2.1)
   - RxCocoa (5.0.0):
@@ -35,6 +36,7 @@ PODS:
   - RxSwift (5.0.0)
   - SnapKit (5.0.0)
   - SwiftDate (6.0.2)
+  - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
   - Action (~> 4.0.0)
@@ -43,6 +45,7 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - EasyAnimation
   - IQKeyboardManagerSwift (= 6.3.0)
+  - LTMorphingLabel
   - paper-onboarding
   - PKHUD (~> 5.2.1)
   - RxCocoa (~> 5.0.0)
@@ -50,6 +53,7 @@ DEPENDENCIES:
   - RxSwift (~> 5.0.0)
   - SnapKit (~> 5.0.0)
   - SwiftDate
+  - TextFieldEffects
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -60,6 +64,7 @@ SPEC REPOS:
     - Differentiator
     - EasyAnimation
     - IQKeyboardManagerSwift
+    - LTMorphingLabel
     - paper-onboarding
     - PKHUD
     - RxCocoa
@@ -68,6 +73,7 @@ SPEC REPOS:
     - RxSwift
     - SnapKit
     - SwiftDate
+    - TextFieldEffects
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -87,6 +93,7 @@ SPEC CHECKSUMS:
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   EasyAnimation: 226d133d23ef0ef99ddfb8928ff2a9a4a77d1cfd
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   paper-onboarding: 47ded9ede6ae9dd7ec135dddd8bd3e170b79d799
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
@@ -95,7 +102,8 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   SwiftDate: bbed9b23bfec599bd62b9a305afc554f7bd0eb6f
+  TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: 3ac24d0489f6ba8e25d9695597376340a53e3601
+PODFILE CHECKSUM: 7ae144aa18e881222f3144197cd47eddb6fcffa2
 
 COCOAPODS: 1.5.3

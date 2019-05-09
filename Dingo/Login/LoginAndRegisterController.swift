@@ -62,6 +62,8 @@ class LoginAndRegisterController: UIViewController {
         [loginButton, registerButton].forEach { (bt) in
             bt?.setupDgStyle()
             bt?.isEnabled = false
+            let image = UIImage.from(color: bt?.backgroundColor ?? UIColor.white)
+            bt?.dgSetBackgroundImage(image)
         }
         
         registerContainer.alpha = 0
@@ -95,21 +97,14 @@ class LoginAndRegisterController: UIViewController {
             return (self.vm.loginPhone.value!, self.vm.loginPwd.value!)
         }
         
-        vm.loginAction.executing.bind(to: PKHUD.sharedHUD.rx.animation).disposed(by: rx.disposeBag)
-        vm.loginAction.errors.map { (actionError) -> Error in
-            switch actionError {
-            case .underlyingError(let e):
-                return e
-            case .notEnabled:
-                fatalError("出错了")
-            }
-        }.bind(to: PKHUD.sharedHUD.rx.showError).disposed(by: rx.disposeBag)
+        vm.loginAction.executing.observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.animation).disposed(by: rx.disposeBag)
+        vm.loginAction.errors.actionErrorShiftError().observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.showError).disposed(by: rx.disposeBag)
         
-        vm.loginAction.elements.subscribe(onNext: { (user) in
+        vm.loginAction.elements.observeOn(MainScheduler.instance).subscribe(onNext: { (user) in
             
             HUD.flash(.label("登录成功"), delay: 2)
-            user?.setObject(UIDevice.current.identifierForVendor?.uuidString, forKey: "uuid")
-            user?.setObject(true, forKey: "isLogin")
+            user?.setObject(UIDevice.current.identifierForVendor?.uuidString, forKey: DatabaseKey.uuid)
+            user?.setObject(true, forKey: DatabaseKey.isLogin)
             AVUser.changeCurrentUser(user, save: true)
             AVUser.current()?.saveInBackground()
             
@@ -127,18 +122,10 @@ class LoginAndRegisterController: UIViewController {
             return (self.vm.registerPhone.value!, self.vm.registerPwd.value!, self.vm.registerEmail.value!)
         }
 
-        vm.registerAction.executing.bind(to: PKHUD.sharedHUD.rx.animation).disposed(by: rx.disposeBag)
-        vm.registerAction.errors.map { (actionError) -> Error in
-            switch actionError {
-            case .underlyingError(let e):
-                return e
-            case .notEnabled:
-                fatalError("出错了")
-            }
-            }.bind(to: PKHUD.sharedHUD.rx.showError).disposed(by: rx.disposeBag)
+        vm.registerAction.executing.observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.animation).disposed(by: rx.disposeBag)
+        vm.registerAction.errors.actionErrorShiftError().observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.showError).disposed(by: rx.disposeBag)
         
-        
-        vm.registerAction.elements.subscribe(onNext: { (succeeded) in
+        vm.registerAction.elements.observeOn(MainScheduler.instance).subscribe(onNext: { (succeeded) in
             
             if succeeded {
                 HUD.flash(.label("注册成功"), delay: 2)
