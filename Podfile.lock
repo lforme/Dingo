@@ -24,6 +24,7 @@ PODS:
   - LTMorphingLabel (0.7.0)
   - paper-onboarding (6.1.3)
   - PKHUD (5.2.1)
+  - PryntTrimmerView (3.0.0)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -35,8 +36,12 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
   - SnapKit (5.0.0)
+  - SteviaLayout (4.4.4)
   - SwiftDate (6.0.2)
   - TextFieldEffects (1.5.1)
+  - YPImagePicker (4.0.0):
+    - PryntTrimmerView (~> 3.0.0)
+    - SteviaLayout (~> 4.4.1)
 
 DEPENDENCIES:
   - Action (~> 4.0.0)
@@ -54,6 +59,7 @@ DEPENDENCIES:
   - SnapKit (~> 5.0.0)
   - SwiftDate
   - TextFieldEffects
+  - YPImagePicker
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -67,13 +73,16 @@ SPEC REPOS:
     - LTMorphingLabel
     - paper-onboarding
     - PKHUD
+    - PryntTrimmerView
     - RxCocoa
     - RxDataSources
     - RxRelay
     - RxSwift
     - SnapKit
+    - SteviaLayout
     - SwiftDate
     - TextFieldEffects
+    - YPImagePicker
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -96,14 +105,17 @@ SPEC CHECKSUMS:
   LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   paper-onboarding: 47ded9ede6ae9dd7ec135dddd8bd3e170b79d799
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
+  PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SteviaLayout: 523469269059f2c6da02820bb2ff28a5fe0780aa
   SwiftDate: bbed9b23bfec599bd62b9a305afc554f7bd0eb6f
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
+  YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 7ae144aa18e881222f3144197cd47eddb6fcffa2
+PODFILE CHECKSUM: 355886683d07a01b6635be66c620b2e68e24963c
 
 COCOAPODS: 1.5.3

@@ -32,10 +32,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6oB-Gs-LX5">
-                                                <rect key="frame" x="20" y="24" width="374" height="142"/>
+                                                <rect key="frame" x="20" y="24" width="374" height="221.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD8-jZ-aJz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="28.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="编辑昵称">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -44,15 +44,28 @@
                                                             <segue destination="v4W-Aj-ZfU" kind="show" id="Px0-u5-XFb"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93F-uQ-tlw">
+                                                        <rect key="frame" x="0.0" y="48.5" width="374" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                                        <state key="normal" title="更换头像">
+                                                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="changeHeaderTap:" destination="ZI4-Aq-lL3" eventType="touchUpInside" id="JVE-YF-DFr"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfY-3q-sOT">
-                                                        <rect key="frame" x="0.0" y="54" width="374" height="34"/>
+                                                        <rect key="frame" x="0.0" y="96.5" width="374" height="28.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="验证电子邮箱">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="verifyButtonTap:" destination="ZI4-Aq-lL3" eventType="touchUpInside" id="lHf-ch-0xl"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-Zq-aSf">
-                                                        <rect key="frame" x="0.0" y="108" width="374" height="34"/>
+                                                        <rect key="frame" x="0.0" y="145" width="374" height="28.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="退出">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,9 +74,24 @@
                                                             <action selector="logoutTap:" destination="ZI4-Aq-lL3" eventType="touchUpInside" id="xrc-xC-0yD"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o04-sV-Va9" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                                        <rect key="frame" x="0.0" y="193.5" width="374" height="28"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                                        <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="morphingDuration">
+                                                                <real key="value" value="0.90000000000000002"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="o04-sV-Va9" firstAttribute="height" secondItem="Nsi-Zq-aSf" secondAttribute="height" id="3sh-SG-ml4"/>
+                                                    <constraint firstItem="93F-uQ-tlw" firstAttribute="width" secondItem="Nsi-Zq-aSf" secondAttribute="width" id="YU7-6R-ofo"/>
                                                     <constraint firstItem="Nsi-Zq-aSf" firstAttribute="width" secondItem="RfY-3q-sOT" secondAttribute="width" id="a4T-eY-8Yb"/>
+                                                    <constraint firstItem="93F-uQ-tlw" firstAttribute="height" secondItem="Nsi-Zq-aSf" secondAttribute="height" id="azW-R4-4iP"/>
+                                                    <constraint firstItem="o04-sV-Va9" firstAttribute="width" secondItem="Nsi-Zq-aSf" secondAttribute="width" id="f1w-Ym-75A"/>
                                                     <constraint firstItem="RfY-3q-sOT" firstAttribute="width" secondItem="wD8-jZ-aJz" secondAttribute="width" id="g3L-g1-N4Q"/>
                                                     <constraint firstAttribute="trailing" secondItem="wD8-jZ-aJz" secondAttribute="trailing" id="qoo-h9-Tt2"/>
                                                 </constraints>
@@ -100,6 +128,7 @@
                         <viewLayoutGuide key="safeArea" id="x4K-H5-fvl"/>
                     </view>
                     <connections>
+                        <outlet property="appVersionLabel" destination="o04-sV-Va9" id="NEw-xk-bll"/>
                         <outlet property="verifyEmailButton" destination="RfY-3q-sOT" id="w4h-5h-kyb"/>
                     </connections>
                 </viewController>

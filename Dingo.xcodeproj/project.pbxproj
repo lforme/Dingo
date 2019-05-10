@@ -13,6 +13,9 @@
 		9C5218F12282ACF100CF5F15 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5218F02282ACF100CF5F15 /* User.storyboard */; };
 		9C5218F32282AD0500CF5F15 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5218F22282AD0500CF5F15 /* MyViewController.swift */; };
 		9C5218F72282BBC600CF5F15 /* AVQuery+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5218F62282BBC600CF5F15 /* AVQuery+Rx.swift */; };
+		9C661F382285223900FBFA15 /* DGKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661F372285223900FBFA15 /* DGKeychain.swift */; };
+		9C661F3A2285289400FBFA15 /* UIAlertController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661F392285289400FBFA15 /* UIAlertController+Ex.swift */; };
+		9C661F3E22855F9E00FBFA15 /* DGPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661F3D22855F9E00FBFA15 /* DGPicker.swift */; };
 		9C67D984227E896800C05161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67D983227E896800C05161 /* AppDelegate.swift */; };
 		9C67D986227E896800C05161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C67D985227E896800C05161 /* ViewController.swift */; };
 		9C67D989227E896800C05161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C67D987227E896800C05161 /* Main.storyboard */; };
@@ -51,6 +54,9 @@
 		9C5218F02282ACF100CF5F15 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		9C5218F22282AD0500CF5F15 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		9C5218F62282BBC600CF5F15 /* AVQuery+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVQuery+Rx.swift"; sourceTree = "<group>"; };
+		9C661F372285223900FBFA15 /* DGKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGKeychain.swift; sourceTree = "<group>"; };
+		9C661F392285289400FBFA15 /* UIAlertController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Ex.swift"; sourceTree = "<group>"; };
+		9C661F3D22855F9E00FBFA15 /* DGPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGPicker.swift; sourceTree = "<group>"; };
 		9C67D980227E896800C05161 /* Dingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C67D983227E896800C05161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C67D985227E896800C05161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +187,8 @@
 				9CFB197D2283F0C100CE3C8B /* UserInfoLiveData.swift */,
 				9CFB1983228403C700CE3C8B /* StaticConst.swift */,
 				9CFB1987228415A500CE3C8B /* DGTextField.swift */,
+				9C661F372285223900FBFA15 /* DGKeychain.swift */,
+				9C661F3D22855F9E00FBFA15 /* DGPicker.swift */,
 			);
 			path = BaseCommon;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 				9CFB198B22841B6200CE3C8B /* UIViewController+Ex.swift */,
 				9CFB198D228421F500CE3C8B /* ActionError+Ex.swift */,
 				9CFB198F22842AB900CE3C8B /* UIView+Ex.swift */,
+				9C661F392285289400FBFA15 /* UIAlertController+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -312,13 +321,16 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -333,13 +345,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,12 +395,14 @@
 				9C5218EE22826A6600CF5F15 /* HomeViewController.swift in Sources */,
 				9C6D5FE72281289C0090EE87 /* UITextField+Ex.swift in Sources */,
 				9CFB197E2283F0C100CE3C8B /* UserInfoLiveData.swift in Sources */,
+				9C661F3E22855F9E00FBFA15 /* DGPicker.swift in Sources */,
 				9C6D5FE42281259E0090EE87 /* HasDisposeBag.swift in Sources */,
 				9CFB1984228403C700CE3C8B /* StaticConst.swift in Sources */,
 				9C5218F32282AD0500CF5F15 /* MyViewController.swift in Sources */,
 				9CFB198C22841B6200CE3C8B /* UIViewController+Ex.swift in Sources */,
 				9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */,
 				9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */,
+				9C661F3A2285289400FBFA15 /* UIAlertController+Ex.swift in Sources */,
 				9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */,
 				9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */,
 				9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */,
@@ -394,6 +411,7 @@
 				9C67D986227E896800C05161 /* ViewController.swift in Sources */,
 				9CFB1988228415A500CE3C8B /* DGTextField.swift in Sources */,
 				9C9D38B5227FD8C300F73298 /* ViewLoader.swift in Sources */,
+				9C661F382285223900FBFA15 /* DGKeychain.swift in Sources */,
 				9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */,
 				9C5218F72282BBC600CF5F15 /* AVQuery+Rx.swift in Sources */,
 				9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */,

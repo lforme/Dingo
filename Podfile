@@ -24,5 +24,6 @@ target 'Dingo' do
   
   pod 'TextFieldEffects'
   pod 'LTMorphingLabel'
+  pod 'YPImagePicker'
   
 end

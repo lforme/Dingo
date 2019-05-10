@@ -9,11 +9,12 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import UIKit
 
 class UserInfoLiveData: NSObject {
     
     /////////// 公开属性 公开方法/////////////////
-    typealias DataChangedNotification = (AVLiveQuery, object: AnyObject, updatedKeys: [String]?)
+    public typealias DataChangedNotification = (AVLiveQuery, object: AnyObject, updatedKeys: [String]?)
     
     var queryClassName: String? = "_User" {
         didSet {
@@ -82,5 +83,6 @@ extension UserInfoLiveData: AVLiveQueryDelegate {
     
     func liveQuery(_ liveQuery: AVLiveQuery, userDidLogin user: AVUser) {
         liveDataHasChanged.accept((liveQuery, user, nil))
+        NotificationCenter.default.post(name: .loginStateDidChnage, object: nil)
     }
 }

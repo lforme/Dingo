@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class BaseNavigationController: UINavigationController {
 
@@ -73,6 +74,12 @@ private extension BaseNavigationController {
 extension BaseNavigationController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        
+        if let bgColor = viewController.navigationController?.navigationBar.barTintColor {
+            let titleColor = ContrastColorOf(bgColor, returnFlat: true)
+            navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : titleColor]
+            navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : titleColor]
+        }
         
     }
 }

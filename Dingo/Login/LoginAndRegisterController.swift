@@ -12,7 +12,7 @@ import RxCocoa
 import PKHUD
 
 class LoginAndRegisterController: UIViewController {
-
+    
     enum SwitchButtonType: Int {
         case login = 0
         case register
@@ -33,22 +33,20 @@ class LoginAndRegisterController: UIViewController {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    private let keychain = Keychain()
+    
     let observeableSwitchButtonType:BehaviorSubject<SwitchButtonType> = BehaviorSubject(value: .register)
     
     let vm = LoginViewModel()
     
-    deinit {
-        print("deinit")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         interactiveNavigationBarHidden = true
         setupUI()
         bindRx()
     }
-
+    
     func setupUI() {
         [loginPwdTf, loginUserNameTf, registerUserNameTF, registerPwdTf, emailTf].forEach { (tf) in
             tf?.layer.borderWidth = 2
@@ -100,14 +98,17 @@ class LoginAndRegisterController: UIViewController {
         vm.loginAction.executing.observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.animation).disposed(by: rx.disposeBag)
         vm.loginAction.errors.actionErrorShiftError().observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.showError).disposed(by: rx.disposeBag)
         
-        vm.loginAction.elements.observeOn(MainScheduler.instance).subscribe(onNext: { (user) in
+        vm.loginAction.elements.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (user) in
             
             HUD.flash(.label("登录成功"), delay: 2)
-            user?.setObject(UIDevice.current.identifierForVendor?.uuidString, forKey: DatabaseKey.uuid)
-            user?.setObject(true, forKey: DatabaseKey.isLogin)
-            AVUser.changeCurrentUser(user, save: true)
-            AVUser.current()?.saveInBackground()
-            
+            AVUser.current()?.setObject(true, forKey: DatabaseKey.isLogin)
+            AVUser.current()?.setObject(UIDevice.current.identifierForVendor?.uuidString, forKey: DatabaseKey.uuid)
+            AVUser.current()?.saveInBackground({ (s, e) in
+                print(s)
+                print(e?.localizedDescription ?? "")
+            })
+            guard let pwd = self?.vm.loginPwd.value else { return }
+            try? self?.keychain.set(pwd, key: "password")
         }).disposed(by: rx.disposeBag)
         
         
@@ -121,14 +122,17 @@ class LoginAndRegisterController: UIViewController {
             
             return (self.vm.registerPhone.value!, self.vm.registerPwd.value!, self.vm.registerEmail.value!)
         }
-
+        
         vm.registerAction.executing.observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.animation).disposed(by: rx.disposeBag)
         vm.registerAction.errors.actionErrorShiftError().observeOn(MainScheduler.instance).bind(to: PKHUD.sharedHUD.rx.showError).disposed(by: rx.disposeBag)
         
-        vm.registerAction.elements.observeOn(MainScheduler.instance).subscribe(onNext: { (succeeded) in
+        vm.registerAction.elements.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (succeeded) in
             
             if succeeded {
                 HUD.flash(.label("注册成功"), delay: 2)
+                guard let pwd = self?.vm.loginPwd.value else { return }
+                try? self?.keychain.set(pwd, key: "password")
+                NotificationCenter.default.post(name: .loginStateDidChnage, object: nil)
             }
             
         }).disposed(by: rx.disposeBag)

@@ -12,6 +12,7 @@ import UIKit
 extension NSNotification.Name {
     
     public static let statuBarDidChnage = NSNotification.Name(rawValue: "StatuBarDidChnage")
+    public static let loginStateDidChnage = NSNotification.Name(rawValue: "loginStateDidChnage")
 }
 
 
@@ -21,4 +22,5 @@ struct DatabaseKey {
     static let isLogin = "isLogin"
     static let nickname = "nickname"
     static let emailVerified = "emailVerified"
+    static let portrait = "portrait"
 }

@@ -65,7 +65,6 @@ extension UIViewController {
     
     @objc func dg_interactiveViewWillAppear(_ animated: Bool) {
         dg_interactiveViewWillAppear(animated)
-        
         navigationController?.setNavigationBarHidden(interactiveNavigationBarHidden, animated: animated)
     }
     

@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
+import PKHUD
 
 class ViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
             self.setNeedsStatusBarAppearanceUpdate()
         }
     }
+    fileprivate let keychain = Keychain()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return self._statusBarStyle
@@ -45,11 +47,25 @@ class ViewController: UIViewController {
                     self?._statusBarStyle = style
                 }
             }).disposed(by: rx.disposeBag)
+        
+        NotificationCenter.default.rx.notification(.loginStateDidChnage).takeUntil(rx.deallocated)
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (_) in
+                self?.showHomeVC()
+            }).disposed(by: rx.disposeBag)
     }
     
     func checkedLogin() {
-        if let _ = AVUser.current() {
+        
+        if let localUser = AVUser.current() {
             showHomeVC()
+            
+            // 自动登录
+            guard let username = localUser.username, let pwd = self.keychain["password"] else { return }
+            AVUser.logInWithUsername(inBackground: username, password: pwd) { (s, error) in
+                print(error?.localizedDescription ?? "")
+            }
+            
         } else {
             showLoginVC()
         }
@@ -75,7 +91,7 @@ class ViewController: UIViewController {
                         }
                     })
                     this.showLoginVC()
-                } 
+                }
             }
         }).disposed(by: rx.disposeBag)
     }

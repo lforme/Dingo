@@ -12,6 +12,7 @@ import RxCocoa
 import RxSwift
 import PKHUD
 
+
 class EditingNicknameController: UITableViewController {
     
     let nicknameSubject = BehaviorRelay<String?>(value: nil)
@@ -31,8 +32,8 @@ class EditingNicknameController: UITableViewController {
         tableView.separatorStyle = .none
         setupNavigationRightItem()
         bindRx()
-        
-        containerView.setShadow(color: LaunchThemeManager.currentTheme().textBlackColor)
+        containerView.setShadow()
+        title = "编辑昵称"
     }
     
     func bindRx() {

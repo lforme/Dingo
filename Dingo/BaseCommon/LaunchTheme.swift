@@ -57,7 +57,6 @@ struct LaunchThemeManager {
         
         AVOSCloud.setApplicationId("fI1sUJD8N9y9VgmmSV0OL1PB-gzGzoHsz", clientKey: "3qqQwnHfMSFj3soa8q4b9sYr")
         
-        
     }
     
     static func currentTheme() -> LaunchTheme {
