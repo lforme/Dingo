@@ -19,8 +19,7 @@ class MyViewController: UIViewController {
     @IBOutlet weak var appVersionLabel: LTMorphingLabel!
     
     fileprivate let userQuery = AVQuery(className: "_User")
-    fileprivate var disableEmailButtonImage = UIImage(named: "yiyanzheng_icon")?.filled(withColor: LaunchThemeManager.currentTheme().mainColor)
-    fileprivate var enableEmailButtonImage = UIImage(named: "yiyanzheng_icon")?.filled(withColor: UIColor.clear)
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = UIColor.white
@@ -64,13 +63,13 @@ class MyViewController: UIViewController {
         verifyEmailButton.setTitleColor(LaunchThemeManager.currentTheme().textBlackColor.withAlphaComponent(0.4), for: .disabled)
         verifyEmailButton.setTitleColor(LaunchThemeManager.currentTheme().textBlackColor.withAlphaComponent(0.4), for: .highlighted)
         
+        if let disableTitle = verifyEmailButton.titleLabel?.text {
+            let string = NSMutableAttributedString(string: disableTitle + "   (已验证)")
+            string.setColorForText("(已验证)", with: LaunchThemeManager.currentTheme().mainColor)
+            string.setFontForText("(已验证)", with: UIFont.boldSystemFont(ofSize: 14))
+            verifyEmailButton.setAttributedTitle(string, for: .disabled)
         
-        verifyEmailButton.setImage(disableEmailButtonImage, for: .disabled)
-        verifyEmailButton.setImage(enableEmailButtonImage, for: .normal)
-        
-        verifyEmailButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: -(disableEmailButtonImage?.size.width ?? 0), bottom: 0, right: 0)
-        
-        verifyEmailButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: verifyEmailButton.frame.size.width - (disableEmailButtonImage?.size.width ?? 0), bottom: 0, right: 0)
+        }
         
         if let isVerified = AVUser.current()?.object(forKey: DatabaseKey.emailVerified) as? Bool {
             

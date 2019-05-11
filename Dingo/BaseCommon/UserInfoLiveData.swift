@@ -23,15 +23,7 @@ class UserInfoLiveData: NSObject {
     }
     static let shared = UserInfoLiveData()
     
-    
-//    func liveDataHaveChanged(_ change: DataChangedNotification?) {
-//        DispatchQueue.main.async { [weak self] in
-//            self?.notificationBlock = change
-//        }
-//    }
-    
     public var liveDataHasChanged = BehaviorRelay<DataChangedNotification?>(value: nil)
-    
     
     
     /////////// 私有属性 私有方法/////////////////

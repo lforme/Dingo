@@ -37,6 +37,7 @@
 		9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B9228040B900F73298 /* UIButton+Ex.swift */; };
 		9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */; };
 		9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */; };
+		9CDF480C228703EB007711BA /* NSMutableAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */; };
 		9CFB197E2283F0C100CE3C8B /* UserInfoLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB197D2283F0C100CE3C8B /* UserInfoLiveData.swift */; };
 		9CFB1984228403C700CE3C8B /* StaticConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB1983228403C700CE3C8B /* StaticConst.swift */; };
 		9CFB1988228415A500CE3C8B /* DGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB1987228415A500CE3C8B /* DGTextField.swift */; };
@@ -81,6 +82,7 @@
 		9C9D38B9228040B900F73298 /* UIButton+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ex.swift"; sourceTree = "<group>"; };
 		9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Ex.swift"; sourceTree = "<group>"; };
 		9CFB197D2283F0C100CE3C8B /* UserInfoLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoLiveData.swift; sourceTree = "<group>"; };
 		9CFB1983228403C700CE3C8B /* StaticConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticConst.swift; sourceTree = "<group>"; };
 		9CFB1987228415A500CE3C8B /* DGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGTextField.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				9CFB198D228421F500CE3C8B /* ActionError+Ex.swift */,
 				9CFB198F22842AB900CE3C8B /* UIView+Ex.swift */,
 				9C661F392285289400FBFA15 /* UIAlertController+Ex.swift */,
+				9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */,
 				9C5218F72282BBC600CF5F15 /* AVQuery+Rx.swift in Sources */,
 				9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */,
+				9CDF480C228703EB007711BA /* NSMutableAttributedString+Ex.swift in Sources */,
 				9C67D984227E896800C05161 /* AppDelegate.swift in Sources */,
 				9CFB199022842AB900CE3C8B /* UIView+Ex.swift in Sources */,
 			);

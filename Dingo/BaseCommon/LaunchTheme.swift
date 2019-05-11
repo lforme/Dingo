@@ -25,6 +25,10 @@ enum LaunchTheme: Int {
         }
     }
     
+    var secondaryRed: UIColor {
+        return #colorLiteral(red: 0.8509803922, green: 0.3294117647, blue: 0.3490196078, alpha: 1)
+    }
+    
     var textWhiteColor: UIColor {
         return UIColor.white
     }
