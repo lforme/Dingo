@@ -38,6 +38,7 @@
 		9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */; };
 		9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */; };
 		9CDF480C228703EB007711BA /* NSMutableAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */; };
+		9CDF480F22870C17007711BA /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF480E22870C17007711BA /* MoveButton.swift */; };
 		9CFB197E2283F0C100CE3C8B /* UserInfoLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB197D2283F0C100CE3C8B /* UserInfoLiveData.swift */; };
 		9CFB1984228403C700CE3C8B /* StaticConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB1983228403C700CE3C8B /* StaticConst.swift */; };
 		9CFB1988228415A500CE3C8B /* DGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB1987228415A500CE3C8B /* DGTextField.swift */; };
@@ -83,6 +84,7 @@
 		9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Ex.swift"; sourceTree = "<group>"; };
+		9CDF480E22870C17007711BA /* MoveButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
 		9CFB197D2283F0C100CE3C8B /* UserInfoLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoLiveData.swift; sourceTree = "<group>"; };
 		9CFB1983228403C700CE3C8B /* StaticConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticConst.swift; sourceTree = "<group>"; };
 		9CFB1987228415A500CE3C8B /* DGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGTextField.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		9C5218EA22826A2500CF5F15 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9CDF480D22870BE3007711BA /* Views */,
 				9C5218EB22826A3E00CF5F15 /* Home.storyboard */,
 				9C5218ED22826A6600CF5F15 /* HomeViewController.swift */,
 			);
@@ -226,6 +229,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		9CDF480D22870BE3007711BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CDF480E22870C17007711BA /* MoveButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E968BD4DDF1F33EABD56638E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,8 +330,10 @@
 				"${BUILT_PRODUCTS_DIR}/AVOSCloudLiveQuery/AVOSCloudLiveQuery.framework",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/EasyAnimation/EasyAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
@@ -343,8 +356,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AVOSCloudLiveQuery.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
@@ -420,6 +435,7 @@
 				9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */,
 				9CDF480C228703EB007711BA /* NSMutableAttributedString+Ex.swift in Sources */,
 				9C67D984227E896800C05161 /* AppDelegate.swift in Sources */,
+				9CDF480F22870C17007711BA /* MoveButton.swift in Sources */,
 				9CFB199022842AB900CE3C8B /* UIView+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,10 +588,7 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";
@@ -595,10 +608,7 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";

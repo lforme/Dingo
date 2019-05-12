@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import IGListKit
 
 class HomeViewController: UIViewController {
     
+    var collectionView: ListCollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "日常任务"
         LaunchThemeManager.changeStatusBarStyle(.default)
     }
+    
+  
 }

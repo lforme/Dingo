@@ -26,4 +26,7 @@ target 'Dingo' do
   pod 'LTMorphingLabel'
   pod 'YPImagePicker'
   
+  pod 'DZNEmptyDataSet'
+  pod 'IGListKit', '~> 3.0'
+  
 end

@@ -19,7 +19,13 @@ PODS:
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - Differentiator (4.0.1)
+  - DZNEmptyDataSet (1.8.1)
   - EasyAnimation (2.2.1)
+  - IGListKit (3.4.0):
+    - IGListKit/Default (= 3.4.0)
+  - IGListKit/Default (3.4.0):
+    - IGListKit/Diffing
+  - IGListKit/Diffing (3.4.0)
   - IQKeyboardManagerSwift (6.3.0)
   - LTMorphingLabel (0.7.0)
   - paper-onboarding (6.1.3)
@@ -48,7 +54,9 @@ DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudLiveQuery
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - DZNEmptyDataSet
   - EasyAnimation
+  - IGListKit (~> 3.0)
   - IQKeyboardManagerSwift (= 6.3.0)
   - LTMorphingLabel
   - paper-onboarding
@@ -68,7 +76,9 @@ SPEC REPOS:
     - AVOSCloudIM
     - AVOSCloudLiveQuery
     - Differentiator
+    - DZNEmptyDataSet
     - EasyAnimation
+    - IGListKit
     - IQKeyboardManagerSwift
     - LTMorphingLabel
     - paper-onboarding
@@ -100,7 +110,9 @@ SPEC CHECKSUMS:
   AVOSCloudLiveQuery: c55ffd61d547d6a509abed1a2166f7db2b978b5b
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   EasyAnimation: 226d133d23ef0ef99ddfb8928ff2a9a4a77d1cfd
+  IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
   paper-onboarding: 47ded9ede6ae9dd7ec135dddd8bd3e170b79d799
@@ -116,6 +128,6 @@ SPEC CHECKSUMS:
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 355886683d07a01b6635be66c620b2e68e24963c
+PODFILE CHECKSUM: 80efd7b79830860413f8d72cb7a2ca3b9d46fafc
 
 COCOAPODS: 1.5.3
