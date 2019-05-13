@@ -94,6 +94,10 @@ extension UIViewController {
                 img = UIImage(named: "back_button_icon")
             }
             
+            if self is AddNewAppletController {
+                img = UIImage(named: "back_button_icon")?.filled(withColor: UIColor.white)
+            }
+            
             button.setImage(img, for: .normal)
             button.contentMode = .left
             button.addTarget(self, action: #selector(leftNavigationItemAction), for: .touchUpInside)

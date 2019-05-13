@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TaskHeaderView" customModule="Dingo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="225" height="93"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="225" height="93"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9gF-Bm-Hkt">
+                        <rect key="frame" x="0.0" y="0.0" width="225" height="93"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的任务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTH-6g-4eL">
+                                <rect key="frame" x="20" y="34.5" width="82" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eTH-6g-4eL" firstAttribute="centerY" secondItem="9gF-Bm-Hkt" secondAttribute="centerY" id="G4N-SS-XF5"/>
+                            <constraint firstItem="eTH-6g-4eL" firstAttribute="leading" secondItem="9gF-Bm-Hkt" secondAttribute="leading" constant="20" id="yYU-hm-ZW2"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="9gF-Bm-Hkt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MYY-g9-RgL"/>
+                <constraint firstItem="9gF-Bm-Hkt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mXW-6g-3aO"/>
+                <constraint firstAttribute="trailing" secondItem="9gF-Bm-Hkt" secondAttribute="trailing" id="wWT-Uu-78N"/>
+                <constraint firstAttribute="bottom" secondItem="9gF-Bm-Hkt" secondAttribute="bottom" id="z2p-ry-4GD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="225" height="93"/>
+            <point key="canvasLocation" x="264.49275362318843" y="96.09375"/>
+        </collectionViewCell>
+    </objects>
+</document>

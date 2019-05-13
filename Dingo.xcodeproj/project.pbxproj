@@ -36,6 +36,17 @@
 		9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B622802A4300F73298 /* LoginAndRegisterController.swift */; };
 		9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B9228040B900F73298 /* UIButton+Ex.swift */; };
 		9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */; };
+		9CB1415A22890DDF00875411 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415922890DDF00875411 /* ServiceModel.swift */; };
+		9CB1415D2289437400875411 /* SeverSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415C2289437400875411 /* SeverSectionController.swift */; };
+		9CB14160228947CB00875411 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415E228947CB00875411 /* ServiceCell.swift */; };
+		9CB14161228947CB00875411 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB1415F228947CB00875411 /* ServiceCell.xib */; };
+		9CB141682289699D00875411 /* TaskHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB141662289699D00875411 /* TaskHeaderView.swift */; };
+		9CB141692289699D00875411 /* TaskHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB141672289699D00875411 /* TaskHeaderView.xib */; };
+		9CB1416B22896A1300875411 /* TaskSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1416A22896A1300875411 /* TaskSectionController.swift */; };
+		9CB1416D22896BF600875411 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1416C22896BF600875411 /* TaskModel.swift */; };
+		9CB14171228988FB00875411 /* AddNewAppletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB14170228988FB00875411 /* AddNewAppletController.swift */; };
+		9CB14174228995CC00875411 /* AddTaskHaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB14172228995CC00875411 /* AddTaskHaderView.swift */; };
+		9CB14175228995CC00875411 /* AddTaskHaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CB14173228995CC00875411 /* AddTaskHaderView.xib */; };
 		9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */; };
 		9CDF480C228703EB007711BA /* NSMutableAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */; };
 		9CDF480F22870C17007711BA /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF480E22870C17007711BA /* MoveButton.swift */; };
@@ -82,6 +93,17 @@
 		9C9D38B622802A4300F73298 /* LoginAndRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterController.swift; sourceTree = "<group>"; };
 		9C9D38B9228040B900F73298 /* UIButton+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ex.swift"; sourceTree = "<group>"; };
 		9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		9CB1415922890DDF00875411 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		9CB1415C2289437400875411 /* SeverSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverSectionController.swift; sourceTree = "<group>"; };
+		9CB1415E228947CB00875411 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		9CB1415F228947CB00875411 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		9CB141662289699D00875411 /* TaskHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderView.swift; sourceTree = "<group>"; };
+		9CB141672289699D00875411 /* TaskHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskHeaderView.xib; sourceTree = "<group>"; };
+		9CB1416A22896A1300875411 /* TaskSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSectionController.swift; sourceTree = "<group>"; };
+		9CB1416C22896BF600875411 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		9CB14170228988FB00875411 /* AddNewAppletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAppletController.swift; sourceTree = "<group>"; };
+		9CB14172228995CC00875411 /* AddTaskHaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskHaderView.swift; sourceTree = "<group>"; };
+		9CB14173228995CC00875411 /* AddTaskHaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTaskHaderView.xib; sourceTree = "<group>"; };
 		9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Ex.swift"; sourceTree = "<group>"; };
 		9CDF480E22870C17007711BA /* MoveButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
@@ -119,9 +141,11 @@
 		9C5218EA22826A2500CF5F15 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9CB1415B2289413200875411 /* ViewModels */,
 				9CDF480D22870BE3007711BA /* Views */,
 				9C5218EB22826A3E00CF5F15 /* Home.storyboard */,
 				9C5218ED22826A6600CF5F15 /* HomeViewController.swift */,
+				9CB14170228988FB00875411 /* AddNewAppletController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -157,6 +181,7 @@
 		9C67D982227E896800C05161 /* Dingo */ = {
 			isa = PBXGroup;
 			children = (
+				9CB1415822890D5A00875411 /* Models */,
 				9C5218EF2282ACCF00CF5F15 /* User */,
 				9C5218EA22826A2500CF5F15 /* Home */,
 				9C9D38B8228040A200F73298 /* Extension */,
@@ -229,10 +254,35 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		9CB1415822890D5A00875411 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CB1415922890DDF00875411 /* ServiceModel.swift */,
+				9CB1416C22896BF600875411 /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9CB1415B2289413200875411 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9CB1415C2289437400875411 /* SeverSectionController.swift */,
+				9CB1416A22896A1300875411 /* TaskSectionController.swift */,
+			);
+			name = ViewModels;
+			path = Dingo/Home/ViewModels;
+			sourceTree = SOURCE_ROOT;
+		};
 		9CDF480D22870BE3007711BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				9CDF480E22870C17007711BA /* MoveButton.swift */,
+				9CB1415E228947CB00875411 /* ServiceCell.swift */,
+				9CB1415F228947CB00875411 /* ServiceCell.xib */,
+				9CB141662289699D00875411 /* TaskHeaderView.swift */,
+				9CB141672289699D00875411 /* TaskHeaderView.xib */,
+				9CB14172228995CC00875411 /* AddTaskHaderView.swift */,
+				9CB14173228995CC00875411 /* AddTaskHaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,7 +358,10 @@
 			files = (
 				9C9D38B1227FD7FE00F73298 /* Login.storyboard in Resources */,
 				9C5218EC22826A3E00CF5F15 /* Home.storyboard in Resources */,
+				9CB141692289699D00875411 /* TaskHeaderView.xib in Resources */,
 				9C67D98E227E896900C05161 /* LaunchScreen.storyboard in Resources */,
+				9CB14175228995CC00875411 /* AddTaskHaderView.xib in Resources */,
+				9CB14161228947CB00875411 /* ServiceCell.xib in Resources */,
 				9C67D98B227E896900C05161 /* Assets.xcassets in Resources */,
 				9C67D989227E896800C05161 /* Main.storyboard in Resources */,
 				9C5218F12282ACF100CF5F15 /* User.storyboard in Resources */,
@@ -409,9 +462,11 @@
 				9C6D5FE52281259E0090EE87 /* NSObject+Rx.swift in Sources */,
 				9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */,
 				9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */,
+				9CB14174228995CC00875411 /* AddTaskHaderView.swift in Sources */,
 				9C9D38B3227FD83100F73298 /* LoginViewController.swift in Sources */,
 				9C5218EE22826A6600CF5F15 /* HomeViewController.swift in Sources */,
 				9C6D5FE72281289C0090EE87 /* UITextField+Ex.swift in Sources */,
+				9CB1415D2289437400875411 /* SeverSectionController.swift in Sources */,
 				9CFB197E2283F0C100CE3C8B /* UserInfoLiveData.swift in Sources */,
 				9C661F3E22855F9E00FBFA15 /* DGPicker.swift in Sources */,
 				9C6D5FE42281259E0090EE87 /* HasDisposeBag.swift in Sources */,
@@ -419,11 +474,17 @@
 				9C5218F32282AD0500CF5F15 /* MyViewController.swift in Sources */,
 				9CFB198C22841B6200CE3C8B /* UIViewController+Ex.swift in Sources */,
 				9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */,
+				9CB1416B22896A1300875411 /* TaskSectionController.swift in Sources */,
 				9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */,
 				9C661F3A2285289400FBFA15 /* UIAlertController+Ex.swift in Sources */,
+				9CB14160228947CB00875411 /* ServiceCell.swift in Sources */,
+				9CB1415A22890DDF00875411 /* ServiceModel.swift in Sources */,
 				9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */,
 				9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */,
+				9CB14171228988FB00875411 /* AddNewAppletController.swift in Sources */,
 				9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */,
+				9CB141682289699D00875411 /* TaskHeaderView.swift in Sources */,
+				9CB1416D22896BF600875411 /* TaskModel.swift in Sources */,
 				9CFB198E228421F500CE3C8B /* ActionError+Ex.swift in Sources */,
 				9CFB198A2284167C00CE3C8B /* EditingNicknameController.swift in Sources */,
 				9C67D986227E896800C05161 /* ViewController.swift in Sources */,
@@ -588,7 +649,10 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";
@@ -608,7 +672,10 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";

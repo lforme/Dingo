@@ -83,9 +83,11 @@ extension LoginViewController: PaperOnboardingDelegate {
                 self.skipButton.alpha = 1
                 self.skipButton.center.y -= 10
             }, completion: nil)
-            
-        } else {
-            
+        }
+    }
+    
+    @objc(onboardingWillTransitonToIndex:) func onboardingWillTransitonToIndex(_ index: Int) {
+        if index != 2 {
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.4, options: [.curveEaseOut], animations: {
                 self.skipButton.center.y += 10
                 self.skipButton.alpha = 0
@@ -94,7 +96,6 @@ extension LoginViewController: PaperOnboardingDelegate {
                     self.onboarding.sendSubviewToBack(self.skipButton)
                 }
             })
-            
         }
     }
     
