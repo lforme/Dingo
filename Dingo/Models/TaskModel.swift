@@ -21,8 +21,9 @@ final class TaskModel {
     let color: Int
     let userId: String
     let `repeat`: Bool
+    let taskType: Int
     
-    init(userId: String, name: String, usedCount: Int, icon: String, color: Int, repeat: Bool, remindDate: Date?, remindLocal: AVGeoPoint?) {
+    init(userId: String, name: String, usedCount: Int, icon: String, color: Int, repeat: Bool, taskType: Int, remindDate: Date?, remindLocal: AVGeoPoint?) {
         self.userId = userId
         self.name = name
         self.usedCount = usedCount
@@ -31,6 +32,7 @@ final class TaskModel {
         self.remindDate = remindDate
         self.remindLocal = remindLocal
         self.repeat = `repeat`
+        self.taskType = taskType
     }
 }
 
@@ -54,22 +56,43 @@ extension TaskModel: ListDiffable {
 
 extension TaskModel {
     
-    func saveToLeanCloud(by userId: String) -> Bool {
-        let leancloudObjc = AVObject(className: "TaskModel")
-        leancloudObjc.setObject(name, forKey: "name")
-        leancloudObjc.setObject(userId, forKey: "userId")
-        leancloudObjc.setObject(usedCount, forKey: "usedCount")
-        leancloudObjc.setObject(icon, forKey: "icon")
-        leancloudObjc.setObject(color, forKey: "color")
-        leancloudObjc.setObject(`repeat`, forKey: "repeat")
-        if let date = remindDate {
-            leancloudObjc.setObject(date, forKey: "remindDate")
-        }
-        if let local = remindLocal {
-            leancloudObjc.setObject(local, forKey: "remindLocal")
-        }
+    func saveToLeanCloud() -> Observable<String> {
         
-       return leancloudObjc.save()
+        return Observable<String>.create({[weak self] (obs) -> Disposable in
+            
+            guard let this = self else {
+                return Disposables.create()
+            }
+            
+            let leancloudObjc = AVObject(className: "TaskModel")
+            leancloudObjc.setObject(this.name, forKey: "name")
+            leancloudObjc.setObject(this.userId, forKey: "userId")
+            leancloudObjc.setObject(this.usedCount, forKey: "usedCount")
+            leancloudObjc.setObject(this.icon, forKey: "icon")
+            leancloudObjc.setObject(this.color, forKey: "color")
+            leancloudObjc.setObject(this.repeat, forKey: "repeat")
+            leancloudObjc.setObject(this.taskType, forKey: "taskType")
+            if let date = this.remindDate {
+                leancloudObjc.setObject(date, forKey: "remindDate")
+            }
+            if let local = this.remindLocal {
+                leancloudObjc.setObject(local, forKey: "remindLocal")
+            }
+            
+            leancloudObjc.saveInBackground({ (success, error) in
+                if let e = error {
+                    obs.onError(e)
+                } else {
+                    if let id = leancloudObjc.objectId {
+                        obs.onNext(id)
+                        obs.onCompleted()
+                    }
+                }
+            })
+            
+            return Disposables.create()
+            
+        }).observeOn(MainScheduler.instance)
     }
     
     static func fetchServerModels(by userId: String) -> Driver<[TaskModel]> {

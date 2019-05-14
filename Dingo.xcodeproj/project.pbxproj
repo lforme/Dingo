@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		207C5DB563A7A3E1C337F25E /* Pods_Dingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF0536E8C1F3351235679 /* Pods_Dingo.framework */; };
+		9C1FC060228A51B7008AA468 /* DateTaskSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1FC05F228A51B7008AA468 /* DateTaskSettingController.swift */; };
 		9C5218EC22826A3E00CF5F15 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5218EB22826A3E00CF5F15 /* Home.storyboard */; };
 		9C5218EE22826A6600CF5F15 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5218ED22826A6600CF5F15 /* HomeViewController.swift */; };
 		9C5218F12282ACF100CF5F15 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5218F02282ACF100CF5F15 /* User.storyboard */; };
@@ -28,6 +29,9 @@
 		9C6D5FEC22817AE90090EE87 /* String+tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FEB22817AE90090EE87 /* String+tools.swift */; };
 		9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FED228181730090EE87 /* PKHud+Rx.swift */; };
 		9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92218E227ECB0900763D35 /* LaunchTheme.swift */; };
+		9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C97D4BA228A7E080016542E /* DataPickerController.swift */; };
+		9C97D4BD228A7E080016542E /* DataPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C97D4BB228A7E080016542E /* DataPickerController.xib */; };
+		9C97D4BF228A92C20016542E /* DateTaskSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */; };
 		9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38AB227FCEFA00F73298 /* UIViewController+Navigation.swift */; };
 		9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38AD227FD08A00F73298 /* ObjectAssociation.swift */; };
 		9C9D38B1227FD7FE00F73298 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9D38B0227FD7FD00F73298 /* Login.storyboard */; };
@@ -62,6 +66,7 @@
 /* Begin PBXFileReference section */
 		158CF0536E8C1F3351235679 /* Pods_Dingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		573E12B7DFCB81B6CE238590 /* Pods-Dingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dingo/Pods-Dingo.debug.xcconfig"; sourceTree = "<group>"; };
+		9C1FC05F228A51B7008AA468 /* DateTaskSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTaskSettingController.swift; sourceTree = "<group>"; };
 		9C5218EB22826A3E00CF5F15 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9C5218ED22826A6600CF5F15 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9C5218F02282ACF100CF5F15 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
@@ -85,6 +90,9 @@
 		9C6D5FED228181730090EE87 /* PKHud+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PKHud+Rx.swift"; sourceTree = "<group>"; };
 		9C922189227EC64100763D35 /* Dingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dingo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C92218E227ECB0900763D35 /* LaunchTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTheme.swift; sourceTree = "<group>"; };
+		9C97D4BA228A7E080016542E /* DataPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerController.swift; sourceTree = "<group>"; };
+		9C97D4BB228A7E080016542E /* DataPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPickerController.xib; sourceTree = "<group>"; };
+		9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTaskSettingViewModel.swift; sourceTree = "<group>"; };
 		9C9D38AB227FCEFA00F73298 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		9C9D38AD227FD08A00F73298 /* ObjectAssociation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectAssociation.swift; sourceTree = "<group>"; };
 		9C9D38B0227FD7FD00F73298 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 				9C5218EB22826A3E00CF5F15 /* Home.storyboard */,
 				9C5218ED22826A6600CF5F15 /* HomeViewController.swift */,
 				9CB14170228988FB00875411 /* AddNewAppletController.swift */,
+				9C1FC05F228A51B7008AA468 /* DateTaskSettingController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -219,6 +228,8 @@
 				9CFB1987228415A500CE3C8B /* DGTextField.swift */,
 				9C661F372285223900FBFA15 /* DGKeychain.swift */,
 				9C661F3D22855F9E00FBFA15 /* DGPicker.swift */,
+				9C97D4BA228A7E080016542E /* DataPickerController.swift */,
+				9C97D4BB228A7E080016542E /* DataPickerController.xib */,
 			);
 			path = BaseCommon;
 			sourceTree = "<group>";
@@ -268,6 +279,7 @@
 			children = (
 				9CB1415C2289437400875411 /* SeverSectionController.swift */,
 				9CB1416A22896A1300875411 /* TaskSectionController.swift */,
+				9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */,
 			);
 			name = ViewModels;
 			path = Dingo/Home/ViewModels;
@@ -359,6 +371,7 @@
 				9C9D38B1227FD7FE00F73298 /* Login.storyboard in Resources */,
 				9C5218EC22826A3E00CF5F15 /* Home.storyboard in Resources */,
 				9CB141692289699D00875411 /* TaskHeaderView.xib in Resources */,
+				9C97D4BD228A7E080016542E /* DataPickerController.xib in Resources */,
 				9C67D98E227E896900C05161 /* LaunchScreen.storyboard in Resources */,
 				9CB14175228995CC00875411 /* AddTaskHaderView.xib in Resources */,
 				9CB14161228947CB00875411 /* ServiceCell.xib in Resources */,
@@ -399,6 +412,7 @@
 				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/YPImagePicker/YPImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
@@ -425,6 +439,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YPImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
@@ -475,11 +490,13 @@
 				9CFB198C22841B6200CE3C8B /* UIViewController+Ex.swift in Sources */,
 				9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */,
 				9CB1416B22896A1300875411 /* TaskSectionController.swift in Sources */,
+				9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */,
 				9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */,
 				9C661F3A2285289400FBFA15 /* UIAlertController+Ex.swift in Sources */,
 				9CB14160228947CB00875411 /* ServiceCell.swift in Sources */,
 				9CB1415A22890DDF00875411 /* ServiceModel.swift in Sources */,
 				9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */,
+				9C1FC060228A51B7008AA468 /* DateTaskSettingController.swift in Sources */,
 				9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */,
 				9CB14171228988FB00875411 /* AddNewAppletController.swift in Sources */,
 				9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */,
@@ -498,6 +515,7 @@
 				9C67D984227E896800C05161 /* AppDelegate.swift in Sources */,
 				9CDF480F22870C17007711BA /* MoveButton.swift in Sources */,
 				9CFB199022842AB900CE3C8B /* UIView+Ex.swift in Sources */,
+				9C97D4BF228A92C20016542E /* DateTaskSettingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,15 @@ extension UIView {
         layer.borderColor = color.cgColor
         layer.shadowOpacity = 0.8
         layer.shadowOffset = CGSize(width: 4, height: 4)
-        
+    }
+    
+    
+//    [.layerMaxXMinYCorner, .layerMinXMinYCorner] 左右下
+//    [.layerMaxXMinYCorner, .layerMinXMinYCorner] 左右上
+    // https://stackoverflow.com/questions/4847163/round-two-corners-in-uiview
+    func roundCorners(_ corners: CACornerMask, radius: CGFloat) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 10
+        self.layer.maskedCorners = corners
     }
 }

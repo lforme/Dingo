@@ -30,6 +30,7 @@ class HomeViewController: UIViewController {
         LaunchThemeManager.changeStatusBarStyle(.default)
         setupCollectionView()
         fetchAllServer()
+        
     }
     
     func fetchAllServer() {
@@ -68,4 +69,3 @@ extension HomeViewController: ListAdapterDataSource {
         return nil
     }
 }
-

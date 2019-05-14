@@ -11,6 +11,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import ChameleonFramework
 import EasyAnimation
+import UserNotifications
 
 enum LaunchTheme: Int {
     case dark = 0
@@ -51,7 +52,8 @@ struct LaunchThemeManager {
     
     private static let selectedThemeKey = "SelectedTheme"
     
-    static func launchInit() {
+    @discardableResult
+    static func launchInit() -> Bool {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldPlayInputClicks = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -61,6 +63,15 @@ struct LaunchThemeManager {
         
         AVOSCloud.setApplicationId("fI1sUJD8N9y9VgmmSV0OL1PB-gzGzoHsz", clientKey: "3qqQwnHfMSFj3soa8q4b9sYr")
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Notifications permission granted.")
+            }
+            else {
+                print("Notifications permission denied because: \(error?.localizedDescription ?? "错误").")
+            }
+        }
+        return true
     }
     
     static func currentTheme() -> LaunchTheme {

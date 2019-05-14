@@ -16,7 +16,7 @@ final class SeverSectionController: ListSectionController {
     private let colors = [LaunchThemeManager.currentTheme().mainColor,
                           LaunchThemeManager.currentTheme().textBlackColor,
                           LaunchThemeManager.currentTheme().secondaryRed]
-
+    
     override init() {
         super.init()
         displayDelegate = self
@@ -51,21 +51,19 @@ final class SeverSectionController: ListSectionController {
     }
     
     override func didSelectItem(at index: Int) {
+        
         let addVC: AddNewAppletController = ViewLoader.Storyboard.controller(from: "Home")
         addVC.color = colors[service?.colorType ?? 0]
         if let i = service?.icon {
             addVC.icon = i
         }
-        switch index {
-        case 0:
-            addVC.type = .date
-        case 1:
-            addVC.type = .local
-        default:
-            break
+        guard let num = service?.functionType, let type = AddAppletType(rawValue: num)  else {
+            return
         }
+        addVC.type = type
         self.viewController?.navigationController?.pushViewController(addVC, animated: true)
     }
+    
 }
 
 

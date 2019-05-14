@@ -151,4 +151,13 @@ class ViewController: UIViewController {
         self.addChild(tabBarVC)
     }
     
+    static func visibleViewController() -> UIViewController? {
+        let root = UIApplication.shared.keyWindow?.rootViewController
+        
+        if let navi = root?.children.last as? BaseNavigationController {
+            return navi.visibleViewController
+        }
+        return nil
+    }
+    
 }

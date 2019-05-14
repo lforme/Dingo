@@ -25,6 +25,8 @@ extension UIButton {
         if let i = image {
             let disableColor = AverageColorFromImage(i).withAlphaComponent(0.4)
             setBackgroundImage(i.filled(withColor: disableColor), for: UIControl.State.disabled)
+            let textDisableColor = titleLabel?.textColor!.withAlphaComponent(0.4)
+            setTitleColor(textDisableColor, for: UIControl.State.disabled)
         }
     }
     

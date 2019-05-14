@@ -8,8 +8,8 @@
 
 import UIKit
 
-enum AddAppletType {
-    case date
+enum AddAppletType: Int {
+    case date = 0
     case local
 }
 
@@ -68,7 +68,7 @@ class AddNewAppletController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = true
         self.tableView.tableFooterView = UIView(frame: .zero)
         self.tableView.register(UINib(nibName: "AddTaskHaderView", bundle: nil), forCellReuseIdentifier: "AddTaskHaderView")
         configUIByType()
@@ -107,6 +107,20 @@ class AddNewAppletController: UITableViewController {
         
         return headerView
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let t = type else {
+            return
+        }
+        
+        switch t {
+        case .date:
+            gotoDateSettingVC(index: indexPath.row)
+        case .local:
+            break
+        }
+    }
 }
 
 extension AddNewAppletController {
@@ -117,13 +131,59 @@ extension AddNewAppletController {
         let item0 = AddNewAppletData(name: "每天提醒", index: 0)
         let item1 = AddNewAppletData(name: "每小时提醒", index: 1)
         let item2 = AddNewAppletData(name: "每周提醒", index: 2)
-        let item3 = AddNewAppletData(name: "每月提醒", index: 3)
-        let item4 = AddNewAppletData(name: "每年提醒", index: 4)
+        let item3 = AddNewAppletData(name: "每年提醒", index: 3)
         
-        datasource = [item0, item1, item2, item3, item4]
+        datasource = [item0, item1, item2, item3]
     }
     
     func configLocalUI() {
         
+    }
+    
+    func gotoDateSettingVC(index: Int) {
+        let dateSettingVC: DateTaskSettingController = ViewLoader.Storyboard.controller(from: "Home")
+        if let type = DateTaskSettingController.DateType(rawValue: index) {
+            dateSettingVC.dateType = type
+        }
+        if let taksType = type {
+            dateSettingVC.taskType = taksType
+        }
+        switch index {
+        case 0:
+            dateSettingVC.funcNameText = "每天提醒"
+            dateSettingVC.funcDescribeText = "此触发器会在您设置的特定时间触发每一天"
+            dateSettingVC.chooseText = "时间"
+            dateSettingVC.datePickerMode = .time
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            dateSettingVC.dateFormatter = formatter
+            
+        case 1:
+            dateSettingVC.funcNameText = "每小时提醒"
+            dateSettingVC.funcDescribeText = "此触发器会在每小时内触发一次"
+            dateSettingVC.chooseText = "过了几分钟"
+            
+        case 2:
+            dateSettingVC.funcNameText = "每周提醒"
+            dateSettingVC.funcDescribeText = "此触发器仅在您提供的一周中的特定日期触发"
+            dateSettingVC.chooseText = "一天中的时间"
+            dateSettingVC.showDaysOfWeek = true
+            dateSettingVC.datePickerMode = .time
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            dateSettingVC.dateFormatter = formatter
+            
+        case 3:
+            dateSettingVC.funcNameText = "每年提醒"
+            dateSettingVC.funcDescribeText = "此触发器仅在您提供的一年中的特定日期触发"
+            dateSettingVC.chooseText = "一年中的时间"
+            dateSettingVC.datePickerMode = .dateAndTime
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            dateSettingVC.dateFormatter = formatter
+        default:
+            break
+        }
+        navigationController?.pushViewController(dateSettingVC, animated: true)
     }
 }

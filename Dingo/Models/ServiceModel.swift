@@ -16,12 +16,14 @@ final class ServiceModel {
     let colorType: Int
     let introduce: String
     let icon: String
+    let functionType: Int
     
-    init(name: String, colorType: Int, introduce: String, icon: String) {
+    init(name: String, colorType: Int, introduce: String, icon: String, functionType: Int) {
         self.name = name
         self.colorType = colorType
         self.introduce = introduce
         self.icon = icon
+        self.functionType = functionType
     }
 }
 
@@ -46,7 +48,7 @@ extension ServiceModel {
         leancloudObjc.setObject(self.colorType, forKey: "colorType")
         leancloudObjc.setObject(self.introduce, forKey: "introduce")
         leancloudObjc.setObject(self.icon, forKey: "icon")
-        
+        leancloudObjc.setObject(self.functionType, forKey: "functionType")
         return leancloudObjc
     }
     
@@ -62,8 +64,9 @@ extension ServiceModel {
                         guard let name = d.object(forKey: "name") as? String,
                             let colorType = d.object(forKey: "colorType") as? Int,
                             let introduce = d.object(forKey: "introduce") as? String,
-                            let icon = d.object(forKey: "icon") as? String else { return nil }
-                        let model = ServiceModel(name: name, colorType: colorType, introduce: introduce, icon: icon)
+                            let icon = d.object(forKey: "icon") as? String,
+                            let functionType = d.object(forKey: "functionType") as? Int else { return nil }
+                        let model = ServiceModel(name: name, colorType: colorType, introduce: introduce, icon: icon, functionType: functionType)
                         return model
                     }).compactMap { $0 }
                     
