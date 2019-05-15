@@ -18,7 +18,7 @@ class MyViewController: UIViewController {
     @IBOutlet weak var verifyEmailButton: UIButton!
     @IBOutlet weak var appVersionLabel: LTMorphingLabel!
     
-    fileprivate let userQuery = AVQuery(className: "_User")
+    fileprivate let userQuery = AVQuery(className: DatabaseKey.userTable)
     
     
     override func viewWillDisappear(_ animated: Bool) {

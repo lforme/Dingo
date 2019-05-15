@@ -28,7 +28,7 @@ class UserInfoLiveData: NSObject {
     
     /////////// 私有属性 私有方法/////////////////
     fileprivate var doingLiveQuery: AVLiveQuery
-    fileprivate let userQuery = AVQuery(className: "_User")
+    fileprivate let userQuery = AVQuery(className: DatabaseKey.userTable)
     fileprivate var notificationBlock: DataChangedNotification?
     
     private override init() {

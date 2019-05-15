@@ -40,10 +40,15 @@ class MyTaskCell: UICollectionViewCell {
         isOnIcon.layer.borderColor = UIColor.white.cgColor
         isOnIcon.layer.borderWidth = 2
         isOnIcon.layer.cornerRadius = isOnIcon.bounds.height / 2
-        isOnIcon.backgroundColor = UIColor.flatGreen
         
         isOnLabel.text = "运行中"
-        ringsLabel.text = "提醒方式"
     }
 
+    func updateAvailableIconBy(available: Bool) {
+        if available {
+            isOnIcon.backgroundColor = UIColor.flatGreen
+        } else {
+            isOnIcon.backgroundColor = LaunchThemeManager.currentTheme().secondaryRed
+        }
+    }
 }

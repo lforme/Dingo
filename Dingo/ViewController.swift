@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     fileprivate var homeTab: UITabBarController?
     fileprivate var baseNavigationVC: BaseNavigationController?
     fileprivate var doingLiveQuery: AVLiveQuery?
-    fileprivate let userQuery = AVQuery(className: "_User")
+    fileprivate let userQuery = AVQuery(className: DatabaseKey.userTable)
     fileprivate var _statusBarStyle: UIStatusBarStyle = .default {
         didSet {
             self.setNeedsStatusBarAppearanceUpdate()

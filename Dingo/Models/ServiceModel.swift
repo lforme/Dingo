@@ -54,7 +54,7 @@ extension ServiceModel {
     
     static func fetchServerModels() -> Driver<[ServiceModel]?> {
         return Observable<[ServiceModel]?>.create({ (obs) -> Disposable in
-            let query = AVQuery(className: "ServiceModel")
+            let query = AVQuery(className: DatabaseKey.serviceTable)
             query.cachePolicy = AVCachePolicy.networkElseCache
             query.findObjectsInBackground({ (obejcts, error) in
                 if let e = error {

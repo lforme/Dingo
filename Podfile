@@ -30,5 +30,6 @@ target 'Dingo' do
   pod 'IGListKit', '~> 3.0'
   pod 'Then'
   pod 'MJRefresh'
+  pod 'NotificationBannerSwift'
   
 end

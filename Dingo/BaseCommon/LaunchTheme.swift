@@ -98,5 +98,3 @@ struct LaunchThemeManager {
         NotificationCenter.default.post(name: .statuBarDidChnage, object: style)
     }
 }
-
-

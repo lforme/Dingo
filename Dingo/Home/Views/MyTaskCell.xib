@@ -51,7 +51,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY4-Iu-Yzm">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY4-Iu-Yzm">
                                             <rect key="frame" x="233" y="13" width="34" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,6 +69,7 @@
                                         <constraint firstItem="ByD-EO-U84" firstAttribute="leading" secondItem="4Zb-Ii-znA" secondAttribute="leading" constant="16" id="bO5-fR-YjB"/>
                                         <constraint firstItem="lY4-Iu-Yzm" firstAttribute="centerY" secondItem="rvG-v9-OTP" secondAttribute="centerY" id="e4K-FA-4l9"/>
                                         <constraint firstItem="rvG-v9-OTP" firstAttribute="centerY" secondItem="4Zb-Ii-znA" secondAttribute="centerY" id="qbU-3t-NKa"/>
+                                        <constraint firstItem="lY4-Iu-Yzm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FE7-nK-4wn" secondAttribute="trailing" constant="20" id="umH-ea-rbP"/>
                                         <constraint firstItem="rvG-v9-OTP" firstAttribute="leading" secondItem="lY4-Iu-Yzm" secondAttribute="trailing" constant="4" id="wwl-zO-nMF"/>
                                         <constraint firstItem="FE7-nK-4wn" firstAttribute="centerY" secondItem="4Zb-Ii-znA" secondAttribute="centerY" id="xEY-33-jAX"/>
                                     </constraints>

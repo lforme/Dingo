@@ -24,8 +24,9 @@ final class TaskModel {
     let taskType: Int
     let objcId: String?
     let functionType: Int
+    let available: Bool
     
-    init(userId: String, name: String, usedCount: Int, icon: String, color: Int, repeat: Bool, taskType: Int, remindDate: String?, remindLocal: AVGeoPoint?, id: String?, functionType: Int) {
+    init(userId: String, name: String, usedCount: Int, icon: String, color: Int, repeat: Bool, taskType: Int, remindDate: String?, remindLocal: AVGeoPoint?, id: String?, functionType: Int, available: Bool = true) {
         self.userId = userId
         self.name = name
         self.usedCount = usedCount
@@ -37,6 +38,7 @@ final class TaskModel {
         self.taskType = taskType
         self.objcId = id
         self.functionType = functionType
+        self.available = available
     }
 }
 
@@ -77,6 +79,7 @@ extension TaskModel {
             leancloudObjc.setObject(this.repeat, forKey: "repeat")
             leancloudObjc.setObject(this.taskType, forKey: "taskType")
             leancloudObjc.setObject(this.functionType, forKey: "functionType")
+            leancloudObjc.setObject(this.available, forKey: "available")
             if let date = this.remindDate {
                 leancloudObjc.setObject(date, forKey: "remindDate")
             }
@@ -122,13 +125,14 @@ extension TaskModel {
                             let userId = dict["userId"] as? String,
                             let `repeat` = dict["repeat"] as? Bool,
                             let taskType = dict["taskType"] as? Int,
-                            let functionType = dict["functionType"] as? Int else { return nil }
+                            let functionType = dict["functionType"] as? Int,
+                            let available = dict["available"] as? Bool else { return nil }
                         
                         let remindDate = dict["remindDate"] as? String
                         let remindLocal = dict["remindLocal"] as? AVGeoPoint
                         let objcId = dict["objectId"] as? String
                         
-                        let model = TaskModel(userId: userId, name: name, usedCount: usedCount, icon: icon, color: color, repeat: `repeat`, taskType: taskType, remindDate: remindDate, remindLocal: remindLocal, id: objcId, functionType: functionType)
+                        let model = TaskModel(userId: userId, name: name, usedCount: usedCount, icon: icon, color: color, repeat: `repeat`, taskType: taskType, remindDate: remindDate, remindLocal: remindLocal, id: objcId, functionType: functionType, available: available)
                         return model
                         
                     })

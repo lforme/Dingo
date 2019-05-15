@@ -34,10 +34,11 @@ final class TaskSectionController: ListSectionController {
         guard let cell = collectionContext?.dequeueReusableCell(withNibName: "MyTaskCell", bundle: nil, for: self, at: index) as? MyTaskCell else {
             fatalError()
         }
+        cell.updateAvailableIconBy(available: task.available)
         let color = colors[task.color]
         cell.bkView.backgroundColor = color
         cell.icon.image = UIImage(named: task.icon)
-        
+        cell.ringsLabel.text = "已经提醒\(task.usedCount.description)次"
         guard let addType = AddAppletType(rawValue: task.taskType) else {
             fatalError()
         }
@@ -62,6 +63,11 @@ final class TaskSectionController: ListSectionController {
             cell.decreaseLabel.text = "有过你进入或者离开\("这个区域"), 叮咚就会发出提醒"
             return cell
         }
+    }
+    
+    override func didSelectItem(at index: Int) {
+        let taskDetailVC: TaskDetailViewController = ViewLoader.Storyboard.controller(from: "Home")
+        viewController?.navigationController?.pushViewController(taskDetailVC, animated: true)
     }
     
     override func didUpdate(to object: Any) {

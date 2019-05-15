@@ -24,4 +24,8 @@ struct DatabaseKey {
     static let nickname = "nickname"
     static let emailVerified = "emailVerified"
     static let portrait = "portrait"
+    
+    static let userTable = "_User"
+    static let taskTable = "TaskModel"
+    static let serviceTable = "ServiceModel"
 }
