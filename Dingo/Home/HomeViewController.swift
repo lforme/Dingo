@@ -8,6 +8,9 @@
 
 import UIKit
 import IGListKit
+import MJRefresh
+import RxCocoa
+import RxSwift
 
 class HomeViewController: UIViewController {
     
@@ -22,6 +25,9 @@ class HomeViewController: UIViewController {
     }()
     
     var serverData: [ServiceModel] = []
+    var serverTaskData: [TaskModel] = []
+    let headerData: [String] = ["任务列表"]
+    private var page = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +37,31 @@ class HomeViewController: UIViewController {
         setupCollectionView()
         fetchAllServer()
         
+        NotificationCenter.default.rx.notification(.refreshState)
+            .takeUntil(rx.deallocated)
+            .observeOn(MainScheduler.instance)
+            .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (_) in
+                self?.collectionView.mj_header.beginRefreshing()
+            }).disposed(by: rx.disposeBag)
     }
     
     func fetchAllServer() {
+        guard let userId = AVUser.current()?.objectId else {
+            return
+        }
         ServiceModel.fetchServerModels().drive(onNext: {[weak self] (models) in
             if let ms = models {
                 self?.serverData = ms
                 self?.adapter.reloadData(completion: nil)
             }
         }).disposed(by: rx.disposeBag)
+        
+        
+        TaskModel.fetchServerModels(by: userId).drive(onNext: {[weak self] (models) in
+            self?.serverTaskData = models
+            self?.adapter.reloadData(completion: nil)
+        }).disposed(by: rx.disposeBag)
+        
     }
     
     func setupCollectionView() {
@@ -47,6 +69,33 @@ class HomeViewController: UIViewController {
         collectionView.backgroundColor = UIColor.white
         adapter.collectionView = collectionView
         adapter.dataSource = self
+        
+        guard let userId = AVUser.current()?.objectId else {
+            return
+        }
+        
+        self.collectionView.mj_header = MJRefreshNormalHeader(refreshingBlock: {[unowned self] in
+            TaskModel.fetchServerModels(by: userId, page: 0).drive(onNext: {[weak self] (models) in
+                self?.collectionView.mj_header.endRefreshing()
+                self?.page = 0
+                self?.serverTaskData = models
+                self?.adapter.reloadData(completion: nil)
+                
+            }).disposed(by: self.rx.disposeBag)
+        })
+        
+        self.collectionView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            self.page += 1
+            TaskModel.fetchServerModels(by: userId, page: self.page).drive(onNext: {[weak self] (models) in
+                self?.serverTaskData += models
+                if models.count == 0 {
+                    self?.collectionView.mj_footer.endRefreshingWithNoMoreData()
+                } else {
+                    self?.collectionView.mj_footer.endRefreshing()
+                }
+                self?.adapter.reloadData(completion: nil)
+            }).disposed(by: self.rx.disposeBag)
+        })
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,11 +107,23 @@ class HomeViewController: UIViewController {
 extension HomeViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return serverData
+        let header = headerData as [ListDiffable]
+        
+        return serverData + header + serverTaskData
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return SeverSectionController()
+        
+        if object is ServiceModel {
+            return SeverSectionController()
+        }
+        if object is String {
+            return TaskHeaderSectionController()
+        }
+        if object is TaskModel {
+            return TaskSectionController()
+        }
+        fatalError()
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {

@@ -9,7 +9,6 @@
 import UIKit
 import IGListKit
 
-
 final class SeverSectionController: ListSectionController {
     
     private var service: ServiceModel?

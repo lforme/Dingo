@@ -28,6 +28,7 @@ PODS:
   - IGListKit/Diffing (3.4.0)
   - IQKeyboardManagerSwift (6.3.0)
   - LTMorphingLabel (0.7.0)
+  - MJRefresh (3.1.16)
   - paper-onboarding (6.1.3)
   - PKHUD (5.2.1)
   - PryntTrimmerView (3.0.0)
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - IGListKit (~> 3.0)
   - IQKeyboardManagerSwift (= 6.3.0)
   - LTMorphingLabel
+  - MJRefresh
   - paper-onboarding
   - PKHUD (~> 5.2.1)
   - RxCocoa (~> 5.0.0)
@@ -83,6 +85,7 @@ SPEC REPOS:
     - IGListKit
     - IQKeyboardManagerSwift
     - LTMorphingLabel
+    - MJRefresh
     - paper-onboarding
     - PKHUD
     - PryntTrimmerView
@@ -118,6 +121,7 @@ SPEC CHECKSUMS:
   IGListKit: 7a5d788e9fb746bcd402baa8e8b24bc3bd2a5a07
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   LTMorphingLabel: 22147fb1ec2b0306537ccc348b36ea8617179b03
+  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   paper-onboarding: 47ded9ede6ae9dd7ec135dddd8bd3e170b79d799
   PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
   PryntTrimmerView: 53ac64053c7ce63cb3e27f54090f52da0734891d
@@ -132,6 +136,6 @@ SPEC CHECKSUMS:
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 55b9aaa984b90beda7da5f25606943ca9e2d3815
+PODFILE CHECKSUM: ece203e597b2187fe0543147520521b2c925ab00
 
 COCOAPODS: 1.5.3

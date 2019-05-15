@@ -15,15 +15,17 @@ import IGListKit
 final class TaskModel {
     let name: String
     let usedCount: Int
-    let remindDate: Date?
-    let remindLocal: AVGeoPoint?
+    var remindDate: String?
+    var remindLocal: AVGeoPoint?
     let icon: String
     let color: Int
     let userId: String
     let `repeat`: Bool
     let taskType: Int
+    let objcId: String?
+    let functionType: Int
     
-    init(userId: String, name: String, usedCount: Int, icon: String, color: Int, repeat: Bool, taskType: Int, remindDate: Date?, remindLocal: AVGeoPoint?) {
+    init(userId: String, name: String, usedCount: Int, icon: String, color: Int, repeat: Bool, taskType: Int, remindDate: String?, remindLocal: AVGeoPoint?, id: String?, functionType: Int) {
         self.userId = userId
         self.name = name
         self.usedCount = usedCount
@@ -33,22 +35,24 @@ final class TaskModel {
         self.remindLocal = remindLocal
         self.repeat = `repeat`
         self.taskType = taskType
+        self.objcId = id
+        self.functionType = functionType
     }
 }
 
 extension TaskModel: ListDiffable {
     
     func diffIdentifier() -> NSObjectProtocol {
-        let identifier = self.userId + self.name
-        return identifier as NSObjectProtocol
+        let identifier = self.objcId
+        return identifier! as NSObjectProtocol
     }
     
     func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
         guard let obj = object as? TaskModel else {
             return false
         }
-        let right = self.userId + self.name
-        let left = obj.userId + obj.name
+        let right = self.objcId
+        let left = obj.objcId
         
         return right == left
     }    
@@ -72,6 +76,7 @@ extension TaskModel {
             leancloudObjc.setObject(this.color, forKey: "color")
             leancloudObjc.setObject(this.repeat, forKey: "repeat")
             leancloudObjc.setObject(this.taskType, forKey: "taskType")
+            leancloudObjc.setObject(this.functionType, forKey: "functionType")
             if let date = this.remindDate {
                 leancloudObjc.setObject(date, forKey: "remindDate")
             }
@@ -79,7 +84,7 @@ extension TaskModel {
                 leancloudObjc.setObject(local, forKey: "remindLocal")
             }
             
-            leancloudObjc.saveInBackground({ (success, error) in
+            leancloudObjc.saveEventually({ (_, error) in
                 if let e = error {
                     obs.onError(e)
                 } else {
@@ -95,20 +100,42 @@ extension TaskModel {
         }).observeOn(MainScheduler.instance)
     }
     
-    static func fetchServerModels(by userId: String) -> Driver<[TaskModel]> {
+    static func fetchServerModels(by userId: String, page: Int = 0) -> Driver<[TaskModel]> {
         return Observable<[TaskModel]>.create({ (observer) -> Disposable in
             
             let query = AVQuery(className: "TaskModel")
             query.whereKey("userId", equalTo: userId)
+            query.order(byDescending: "createdAt")
+            query.limit = 10
+            query.skip = 10 * page
             query.findObjectsInBackground({ (objs, error) in
                 if let e = error {
                     observer.onError(e)
                 } else {
-                    let entitis = objs as? [TaskModel]
-                    if let tasks = entitis {
-                        observer.onNext(tasks)
-                        observer.onCompleted()
-                    }
+                    
+                    let entities = objs?.compactMap({ (elem) -> TaskModel? in
+                        guard let dict = elem as? AVObject else { return nil }
+                        guard let name = dict["name"] as? String,
+                            let usedCount = dict["usedCount"] as? Int,
+                            let icon = dict["icon"] as? String,
+                            let color = dict["color"] as? Int,
+                            let userId = dict["userId"] as? String,
+                            let `repeat` = dict["repeat"] as? Bool,
+                            let taskType = dict["taskType"] as? Int,
+                            let functionType = dict["functionType"] as? Int else { return nil }
+                        
+                        let remindDate = dict["remindDate"] as? String
+                        let remindLocal = dict["remindLocal"] as? AVGeoPoint
+                        let objcId = dict["objectId"] as? String
+                        
+                        let model = TaskModel(userId: userId, name: name, usedCount: usedCount, icon: icon, color: color, repeat: `repeat`, taskType: taskType, remindDate: remindDate, remindLocal: remindLocal, id: objcId, functionType: functionType)
+                        return model
+                        
+                    })
+                    
+                    observer.onNext(entities ?? [])
+                    observer.onCompleted()
+                    
                 }
             })
             return Disposables.create()

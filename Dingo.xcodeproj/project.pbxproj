@@ -54,6 +54,9 @@
 		9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */; };
 		9CDF480C228703EB007711BA /* NSMutableAttributedString+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */; };
 		9CDF480F22870C17007711BA /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDF480E22870C17007711BA /* MoveButton.swift */; };
+		9CF6BF6D228BB51300F2C467 /* MyTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6BF6B228BB51300F2C467 /* MyTaskCell.swift */; };
+		9CF6BF6E228BB51300F2C467 /* MyTaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF6BF6C228BB51300F2C467 /* MyTaskCell.xib */; };
+		9CF6BF70228BEA0400F2C467 /* TaskHeaderSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF6BF6F228BEA0400F2C467 /* TaskHeaderSectionController.swift */; };
 		9CFB197E2283F0C100CE3C8B /* UserInfoLiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB197D2283F0C100CE3C8B /* UserInfoLiveData.swift */; };
 		9CFB1984228403C700CE3C8B /* StaticConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB1983228403C700CE3C8B /* StaticConst.swift */; };
 		9CFB1988228415A500CE3C8B /* DGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFB1987228415A500CE3C8B /* DGTextField.swift */; };
@@ -115,6 +118,9 @@
 		9CD8DBD6227F19EA00D00BE8 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Ex.swift"; sourceTree = "<group>"; };
 		9CDF480E22870C17007711BA /* MoveButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
+		9CF6BF6B228BB51300F2C467 /* MyTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaskCell.swift; sourceTree = "<group>"; };
+		9CF6BF6C228BB51300F2C467 /* MyTaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTaskCell.xib; sourceTree = "<group>"; };
+		9CF6BF6F228BEA0400F2C467 /* TaskHeaderSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskHeaderSectionController.swift; sourceTree = "<group>"; };
 		9CFB197D2283F0C100CE3C8B /* UserInfoLiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoLiveData.swift; sourceTree = "<group>"; };
 		9CFB1983228403C700CE3C8B /* StaticConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticConst.swift; sourceTree = "<group>"; };
 		9CFB1987228415A500CE3C8B /* DGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGTextField.swift; sourceTree = "<group>"; };
@@ -279,6 +285,7 @@
 			children = (
 				9CB1415C2289437400875411 /* SeverSectionController.swift */,
 				9CB1416A22896A1300875411 /* TaskSectionController.swift */,
+				9CF6BF6F228BEA0400F2C467 /* TaskHeaderSectionController.swift */,
 				9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */,
 			);
 			name = ViewModels;
@@ -295,6 +302,8 @@
 				9CB141672289699D00875411 /* TaskHeaderView.xib */,
 				9CB14172228995CC00875411 /* AddTaskHaderView.swift */,
 				9CB14173228995CC00875411 /* AddTaskHaderView.xib */,
+				9CF6BF6B228BB51300F2C467 /* MyTaskCell.swift */,
+				9CF6BF6C228BB51300F2C467 /* MyTaskCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -375,6 +384,7 @@
 				9C67D98E227E896900C05161 /* LaunchScreen.storyboard in Resources */,
 				9CB14175228995CC00875411 /* AddTaskHaderView.xib in Resources */,
 				9CB14161228947CB00875411 /* ServiceCell.xib in Resources */,
+				9CF6BF6E228BB51300F2C467 /* MyTaskCell.xib in Resources */,
 				9C67D98B227E896900C05161 /* Assets.xcassets in Resources */,
 				9C67D989227E896800C05161 /* Main.storyboard in Resources */,
 				9C5218F12282ACF100CF5F15 /* User.storyboard in Resources */,
@@ -402,6 +412,7 @@
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PryntTrimmerView/PryntTrimmerView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -429,6 +440,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTMorphingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PryntTrimmerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -489,6 +501,7 @@
 				9C5218F32282AD0500CF5F15 /* MyViewController.swift in Sources */,
 				9CFB198C22841B6200CE3C8B /* UIViewController+Ex.swift in Sources */,
 				9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */,
+				9CF6BF6D228BB51300F2C467 /* MyTaskCell.swift in Sources */,
 				9CB1416B22896A1300875411 /* TaskSectionController.swift in Sources */,
 				9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */,
 				9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */,
@@ -501,6 +514,7 @@
 				9CB14171228988FB00875411 /* AddNewAppletController.swift in Sources */,
 				9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */,
 				9CB141682289699D00875411 /* TaskHeaderView.swift in Sources */,
+				9CF6BF70228BEA0400F2C467 /* TaskHeaderSectionController.swift in Sources */,
 				9CB1416D22896BF600875411 /* TaskModel.swift in Sources */,
 				9CFB198E228421F500CE3C8B /* ActionError+Ex.swift in Sources */,
 				9CFB198A2284167C00CE3C8B /* EditingNicknameController.swift in Sources */,
@@ -667,10 +681,7 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";
@@ -690,10 +701,7 @@
 				DEVELOPMENT_TEAM = 7KT3ZBQ36B;
 				INFOPLIST_FILE = Dingo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.why.Dingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dingo/Dingo-Bridging-Header.h";

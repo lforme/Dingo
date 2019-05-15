@@ -11,6 +11,8 @@ import SwiftDate
 import RxCocoa
 import RxSwift
 import RxDataSources
+import Action
+import PKHUD
 
 class DateTaskSettingController: UITableViewController {
     
@@ -99,13 +101,27 @@ class DateTaskSettingController: UITableViewController {
         friSwitch.rx.value.bind(to: vm.fir).disposed(by: rx.disposeBag)
         satSwitch.rx.value.bind(to: vm.sta).disposed(by: rx.disposeBag)
         sunSwitch.rx.value.bind(to: vm.sun).disposed(by: rx.disposeBag)
+        
+        vm.action.elements.subscribe(onNext: {[unowned self] (_) in
+            HUD.flash(.label("设置成功"), delay: 2)
+            self.navigationController?.popToRootViewController(animated: true)
+            NotificationCenter.default.post(name: .refreshState, object: nil)
+        }).disposed(by: rx.disposeBag)
+        
+        vm.action.executing.asObservable().bind(to: PKHUD.sharedHUD.rx.animation).disposed(by: rx.disposeBag)
+        vm.action.errors.actionErrorShiftError().bind(to: PKHUD.sharedHUD.rx.showError).disposed(by: rx.disposeBag)
     }
     
     func setupViewModel() {
         guard let userId = AVUser.current()?.objectId else {
             return
         }
-        vm = DateTaskSettingViewModel(type: self.dateType, userId: userId, taskType: self.taskType)
+        
+        if self.dateType == .everyYearOn {
+            vm = DateTaskSettingViewModel(type: self.dateType, userId: userId, taskType: self.taskType, repeats: false)
+        } else {
+            vm = DateTaskSettingViewModel(type: self.dateType, userId: userId, taskType: self.taskType)
+        }
     }
     
     func bindData() {
@@ -138,7 +154,7 @@ class DateTaskSettingController: UITableViewController {
             
             shareObserver.map {[weak self] (date) -> Date in
                 guard let this = self, let time = this.dateFormatter?.string(from: date) else { return date }
-                 return time.toDate()?.date ?? Date()
+                return time.toDate()?.date ?? Date()
                 
                 }.bind(to: vm.observerDate).disposed(by: rx.disposeBag)
         }

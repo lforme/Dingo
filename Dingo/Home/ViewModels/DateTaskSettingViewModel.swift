@@ -30,7 +30,7 @@ final class DateTaskSettingViewModel {
     let _userId: String
     let observerDate = BehaviorRelay<Date?>(value: nil)
     var action: Action<Inptu, Void>!
-    var _repeats = true
+    let _repeats: Bool
     let _taskType: AddAppletType
     let observerOfset = BehaviorRelay<Int>(value: 15)
     private var task: TaskModel!
@@ -75,7 +75,31 @@ final class DateTaskSettingViewModel {
         action = Action<Inptu, Void>(enabledIf: enable, workFactory: {[unowned self] (input) -> Observable<Void> in
             
             let n = username + Date().localString()
-            self.task = TaskModel(userId: self._userId, name: n, usedCount: 0, icon: "server_date_icon", color: 2, repeat: self._repeats, taskType: self._taskType.rawValue, remindDate: self.observerDate.value, remindLocal: nil)
+            self.task = TaskModel(userId: self._userId, name: n, usedCount: 0, icon: "server_date_icon", color: 2, repeat: self._repeats, taskType: self._taskType.rawValue, remindDate: nil, remindLocal: nil, id: nil, functionType: self.dateType.rawValue)
+            let guaranteeValue =  self.observerDate.value!
+            switch self.dateType {
+            case .everyDayAt:
+                
+                self.task.remindDate = String(guaranteeValue.hour) + ":" + String( guaranteeValue.minute)
+                
+            case .everyHourAt:
+                let date = guaranteeValue + self.observerOfset.value.minutes
+                self.task.remindDate = String(date.hour) + ":" + String( date.minute)
+                
+            case .everyDayOfWeek:
+                var weekDay = 0
+               let weekString = [self.mon.value, self.tues.value, self.wed.value, self.thurs.value, self.fir.value, self.sta.value, self.sun.value].map { (isOn) -> (Int, Bool) in
+                    weekDay += 1
+                    return (weekDay, isOn)
+                    }.filter{ $0.1 }.map { "星期\($0.0)." }.description
+                
+                self.task.remindDate = weekString + "\(guaranteeValue.hour)" + ":" + "\(guaranteeValue.minute)"
+                
+            case .everyYearOn:
+                
+                self.task.remindDate = guaranteeValue.description
+            }
+            
             
             return self.task.saveToLeanCloud().flatMapLatest({ (id) -> Observable<Void> in
                 
@@ -85,13 +109,15 @@ final class DateTaskSettingViewModel {
                     }
                     this.content.userInfo = ["objecId": id]
                     this.generateNotification(notiIdentifier: id, repeats: this._repeats)
+                    obs.onNext(())
+                    obs.onCompleted()
                     return Disposables.create()
                 })
             })
         })
     }
-
-    private func generateNotification(notiIdentifier: String, repeats: Bool = true) {
+    
+    private func generateNotification(notiIdentifier: String, repeats: Bool) {
         guard let date = observerDate.value else {
             return
         }
@@ -122,15 +148,24 @@ final class DateTaskSettingViewModel {
                         var dateCompo = DateComponents()
                         dateCompo.hour = date.hour
                         dateCompo.minute = date.minute
-                        dateCompo.weekday = d
+                        dateCompo.weekday = d + 1
                         let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompo, repeats: repeats)
                         let notificationReq = UNNotificationRequest(identifier: notiIdentifier, content: content, trigger: trigger)
                         UNUserNotificationCenter.current().add(notificationReq, withCompletionHandler: nil)
                     }
             }
             
-        default:
-            break
+        case .everyYearOn:
+            
+            var dateCompo = DateComponents()
+            dateCompo.hour = date.hour
+            dateCompo.minute = date.minute
+            dateCompo.year = date.year
+            dateCompo.weekday = date.weekday
+            dateCompo.day = date.day
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateCompo, repeats: repeats)
+            let notificationReq = UNNotificationRequest(identifier: notiIdentifier, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(notificationReq, withCompletionHandler: nil)
         }
     }
 }
