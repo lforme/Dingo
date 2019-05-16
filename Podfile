@@ -32,4 +32,8 @@ target 'Dingo' do
   pod 'MJRefresh'
   pod 'NotificationBannerSwift'
   
+  # Map
+  pod 'AMap3DMap-NO-IDFA'
+  pod 'AMapSearch-NO-IDFA'
+  
 end

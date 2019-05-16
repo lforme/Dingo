@@ -32,10 +32,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6oB-Gs-LX5">
-                                                <rect key="frame" x="20" y="24" width="374" height="221.5"/>
+                                                <rect key="frame" x="20" y="24" width="374" height="276"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD8-jZ-aJz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="29.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="编辑昵称">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,7 +45,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93F-uQ-tlw">
-                                                        <rect key="frame" x="0.0" y="48.5" width="374" height="28"/>
+                                                        <rect key="frame" x="0.0" y="49.5" width="374" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="更换头像">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,7 +55,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfY-3q-sOT">
-                                                        <rect key="frame" x="0.0" y="96.5" width="374" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="98.5" width="374" height="29.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="验证电子邮箱">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,8 +64,18 @@
                                                             <action selector="verifyButtonTap:" destination="ZI4-Aq-lL3" eventType="touchUpInside" id="lHf-ch-0xl"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZL-ro-gKh">
+                                                        <rect key="frame" x="0.0" y="148" width="374" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                                        <state key="normal" title="清除缓存">
+                                                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="cleanTap:" destination="ZI4-Aq-lL3" eventType="touchUpInside" id="SGc-6O-7QG"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-Zq-aSf">
-                                                        <rect key="frame" x="0.0" y="145" width="374" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="197" width="374" height="29.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="退出">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,7 +85,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o04-sV-Va9" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                        <rect key="frame" x="0.0" y="193.5" width="374" height="28"/>
+                                                        <rect key="frame" x="0.0" y="246.5" width="374" height="29.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -88,6 +98,8 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="o04-sV-Va9" firstAttribute="height" secondItem="Nsi-Zq-aSf" secondAttribute="height" id="3sh-SG-ml4"/>
+                                                    <constraint firstItem="AZL-ro-gKh" firstAttribute="height" secondItem="RfY-3q-sOT" secondAttribute="height" id="5cQ-wW-YwD"/>
+                                                    <constraint firstItem="AZL-ro-gKh" firstAttribute="width" secondItem="RfY-3q-sOT" secondAttribute="width" id="6MN-9K-AJm"/>
                                                     <constraint firstItem="93F-uQ-tlw" firstAttribute="width" secondItem="Nsi-Zq-aSf" secondAttribute="width" id="YU7-6R-ofo"/>
                                                     <constraint firstItem="Nsi-Zq-aSf" firstAttribute="width" secondItem="RfY-3q-sOT" secondAttribute="width" id="a4T-eY-8Yb"/>
                                                     <constraint firstItem="93F-uQ-tlw" firstAttribute="height" secondItem="Nsi-Zq-aSf" secondAttribute="height" id="azW-R4-4iP"/>
@@ -129,6 +141,7 @@
                     </view>
                     <connections>
                         <outlet property="appVersionLabel" destination="o04-sV-Va9" id="NEw-xk-bll"/>
+                        <outlet property="cleanCacheButton" destination="AZL-ro-gKh" id="Kel-4r-w4k"/>
                         <outlet property="verifyEmailButton" destination="RfY-3q-sOT" id="w4h-5h-kyb"/>
                     </connections>
                 </viewController>

@@ -63,6 +63,7 @@ final class DateTaskSettingViewModel {
         guard let username = AVUser.current()?.username else  {
             return
         }
+        let nickName = AVUser.current()?.object(forKey: "nickName") as? String
         
         let enable = observerDate.map { (d) -> Bool in
             if d == nil {
@@ -74,8 +75,9 @@ final class DateTaskSettingViewModel {
         
         action = Action<Inptu, Void>(enabledIf: enable, workFactory: {[unowned self] (input) -> Observable<Void> in
             
-            let n = username + Date().localString()
-            self.task = TaskModel(userId: self._userId, name: n, usedCount: 0, icon: "server_date_icon", color: 2, repeat: self._repeats, taskType: self._taskType.rawValue, remindDate: nil, remindLocal: nil, id: nil, functionType: self.dateType.rawValue)
+            
+            let n = nickName.isNilOrEmpty ? username : nickName
+            self.task = TaskModel(userId: self._userId, name: n!, usedCount: 0, icon: "server_date_icon", color: 2, repeat: self._repeats, taskType: self._taskType.rawValue, remindDate: nil, remindLocal: nil, id: nil, functionType: self.dateType.rawValue)
             let guaranteeValue =  self.observerDate.value!
             switch self.dateType {
             case .everyDayAt:

@@ -17,6 +17,8 @@ class MyViewController: UIViewController {
     
     @IBOutlet weak var verifyEmailButton: UIButton!
     @IBOutlet weak var appVersionLabel: LTMorphingLabel!
+    @IBOutlet weak var cleanCacheButton: UIButton!
+    
     
     fileprivate let userQuery = AVQuery(className: DatabaseKey.userTable)
     
@@ -43,6 +45,7 @@ class MyViewController: UIViewController {
         setupVersionLabel()
     }
     
+    
     func setupVersionLabel() {
         appVersionLabel.morphingEffect = .sparkle
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
@@ -68,7 +71,7 @@ class MyViewController: UIViewController {
             string.setColorForText("(已验证)", with: LaunchThemeManager.currentTheme().mainColor)
             string.setFontForText("(已验证)", with: UIFont.boldSystemFont(ofSize: 14))
             verifyEmailButton.setAttributedTitle(string, for: .disabled)
-        
+            
         }
         
         if let isVerified = AVUser.current()?.object(forKey: DatabaseKey.emailVerified) as? Bool {
@@ -79,6 +82,14 @@ class MyViewController: UIViewController {
                 verifyEmailButton.isEnabled = true
             }
         }
+        
+        let cache = UIDevice.current.getAppUsedDiskSpaceInMB().description
+        guard let title = self.cleanCacheButton.titleLabel?.text else { return }
+        let string = NSMutableAttributedString(string: title + "  " + "已使用(\(cache))MB")
+        string.setColorForText("已使用(\(cache))MB", with: LaunchThemeManager.currentTheme().textBlackColor.withAlphaComponent(0.7))
+        string.setFontForText("已使用(\(cache))MB", with: UIFont.boldSystemFont(ofSize: 14))
+        cleanCacheButton.setAttributedTitle(string, for: .normal)
+        
     }
     
     
@@ -156,7 +167,7 @@ class MyViewController: UIViewController {
     @IBAction func changeHeaderTap(_ sender: UIButton) {
         
         DGPicker.pickImage(count: 1).drive(onNext: { (items) in
-        
+            
             guard let image = items.singlePhoto else { return }
             if let data = image.image.compressedData() {
                 AVUser.current()?.setObject(data, forKey: DatabaseKey.portrait)
@@ -175,7 +186,15 @@ class MyViewController: UIViewController {
                 })
             }
         }).disposed(by: rx.disposeBag)
-        
+    }
+    
+    @IBAction func cleanTap(_ sender: UIButton) {
+     
+        self.showAlert(title: "重要提示!", message: "清除缓存会导致APP在无网络情况下无法使用", buttonTitles: ["清除", "取消"], highlightedButtonIndex: 1) { (index) in
+            if index == 0 {
+                AVQuery.clearAllCachedResults()
+            }
+        }
     }
 }
 

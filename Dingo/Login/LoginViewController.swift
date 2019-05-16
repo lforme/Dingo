@@ -36,7 +36,7 @@ extension LoginViewController: PaperOnboardingDataSource {
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
         return [OnboardingItemInfo(informationImage: UIImage(),
                                    title: "时刻提醒",
-                                   description: "添加提醒任务\n让你的手机和其他APP亲密交谈",
+                                   description: "添加提醒任务\n功能比番茄时钟更加强大",
                                    pageIcon: UIImage(),
                                    color: LaunchThemeManager.currentTheme().mainColor,
                                    titleColor: LaunchThemeManager.currentTheme().textWhiteColor,

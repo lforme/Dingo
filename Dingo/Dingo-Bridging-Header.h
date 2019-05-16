@@ -5,3 +5,5 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import <AVOSCloudLiveQuery/AVOSCloudLiveQuery.h>
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <MAMapKit/MAMapKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>

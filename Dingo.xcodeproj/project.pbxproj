@@ -40,6 +40,12 @@
 		9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B622802A4300F73298 /* LoginAndRegisterController.swift */; };
 		9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38B9228040B900F73298 /* UIButton+Ex.swift */; };
 		9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */; };
+		9CAE9B18228D4EAC00321BA4 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B17228D4EAC00321BA4 /* TaskDetailViewModel.swift */; };
+		9CAE9B1A228D633F00321BA4 /* UIDevice+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B19228D633F00321BA4 /* UIDevice+Ex.swift */; };
+		9CAE9B21228D7D9700321BA4 /* LocationTaskSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B20228D7D9700321BA4 /* LocationTaskSettingController.swift */; };
+		9CAE9B24228D91EF00321BA4 /* style_extra.data in Resources */ = {isa = PBXBuildFile; fileRef = 9CAE9B22228D91EF00321BA4 /* style_extra.data */; };
+		9CAE9B25228D91EF00321BA4 /* style.data in Resources */ = {isa = PBXBuildFile; fileRef = 9CAE9B23228D91EF00321BA4 /* style.data */; };
+		9CAE9B27228D960000321BA4 /* DGMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B26228D960000321BA4 /* DGMapViewController.swift */; };
 		9CB1415A22890DDF00875411 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415922890DDF00875411 /* ServiceModel.swift */; };
 		9CB1415D2289437400875411 /* SeverSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415C2289437400875411 /* SeverSectionController.swift */; };
 		9CB14160228947CB00875411 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415E228947CB00875411 /* ServiceCell.swift */; };
@@ -108,6 +114,12 @@
 		9C9D38B622802A4300F73298 /* LoginAndRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterController.swift; sourceTree = "<group>"; };
 		9C9D38B9228040B900F73298 /* UIButton+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ex.swift"; sourceTree = "<group>"; };
 		9C9D38BB2280479D00F73298 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		9CAE9B17228D4EAC00321BA4 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
+		9CAE9B19228D633F00321BA4 /* UIDevice+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ex.swift"; sourceTree = "<group>"; };
+		9CAE9B20228D7D9700321BA4 /* LocationTaskSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTaskSettingController.swift; sourceTree = "<group>"; };
+		9CAE9B22228D91EF00321BA4 /* style_extra.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = style_extra.data; sourceTree = "<group>"; };
+		9CAE9B23228D91EF00321BA4 /* style.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = style.data; sourceTree = "<group>"; };
+		9CAE9B26228D960000321BA4 /* DGMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGMapViewController.swift; sourceTree = "<group>"; };
 		9CB1415922890DDF00875411 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		9CB1415C2289437400875411 /* SeverSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverSectionController.swift; sourceTree = "<group>"; };
 		9CB1415E228947CB00875411 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
@@ -167,6 +179,8 @@
 				9C5218ED22826A6600CF5F15 /* HomeViewController.swift */,
 				9CB14170228988FB00875411 /* AddNewAppletController.swift */,
 				9C1FC05F228A51B7008AA468 /* DateTaskSettingController.swift */,
+				9CAE9B20228D7D9700321BA4 /* LocationTaskSettingController.swift */,
+				9CAE9B26228D960000321BA4 /* DGMapViewController.swift */,
 				9CF6BF73228C307E00F2C467 /* TaskDetailViewController.swift */,
 			);
 			path = Home;
@@ -203,6 +217,7 @@
 		9C67D982227E896800C05161 /* Dingo */ = {
 			isa = PBXGroup;
 			children = (
+				9CAE9B1B228D7C6300321BA4 /* Resources */,
 				9CB1415822890D5A00875411 /* Models */,
 				9C5218EF2282ACCF00CF5F15 /* User */,
 				9C5218EA22826A2500CF5F15 /* Home */,
@@ -275,8 +290,18 @@
 				9CFB198F22842AB900CE3C8B /* UIView+Ex.swift */,
 				9C661F392285289400FBFA15 /* UIAlertController+Ex.swift */,
 				9CDF480B228703EB007711BA /* NSMutableAttributedString+Ex.swift */,
+				9CAE9B19228D633F00321BA4 /* UIDevice+Ex.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9CAE9B1B228D7C6300321BA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE9B22228D91EF00321BA4 /* style_extra.data */,
+				9CAE9B23228D91EF00321BA4 /* style.data */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9CB1415822890D5A00875411 /* Models */ = {
@@ -295,6 +320,7 @@
 				9CB1416A22896A1300875411 /* TaskSectionController.swift */,
 				9CF6BF6F228BEA0400F2C467 /* TaskHeaderSectionController.swift */,
 				9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */,
+				9CAE9B17228D4EAC00321BA4 /* TaskDetailViewModel.swift */,
 			);
 			name = ViewModels;
 			path = Dingo/Home/ViewModels;
@@ -336,6 +362,7 @@
 				9C67D97D227E896800C05161 /* Frameworks */,
 				9C67D97E227E896800C05161 /* Resources */,
 				5277D42D0F6BF56FA572BA5C /* [CP] Embed Pods Frameworks */,
+				A1651C432861BFD1D4D3F5E7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,11 +413,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CAE9B24228D91EF00321BA4 /* style_extra.data in Resources */,
 				9C9D38B1227FD7FE00F73298 /* Login.storyboard in Resources */,
 				9C5218EC22826A3E00CF5F15 /* Home.storyboard in Resources */,
 				9CB141692289699D00875411 /* TaskHeaderView.xib in Resources */,
 				9C97D4BD228A7E080016542E /* DataPickerController.xib in Resources */,
 				9C67D98E227E896900C05161 /* LaunchScreen.storyboard in Resources */,
+				9CAE9B25228D91EF00321BA4 /* style.data in Resources */,
 				9CB14175228995CC00875411 /* AddTaskHaderView.xib in Resources */,
 				9CB14161228947CB00875411 /* ServiceCell.xib in Resources */,
 				9CF6BF6E228BB51300F2C467 /* MyTaskCell.xib in Resources */,
@@ -473,6 +502,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dingo/Pods-Dingo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A1651C432861BFD1D4D3F5E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dingo/Pods-Dingo-resources.sh",
+				"${PODS_ROOT}/AMap3DMap-NO-IDFA/MAMapKit.framework/AMap.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dingo/Pods-Dingo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AF581A1EEBAD71183E286EAA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,9 +548,11 @@
 				9C6D5FEC22817AE90090EE87 /* String+tools.swift in Sources */,
 				9C6D5FE52281259E0090EE87 /* NSObject+Rx.swift in Sources */,
 				9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */,
+				9CAE9B27228D960000321BA4 /* DGMapViewController.swift in Sources */,
 				9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */,
 				9CB14174228995CC00875411 /* AddTaskHaderView.swift in Sources */,
 				9C9D38B3227FD83100F73298 /* LoginViewController.swift in Sources */,
+				9CAE9B1A228D633F00321BA4 /* UIDevice+Ex.swift in Sources */,
 				9C5218EE22826A6600CF5F15 /* HomeViewController.swift in Sources */,
 				9C6D5FE72281289C0090EE87 /* UITextField+Ex.swift in Sources */,
 				9CB1415D2289437400875411 /* SeverSectionController.swift in Sources */,
@@ -517,6 +566,7 @@
 				9CF6BF6D228BB51300F2C467 /* MyTaskCell.swift in Sources */,
 				9CB1416B22896A1300875411 /* TaskSectionController.swift in Sources */,
 				9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */,
+				9CAE9B21228D7D9700321BA4 /* LocationTaskSettingController.swift in Sources */,
 				9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */,
 				9C661F3A2285289400FBFA15 /* UIAlertController+Ex.swift in Sources */,
 				9CB14160228947CB00875411 /* ServiceCell.swift in Sources */,
@@ -536,6 +586,7 @@
 				9CFB1988228415A500CE3C8B /* DGTextField.swift in Sources */,
 				9C9D38B5227FD8C300F73298 /* ViewLoader.swift in Sources */,
 				9C661F382285223900FBFA15 /* DGKeychain.swift in Sources */,
+				9CAE9B18228D4EAC00321BA4 /* TaskDetailViewModel.swift in Sources */,
 				9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */,
 				9C5218F72282BBC600CF5F15 /* AVQuery+Rx.swift in Sources */,
 				9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */,

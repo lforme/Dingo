@@ -12,9 +12,7 @@ import IGListKit
 final class TaskSectionController: ListSectionController {
     
     private var task: TaskModel!
-    private let colors = [LaunchThemeManager.currentTheme().secondaryRed,
-                          LaunchThemeManager.currentTheme().textBlackColor,
-                          LaunchThemeManager.currentTheme().mainColor]
+    private var selectedText: String?
     
     override init() {
         super.init()
@@ -35,7 +33,7 @@ final class TaskSectionController: ListSectionController {
             fatalError()
         }
         cell.updateAvailableIconBy(available: task.available)
-        let color = colors[task.color]
+        let color = LaunchThemeManager.currentTheme().getProjectColor(index: task.color)
         cell.bkView.backgroundColor = color
         cell.icon.image = UIImage(named: task.icon)
         cell.ringsLabel.text = "已经提醒\(task.usedCount.description)次"
@@ -50,12 +48,16 @@ final class TaskSectionController: ListSectionController {
             switch timeType {
             case .everyDayAt:
                 cell.decreaseLabel.text = "每天\(task.remindDate ?? "")叮咚就会发出提醒"
+                selectedText = cell.decreaseLabel.text
             case .everyHourAt:
                 cell.decreaseLabel.text = "叮咚会在每小时\(task.remindDate ?? "")发出提醒"
+                selectedText = cell.decreaseLabel.text
             case .everyDayOfWeek:
                 cell.decreaseLabel.text = "每个\(task.remindDate ?? "")叮咚就会发出提醒"
+                selectedText = cell.decreaseLabel.text
             case .everyYearOn:
                 cell.decreaseLabel.text = "一年中特殊的 \(task.remindDate![0..<19]) 叮咚就会出提醒!"
+                selectedText = cell.decreaseLabel.text
             }
             return cell
         } else {
@@ -67,6 +69,8 @@ final class TaskSectionController: ListSectionController {
     
     override func didSelectItem(at index: Int) {
         let taskDetailVC: TaskDetailViewController = ViewLoader.Storyboard.controller(from: "Home")
+        taskDetailVC.taskModel = task
+        taskDetailVC.descriptionText = selectedText
         viewController?.navigationController?.pushViewController(taskDetailVC, animated: true)
     }
     

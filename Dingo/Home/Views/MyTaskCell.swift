@@ -41,14 +41,15 @@ class MyTaskCell: UICollectionViewCell {
         isOnIcon.layer.borderWidth = 2
         isOnIcon.layer.cornerRadius = isOnIcon.bounds.height / 2
         
-        isOnLabel.text = "运行中"
     }
 
     func updateAvailableIconBy(available: Bool) {
         if available {
             isOnIcon.backgroundColor = UIColor.flatGreen
+            isOnLabel.text = "运行中"
         } else {
             isOnIcon.backgroundColor = LaunchThemeManager.currentTheme().secondaryRed
+            isOnLabel.text = "已暂停"
         }
     }
 }

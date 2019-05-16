@@ -46,6 +46,14 @@ enum LaunchTheme: Int {
             return UIColor.flatBlack
         }
     }
+    
+    
+    func getProjectColor(index: Int) -> UIColor {
+        
+        return [LaunchThemeManager.currentTheme().secondaryRed,
+                LaunchThemeManager.currentTheme().textBlackColor,
+                LaunchThemeManager.currentTheme().mainColor][index]
+    }
 }
 
 struct LaunchThemeManager {
@@ -62,6 +70,9 @@ struct LaunchThemeManager {
         EasyAnimation.enable()
         
         AVOSCloud.setApplicationId("fI1sUJD8N9y9VgmmSV0OL1PB-gzGzoHsz", clientKey: "3qqQwnHfMSFj3soa8q4b9sYr")
+        
+        AMapServices.shared()?.apiKey = "9ec4ddb24a585ce24cf9137466759964"
+        AMapServices.shared().enableHTTPS = false
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
