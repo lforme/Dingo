@@ -62,7 +62,18 @@ final class TaskSectionController: ListSectionController {
             return cell
         } else {
             cell.effectBgView.backgroundColor = UIColor.flatBlack
-            cell.decreaseLabel.text = "有过你进入或者离开\("这个区域"), 叮咚就会发出提醒"
+            guard let locationType = LocationTaskSettingController.LocationType(rawValue: task.functionType), let building = task.remindDate else {
+                fatalError()
+            }
+            
+            switch locationType {
+            case .enter:
+                cell.decreaseLabel.text = "每当你进入\(building),叮咚就会提醒"
+            case .exit:
+                cell.decreaseLabel.text = "每当你离开\(building),叮咚就会提醒"
+            case .enterAndExit:
+                cell.decreaseLabel.text = "每当你进入或者离开\(building),叮咚就会提醒"
+            }
             return cell
         }
     }

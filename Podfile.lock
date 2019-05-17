@@ -5,6 +5,8 @@ PODS:
   - AMap3DMap-NO-IDFA (6.8.1):
     - AMapFoundation-NO-IDFA (~> 1.5)
   - AMapFoundation-NO-IDFA (1.5.6)
+  - AMapLocation-NO-IDFA (2.6.2):
+    - AMapFoundation-NO-IDFA (~> 1.4)
   - AMapSearch-NO-IDFA (6.6.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
   - AVOSCloud (11.6.2)
@@ -63,6 +65,7 @@ PODS:
 DEPENDENCIES:
   - Action (~> 4.0.0)
   - AMap3DMap-NO-IDFA
+  - AMapLocation-NO-IDFA
   - AMapSearch-NO-IDFA
   - AVOSCloud
   - AVOSCloudLiveQuery
@@ -90,6 +93,7 @@ SPEC REPOS:
     - Action
     - AMap3DMap-NO-IDFA
     - AMapFoundation-NO-IDFA
+    - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
     - AVOSCloud
     - AVOSCloudIM
@@ -130,6 +134,7 @@ SPEC CHECKSUMS:
   Action: 0d14986aad0f1330aa27ce65d0cdeaacbb63d91c
   AMap3DMap-NO-IDFA: c2e5a2d22535c1f55b92298acd211e3479639b77
   AMapFoundation-NO-IDFA: 40d723b352992d0f95abe2976f0c0ecda3c3ffc3
+  AMapLocation-NO-IDFA: d7792c8c516f415e186f1bc25946f1a58ca6a583
   AMapSearch-NO-IDFA: 07651afae010f7acda12beb1f2c0f45d29069e75
   AVOSCloud: b5ddb67d1823e7af59b3fc14ddecf3cddf1f4bf1
   AVOSCloudIM: b814dd9a3b9d1012bc11189f6639bf713474a5b2
@@ -158,6 +163,6 @@ SPEC CHECKSUMS:
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 0405878bd7fc81f964307aefb6007e1577c17bf4
+PODFILE CHECKSUM: 8a906aaa5490234abaa9d0f86130b3780a2d731c
 
 COCOAPODS: 1.5.3

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		207C5DB563A7A3E1C337F25E /* Pods_Dingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158CF0536E8C1F3351235679 /* Pods_Dingo.framework */; };
+		9C155DA7228E52FD00548CD9 /* style.data in Resources */ = {isa = PBXBuildFile; fileRef = 9C155DA5228E52FD00548CD9 /* style.data */; };
+		9C155DA8228E52FD00548CD9 /* style_extra.data in Resources */ = {isa = PBXBuildFile; fileRef = 9C155DA6228E52FD00548CD9 /* style_extra.data */; };
+		9C155DAA228E584900548CD9 /* LocationTaskSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C155DA9228E584900548CD9 /* LocationTaskSettingViewModel.swift */; };
+		9C155DAE228E758B00548CD9 /* DGMapViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C155DAD228E758B00548CD9 /* DGMapViewViewModel.swift */; };
 		9C1FC060228A51B7008AA468 /* DateTaskSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1FC05F228A51B7008AA468 /* DateTaskSettingController.swift */; };
 		9C5218EC22826A3E00CF5F15 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5218EB22826A3E00CF5F15 /* Home.storyboard */; };
 		9C5218EE22826A6600CF5F15 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5218ED22826A6600CF5F15 /* HomeViewController.swift */; };
@@ -43,8 +47,6 @@
 		9CAE9B18228D4EAC00321BA4 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B17228D4EAC00321BA4 /* TaskDetailViewModel.swift */; };
 		9CAE9B1A228D633F00321BA4 /* UIDevice+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B19228D633F00321BA4 /* UIDevice+Ex.swift */; };
 		9CAE9B21228D7D9700321BA4 /* LocationTaskSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B20228D7D9700321BA4 /* LocationTaskSettingController.swift */; };
-		9CAE9B24228D91EF00321BA4 /* style_extra.data in Resources */ = {isa = PBXBuildFile; fileRef = 9CAE9B22228D91EF00321BA4 /* style_extra.data */; };
-		9CAE9B25228D91EF00321BA4 /* style.data in Resources */ = {isa = PBXBuildFile; fileRef = 9CAE9B23228D91EF00321BA4 /* style.data */; };
 		9CAE9B27228D960000321BA4 /* DGMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9B26228D960000321BA4 /* DGMapViewController.swift */; };
 		9CB1415A22890DDF00875411 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415922890DDF00875411 /* ServiceModel.swift */; };
 		9CB1415D2289437400875411 /* SeverSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB1415C2289437400875411 /* SeverSectionController.swift */; };
@@ -77,6 +79,10 @@
 /* Begin PBXFileReference section */
 		158CF0536E8C1F3351235679 /* Pods_Dingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		573E12B7DFCB81B6CE238590 /* Pods-Dingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dingo/Pods-Dingo.debug.xcconfig"; sourceTree = "<group>"; };
+		9C155DA5228E52FD00548CD9 /* style.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = style.data; sourceTree = "<group>"; };
+		9C155DA6228E52FD00548CD9 /* style_extra.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = style_extra.data; sourceTree = "<group>"; };
+		9C155DA9228E584900548CD9 /* LocationTaskSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTaskSettingViewModel.swift; sourceTree = "<group>"; };
+		9C155DAD228E758B00548CD9 /* DGMapViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGMapViewViewModel.swift; sourceTree = "<group>"; };
 		9C1FC05F228A51B7008AA468 /* DateTaskSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTaskSettingController.swift; sourceTree = "<group>"; };
 		9C5218EB22826A3E00CF5F15 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9C5218ED22826A6600CF5F15 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -117,8 +123,6 @@
 		9CAE9B17228D4EAC00321BA4 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 		9CAE9B19228D633F00321BA4 /* UIDevice+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ex.swift"; sourceTree = "<group>"; };
 		9CAE9B20228D7D9700321BA4 /* LocationTaskSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTaskSettingController.swift; sourceTree = "<group>"; };
-		9CAE9B22228D91EF00321BA4 /* style_extra.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = style_extra.data; sourceTree = "<group>"; };
-		9CAE9B23228D91EF00321BA4 /* style.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = style.data; sourceTree = "<group>"; };
 		9CAE9B26228D960000321BA4 /* DGMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGMapViewController.swift; sourceTree = "<group>"; };
 		9CB1415922890DDF00875411 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		9CB1415C2289437400875411 /* SeverSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeverSectionController.swift; sourceTree = "<group>"; };
@@ -298,8 +302,8 @@
 		9CAE9B1B228D7C6300321BA4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9CAE9B22228D91EF00321BA4 /* style_extra.data */,
-				9CAE9B23228D91EF00321BA4 /* style.data */,
+				9C155DA6228E52FD00548CD9 /* style_extra.data */,
+				9C155DA5228E52FD00548CD9 /* style.data */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -321,6 +325,8 @@
 				9CF6BF6F228BEA0400F2C467 /* TaskHeaderSectionController.swift */,
 				9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */,
 				9CAE9B17228D4EAC00321BA4 /* TaskDetailViewModel.swift */,
+				9C155DA9228E584900548CD9 /* LocationTaskSettingViewModel.swift */,
+				9C155DAD228E758B00548CD9 /* DGMapViewViewModel.swift */,
 			);
 			name = ViewModels;
 			path = Dingo/Home/ViewModels;
@@ -413,13 +419,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CAE9B24228D91EF00321BA4 /* style_extra.data in Resources */,
 				9C9D38B1227FD7FE00F73298 /* Login.storyboard in Resources */,
 				9C5218EC22826A3E00CF5F15 /* Home.storyboard in Resources */,
 				9CB141692289699D00875411 /* TaskHeaderView.xib in Resources */,
+				9C155DA7228E52FD00548CD9 /* style.data in Resources */,
 				9C97D4BD228A7E080016542E /* DataPickerController.xib in Resources */,
+				9C155DA8228E52FD00548CD9 /* style_extra.data in Resources */,
 				9C67D98E227E896900C05161 /* LaunchScreen.storyboard in Resources */,
-				9CAE9B25228D91EF00321BA4 /* style.data in Resources */,
 				9CB14175228995CC00875411 /* AddTaskHaderView.xib in Resources */,
 				9CB14161228947CB00875411 /* ServiceCell.xib in Resources */,
 				9CF6BF6E228BB51300F2C467 /* MyTaskCell.xib in Resources */,
@@ -557,6 +563,7 @@
 				9C6D5FE72281289C0090EE87 /* UITextField+Ex.swift in Sources */,
 				9CB1415D2289437400875411 /* SeverSectionController.swift in Sources */,
 				9CFB197E2283F0C100CE3C8B /* UserInfoLiveData.swift in Sources */,
+				9C155DAE228E758B00548CD9 /* DGMapViewViewModel.swift in Sources */,
 				9C661F3E22855F9E00FBFA15 /* DGPicker.swift in Sources */,
 				9C6D5FE42281259E0090EE87 /* HasDisposeBag.swift in Sources */,
 				9CFB1984228403C700CE3C8B /* StaticConst.swift in Sources */,
@@ -596,6 +603,7 @@
 				9CDF480F22870C17007711BA /* MoveButton.swift in Sources */,
 				9CFB199022842AB900CE3C8B /* UIView+Ex.swift in Sources */,
 				9C97D4BF228A92C20016542E /* DateTaskSettingViewModel.swift in Sources */,
+				9C155DAA228E584900548CD9 /* LocationTaskSettingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -140,8 +140,9 @@ extension AddNewAppletController {
         descriptionText = "启用此服务, 需要使用手机的位置信息来确定您的大致位置. 当您进入或者离开指定区域便会有一条消息提醒."
         let item0 = AddNewAppletData(name: "当你进入一个区域", index: 0)
         let item1 = AddNewAppletData(name: "当你离开一个区域", index: 1)
+        let item2 = AddNewAppletData(name: "当你进入或者离开一个区域", index: 2)
         
-        datasource = [item0, item1]
+        datasource = [item0, item1, item2]
     }
     
     func gotoDateSettingVC(index: Int) {
@@ -188,7 +189,6 @@ extension AddNewAppletController {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm"
             dateSettingVC.dateFormatter = formatter
-        default:
             break
         }
         navigationController?.pushViewController(dateSettingVC, animated: true)
@@ -207,6 +207,10 @@ extension AddNewAppletController {
         case .exit:
             locationSettingVC.funcNameText = "当你离开一个区域"
             locationSettingVC.funcDescribeText = "每当您离开这个区域, 这个任务就会自动发出提醒."
+            
+        case .enterAndExit:
+            locationSettingVC.funcNameText = "当你进入或者离开一个区域"
+            locationSettingVC.funcDescribeText = "每当您进入或者离开这个区域, 这个任务就会自动发出提醒."
         }
         
         navigationController?.pushViewController(locationSettingVC, animated: true)
