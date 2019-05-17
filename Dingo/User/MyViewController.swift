@@ -134,6 +134,9 @@ class MyViewController: UIViewController {
                 print(e?.localizedDescription ?? "")
                 
             })
+            
+            // 为了防止 socket 失效
+            NotificationCenter.default.post(name: .loginStateDidChnage, object: false)
         }
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)

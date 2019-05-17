@@ -132,7 +132,7 @@ class LoginAndRegisterController: UIViewController {
                 HUD.flash(.label("注册成功"), delay: 2)
                 guard let pwd = self?.vm.loginPwd.value else { return }
                 try? self?.keychain.set(pwd, key: "password")
-                NotificationCenter.default.post(name: .loginStateDidChnage, object: nil)
+                NotificationCenter.default.post(name: .loginStateDidChnage, object: true)
             }
             
         }).disposed(by: rx.disposeBag)

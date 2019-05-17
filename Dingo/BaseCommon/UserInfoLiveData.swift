@@ -75,6 +75,6 @@ extension UserInfoLiveData: AVLiveQueryDelegate {
     
     func liveQuery(_ liveQuery: AVLiveQuery, userDidLogin user: AVUser) {
         liveDataHasChanged.accept((liveQuery, user, nil))
-        NotificationCenter.default.post(name: .loginStateDidChnage, object: nil)
+        NotificationCenter.default.post(name: .loginStateDidChnage, object: true)
     }
 }

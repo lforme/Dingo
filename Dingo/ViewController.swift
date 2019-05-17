@@ -50,8 +50,13 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.rx.notification(.loginStateDidChnage).takeUntil(rx.deallocated)
             .observeOn(MainScheduler.instance)
-            .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (_) in
-                self?.showHomeVC()
+            .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (objc) in
+                guard let success = objc.object as? Bool else { return }
+                if success {
+                    self?.showHomeVC()
+                } else {
+                    self?.showLoginVC()
+                }
             }).disposed(by: rx.disposeBag)
     }
     
