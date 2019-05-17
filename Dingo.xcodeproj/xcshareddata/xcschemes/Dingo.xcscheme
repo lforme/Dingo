@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E225B5727C941CE1000E5AF2187BF3CF"
-               BuildableName = "Action.framework"
-               BlueprintName = "Action"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "9C67D97F227E896800C05161"
+               BuildableName = "Dingo.app"
+               BlueprintName = "Dingo"
+               ReferencedContainer = "container:Dingo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9C67D97F227E896800C05161"
+            BuildableName = "Dingo.app"
+            BlueprintName = "Dingo"
+            ReferencedContainer = "container:Dingo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E225B5727C941CE1000E5AF2187BF3CF"
-            BuildableName = "Action.framework"
-            BlueprintName = "Action"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "9C67D97F227E896800C05161"
+            BuildableName = "Dingo.app"
+            BlueprintName = "Dingo"
+            ReferencedContainer = "container:Dingo.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,6 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9C67D97F227E896800C05161"
+            BuildableName = "Dingo.app"
+            BlueprintName = "Dingo"
+            ReferencedContainer = "container:Dingo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
