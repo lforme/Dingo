@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum AddAppletType: Int {
-    case date = 0
-    case local
-}
-
 class AddNewAppletCell: UITableViewCell {
     
     @IBOutlet weak var bgView: UIView!
@@ -83,7 +78,12 @@ class AddNewAppletController: UITableViewController {
             configDateUI()
         case .local:
             configLocalUI()
+            
+        case .punchCard: break
+        case .makeSound:
+            configMakeSoundUI()
         }
+        
     }
     
     
@@ -119,6 +119,9 @@ class AddNewAppletController: UITableViewController {
             gotoDateSettingVC(index: indexPath.row)
         case .local:
             gotoLocationSettingVC(index: indexPath.row)
+        case .punchCard: break
+        case .makeSound:
+            gotoMakeSoundVC(index: indexPath.row)
         }
     }
 }
@@ -142,6 +145,14 @@ extension AddNewAppletController {
         let item1 = AddNewAppletData(name: "当你离开一个区域", index: 1)
         let item2 = AddNewAppletData(name: "当你进入或者离开一个区域", index: 2)
         
+        datasource = [item0, item1, item2]
+    }
+    
+    func configMakeSoundUI() {
+        descriptionText = "制作您自己的个性推送铃声提示."
+        let item0 = AddNewAppletData(name: "录制5秒提示", index: 0)
+        let item1 = AddNewAppletData(name: "录制10秒提示", index: 1)
+        let item2 = AddNewAppletData(name: "录制15秒提示", index: 2)
         datasource = [item0, item1, item2]
     }
     
@@ -214,5 +225,16 @@ extension AddNewAppletController {
         }
         
         navigationController?.pushViewController(locationSettingVC, animated: true)
+    }
+    
+    
+    func gotoMakeSoundVC(index: Int) {
+        let makeSoundVC: MakeSoundViewController = ViewLoader.Storyboard.controller(from: "Home")
+        guard let tempType = MakeSoundViewController.MakeSoundType(rawValue: index) else {
+            return
+        }
+        makeSoundVC.addType = self.type
+        makeSoundVC.type = tempType
+        navigationController?.pushViewController(makeSoundVC, animated: true)
     }
 }

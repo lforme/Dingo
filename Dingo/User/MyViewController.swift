@@ -199,6 +199,12 @@ class MyViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func privacyButtonTap(_ sender: UIButton) {
+        
+        let privaceVC: PrivacyPolicyViewController = ViewLoader.Storyboard.controller(from: "User")
+        navigationController?.pushViewController(privaceVC, animated: true)
+    }
 }
 
 

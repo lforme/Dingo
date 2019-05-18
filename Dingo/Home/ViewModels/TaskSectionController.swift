@@ -43,7 +43,9 @@ final class TaskSectionController: ListSectionController {
         guard let timeType = DateTaskSettingController.DateType(rawValue: task.functionType) else {
             fatalError()
         }
-        if addType == .date {
+        
+        switch addType {
+        case .date:
             cell.effectBgView.backgroundColor = UIColor.flatNavyBlue
             switch timeType {
             case .everyDayAt:
@@ -60,7 +62,8 @@ final class TaskSectionController: ListSectionController {
                 selectedText = cell.decreaseLabel.text
             }
             return cell
-        } else {
+            
+        case .local:
             cell.effectBgView.backgroundColor = UIColor.flatBlack
             guard let locationType = LocationTaskSettingController.LocationType(rawValue: task.functionType), let building = task.remindDate else {
                 fatalError()
@@ -73,6 +76,12 @@ final class TaskSectionController: ListSectionController {
                 cell.decreaseLabel.text = "每当你离开\(building),叮咚就会提醒"
             case .enterAndExit:
                 cell.decreaseLabel.text = "每当你进入或者离开\(building),叮咚就会提醒"
+            }
+            return cell
+        case .punchCard: return cell
+        case .makeSound:
+            if let text = task.remindDate {
+             cell.decreaseLabel.text = "自定义提示音\(text)"
             }
             return cell
         }

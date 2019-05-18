@@ -94,7 +94,7 @@ extension UIDevice {
             // 计算缓存大小
             folderSize  += fileSizeAtPath(path:path)
         }
-        let result = Double(folderSize) / 1024.0 / 8
+        let result = Double(folderSize) / 1024.0 / 8 / 8
         return Double(round(100*result)/100)
         
     }

@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
     
     var serverData: [ServiceModel] = []
     var serverTaskData: [TaskModel] = []
-    let headerData: [String] = ["任务列表"]
+    let notiHeaderData: [String] = ["提醒列表"]
     private var page = 0
     
     override func viewDidLoad() {
@@ -107,9 +107,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController: ListAdapterDataSource {
     
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        let header = headerData as [ListDiffable]
+        let notiHeader = notiHeaderData as [ListDiffable]
         
-        return serverData + header + serverTaskData
+        return serverData + notiHeader + serverTaskData
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {

@@ -129,6 +129,9 @@ class TaskDetailViewController: UITableViewController {
         case .local:
             bgViewThree.backgroundColor = UIColor.flatBlackDark
             lineView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+            
+        case .punchCard: break
+        case .makeSound: break
         }
         
         moreButton.underlineButton(text: "更多")

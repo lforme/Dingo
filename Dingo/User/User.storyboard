@@ -10,6 +10,39 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="RoM-iK-17d">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JVf-pC-bk8" customClass="PrivacyPolicyViewController" customModule="Dingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oDc-2K-GeM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JTJ-6D-p7V">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JTJ-6D-p7V" firstAttribute="top" secondItem="TQ3-nk-8q3" secondAttribute="top" id="2YR-Cr-4OY"/>
+                            <constraint firstItem="JTJ-6D-p7V" firstAttribute="leading" secondItem="TQ3-nk-8q3" secondAttribute="leading" id="AJ4-I6-1eC"/>
+                            <constraint firstItem="TQ3-nk-8q3" firstAttribute="trailing" secondItem="JTJ-6D-p7V" secondAttribute="trailing" id="MVO-3l-cnE"/>
+                            <constraint firstItem="TQ3-nk-8q3" firstAttribute="bottom" secondItem="JTJ-6D-p7V" secondAttribute="bottom" id="SKw-SD-5hj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TQ3-nk-8q3"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="JTJ-6D-p7V" id="czg-WE-AYg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyC-d0-M2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1822" y="366"/>
+        </scene>
         <!--My View Controller-->
         <scene sceneID="kkU-5O-fjf">
             <objects>
@@ -32,10 +65,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6oB-Gs-LX5">
-                                                <rect key="frame" x="20" y="24" width="374" height="276"/>
+                                                <rect key="frame" x="20" y="24" width="374" height="330"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wD8-jZ-aJz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="编辑昵称">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,7 +78,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93F-uQ-tlw">
-                                                        <rect key="frame" x="0.0" y="49.5" width="374" height="29"/>
+                                                        <rect key="frame" x="0.0" y="50" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="更换头像">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,7 +88,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfY-3q-sOT">
-                                                        <rect key="frame" x="0.0" y="98.5" width="374" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="100" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="验证电子邮箱">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +98,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZL-ro-gKh">
-                                                        <rect key="frame" x="0.0" y="148" width="374" height="29"/>
+                                                        <rect key="frame" x="0.0" y="150" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="清除缓存">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,8 +107,18 @@
                                                             <action selector="cleanTap:" destination="ZI4-Aq-lL3" eventType="touchUpInside" id="SGc-6O-7QG"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRo-ma-gGL">
+                                                        <rect key="frame" x="0.0" y="200" width="374" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                                        <state key="normal" title="隐私条款">
+                                                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="privacyButtonTap:" destination="ZI4-Aq-lL3" eventType="touchUpInside" id="Zaf-3m-NLC"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsi-Zq-aSf">
-                                                        <rect key="frame" x="0.0" y="197" width="374" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="250" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <state key="normal" title="退出">
                                                             <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -85,7 +128,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o04-sV-Va9" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                                        <rect key="frame" x="0.0" y="246.5" width="374" height="29.5"/>
+                                                        <rect key="frame" x="0.0" y="300" width="374" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                                                         <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -100,6 +143,8 @@
                                                     <constraint firstItem="o04-sV-Va9" firstAttribute="height" secondItem="Nsi-Zq-aSf" secondAttribute="height" id="3sh-SG-ml4"/>
                                                     <constraint firstItem="AZL-ro-gKh" firstAttribute="height" secondItem="RfY-3q-sOT" secondAttribute="height" id="5cQ-wW-YwD"/>
                                                     <constraint firstItem="AZL-ro-gKh" firstAttribute="width" secondItem="RfY-3q-sOT" secondAttribute="width" id="6MN-9K-AJm"/>
+                                                    <constraint firstItem="HRo-ma-gGL" firstAttribute="height" secondItem="AZL-ro-gKh" secondAttribute="height" id="X6z-TF-8LH"/>
+                                                    <constraint firstItem="HRo-ma-gGL" firstAttribute="width" secondItem="AZL-ro-gKh" secondAttribute="width" id="XNr-5A-sZy"/>
                                                     <constraint firstItem="93F-uQ-tlw" firstAttribute="width" secondItem="Nsi-Zq-aSf" secondAttribute="width" id="YU7-6R-ofo"/>
                                                     <constraint firstItem="Nsi-Zq-aSf" firstAttribute="width" secondItem="RfY-3q-sOT" secondAttribute="width" id="a4T-eY-8Yb"/>
                                                     <constraint firstItem="93F-uQ-tlw" firstAttribute="height" secondItem="Nsi-Zq-aSf" secondAttribute="height" id="azW-R4-4iP"/>

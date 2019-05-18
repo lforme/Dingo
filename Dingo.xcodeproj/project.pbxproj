@@ -32,6 +32,9 @@
 		9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */; };
 		9C6D5FEC22817AE90090EE87 /* String+tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FEB22817AE90090EE87 /* String+tools.swift */; };
 		9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FED228181730090EE87 /* PKHud+Rx.swift */; };
+		9C8EC751228FF0330088C1DB /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC750228FF0330088C1DB /* PrivacyPolicyViewController.swift */; };
+		9C8EC755228FF2EE0088C1DB /* AddAppletType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC754228FF2EE0088C1DB /* AddAppletType.swift */; };
+		9C8EC757228FFDA90088C1DB /* MakeSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC756228FFDA90088C1DB /* MakeSoundViewController.swift */; };
 		9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92218E227ECB0900763D35 /* LaunchTheme.swift */; };
 		9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C97D4BA228A7E080016542E /* DataPickerController.swift */; };
 		9C97D4BD228A7E080016542E /* DataPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C97D4BB228A7E080016542E /* DataPickerController.xib */; };
@@ -106,6 +109,9 @@
 		9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9C6D5FEB22817AE90090EE87 /* String+tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+tools.swift"; sourceTree = "<group>"; };
 		9C6D5FED228181730090EE87 /* PKHud+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PKHud+Rx.swift"; sourceTree = "<group>"; };
+		9C8EC750228FF0330088C1DB /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		9C8EC754228FF2EE0088C1DB /* AddAppletType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppletType.swift; sourceTree = "<group>"; };
+		9C8EC756228FFDA90088C1DB /* MakeSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeSoundViewController.swift; sourceTree = "<group>"; };
 		9C9148E7228C520D00F2B98F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		9C9148E8228C520D00F2B98F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9C922189227EC64100763D35 /* Dingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dingo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				9CAE9B20228D7D9700321BA4 /* LocationTaskSettingController.swift */,
 				9CAE9B26228D960000321BA4 /* DGMapViewController.swift */,
 				9CF6BF73228C307E00F2C467 /* TaskDetailViewController.swift */,
+				9C8EC756228FFDA90088C1DB /* MakeSoundViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 				9C5218F02282ACF100CF5F15 /* User.storyboard */,
 				9C5218F22282AD0500CF5F15 /* MyViewController.swift */,
 				9CFB19892284167C00CE3C8B /* EditingNicknameController.swift */,
+				9C8EC750228FF0330088C1DB /* PrivacyPolicyViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 		9CB1415B2289413200875411 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9C8EC754228FF2EE0088C1DB /* AddAppletType.swift */,
 				9CB1415C2289437400875411 /* SeverSectionController.swift */,
 				9CB1416A22896A1300875411 /* TaskSectionController.swift */,
 				9CF6BF6F228BEA0400F2C467 /* TaskHeaderSectionController.swift */,
@@ -573,6 +582,7 @@
 				9C155DAE228E758B00548CD9 /* DGMapViewViewModel.swift in Sources */,
 				9C661F3E22855F9E00FBFA15 /* DGPicker.swift in Sources */,
 				9C6D5FE42281259E0090EE87 /* HasDisposeBag.swift in Sources */,
+				9C8EC751228FF0330088C1DB /* PrivacyPolicyViewController.swift in Sources */,
 				9CFB1984228403C700CE3C8B /* StaticConst.swift in Sources */,
 				9C5218F32282AD0500CF5F15 /* MyViewController.swift in Sources */,
 				9CFB198C22841B6200CE3C8B /* UIViewController+Ex.swift in Sources */,
@@ -580,6 +590,7 @@
 				9CF6BF6D228BB51300F2C467 /* MyTaskCell.swift in Sources */,
 				9CB1416B22896A1300875411 /* TaskSectionController.swift in Sources */,
 				9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */,
+				9C8EC755228FF2EE0088C1DB /* AddAppletType.swift in Sources */,
 				9CAE9B21228D7D9700321BA4 /* LocationTaskSettingController.swift in Sources */,
 				9C9D38AE227FD08A00F73298 /* ObjectAssociation.swift in Sources */,
 				9C661F3A2285289400FBFA15 /* UIAlertController+Ex.swift in Sources */,
@@ -610,6 +621,7 @@
 				9CDF480F22870C17007711BA /* MoveButton.swift in Sources */,
 				9CFB199022842AB900CE3C8B /* UIView+Ex.swift in Sources */,
 				9C97D4BF228A92C20016542E /* DateTaskSettingViewModel.swift in Sources */,
+				9C8EC757228FFDA90088C1DB /* MakeSoundViewController.swift in Sources */,
 				9C155DAA228E584900548CD9 /* LocationTaskSettingViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
