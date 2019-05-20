@@ -32,6 +32,14 @@
 		9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */; };
 		9C6D5FEC22817AE90090EE87 /* String+tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FEB22817AE90090EE87 /* String+tools.swift */; };
 		9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D5FED228181730090EE87 /* PKHud+Rx.swift */; };
+		9C70590E22924AAD0050B864 /* TaskDetailOfSoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70590C22924AAD0050B864 /* TaskDetailOfSoundController.swift */; };
+		9C705914229251610050B864 /* AudioSpectrumPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C705911229251610050B864 /* AudioSpectrumPlayer.swift */; };
+		9C705915229251610050B864 /* RealtimeAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C705912229251610050B864 /* RealtimeAnalyzer.swift */; };
+		9C705916229251610050B864 /* SpectrumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C705913229251610050B864 /* SpectrumView.swift */; };
+		9C70591822928F920050B864 /* SoundListPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70591722928F920050B864 /* SoundListPopViewController.swift */; };
+		9C70591A2292B3560050B864 /* PunchCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7059192292B3560050B864 /* PunchCardViewController.swift */; };
+		9C70591C2292BAFD0050B864 /* PunchCardDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70591B2292BAFD0050B864 /* PunchCardDetailController.swift */; };
+		9C70591E2292BD190050B864 /* DGRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C70591D2292BD190050B864 /* DGRippleButton.swift */; };
 		9C8EC751228FF0330088C1DB /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC750228FF0330088C1DB /* PrivacyPolicyViewController.swift */; };
 		9C8EC755228FF2EE0088C1DB /* AddAppletType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC754228FF2EE0088C1DB /* AddAppletType.swift */; };
 		9C8EC757228FFDA90088C1DB /* MakeSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC756228FFDA90088C1DB /* MakeSoundViewController.swift */; };
@@ -109,6 +117,14 @@
 		9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9C6D5FEB22817AE90090EE87 /* String+tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+tools.swift"; sourceTree = "<group>"; };
 		9C6D5FED228181730090EE87 /* PKHud+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PKHud+Rx.swift"; sourceTree = "<group>"; };
+		9C70590C22924AAD0050B864 /* TaskDetailOfSoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailOfSoundController.swift; sourceTree = "<group>"; };
+		9C705911229251610050B864 /* AudioSpectrumPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSpectrumPlayer.swift; sourceTree = "<group>"; };
+		9C705912229251610050B864 /* RealtimeAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealtimeAnalyzer.swift; sourceTree = "<group>"; };
+		9C705913229251610050B864 /* SpectrumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpectrumView.swift; sourceTree = "<group>"; };
+		9C70591722928F920050B864 /* SoundListPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundListPopViewController.swift; sourceTree = "<group>"; };
+		9C7059192292B3560050B864 /* PunchCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchCardViewController.swift; sourceTree = "<group>"; };
+		9C70591B2292BAFD0050B864 /* PunchCardDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchCardDetailController.swift; sourceTree = "<group>"; };
+		9C70591D2292BD190050B864 /* DGRippleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DGRippleButton.swift; sourceTree = "<group>"; };
 		9C8EC750228FF0330088C1DB /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		9C8EC754228FF2EE0088C1DB /* AddAppletType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppletType.swift; sourceTree = "<group>"; };
 		9C8EC756228FFDA90088C1DB /* MakeSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeSoundViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +210,10 @@
 				9CAE9B26228D960000321BA4 /* DGMapViewController.swift */,
 				9CF6BF73228C307E00F2C467 /* TaskDetailViewController.swift */,
 				9C8EC756228FFDA90088C1DB /* MakeSoundViewController.swift */,
+				9C70590C22924AAD0050B864 /* TaskDetailOfSoundController.swift */,
+				9C70591722928F920050B864 /* SoundListPopViewController.swift */,
+				9C7059192292B3560050B864 /* PunchCardViewController.swift */,
+				9C70591B2292BAFD0050B864 /* PunchCardDetailController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -255,6 +275,16 @@
 				9C6D5FE92281799D0090EE87 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C705910229251440050B864 /* AudioAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				9C705911229251610050B864 /* AudioSpectrumPlayer.swift */,
+				9C705912229251610050B864 /* RealtimeAnalyzer.swift */,
+				9C705913229251610050B864 /* SpectrumView.swift */,
+			);
+			path = AudioAnimations;
 			sourceTree = "<group>";
 		};
 		9C92218D227ECADF00763D35 /* BaseCommon */ = {
@@ -330,6 +360,7 @@
 		9CB1415B2289413200875411 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9C705910229251440050B864 /* AudioAnimations */,
 				9C8EC754228FF2EE0088C1DB /* AddAppletType.swift */,
 				9CB1415C2289437400875411 /* SeverSectionController.swift */,
 				9CB1416A22896A1300875411 /* TaskSectionController.swift */,
@@ -355,6 +386,7 @@
 				9CB14173228995CC00875411 /* AddTaskHaderView.xib */,
 				9CF6BF6B228BB51300F2C467 /* MyTaskCell.swift */,
 				9CF6BF6C228BB51300F2C467 /* MyTaskCell.xib */,
+				9C70591D2292BD190050B864 /* DGRippleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -573,6 +605,8 @@
 				9CAE9B27228D960000321BA4 /* DGMapViewController.swift in Sources */,
 				9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */,
 				9CB14174228995CC00875411 /* AddTaskHaderView.swift in Sources */,
+				9C705915229251610050B864 /* RealtimeAnalyzer.swift in Sources */,
+				9C705916229251610050B864 /* SpectrumView.swift in Sources */,
 				9C9D38B3227FD83100F73298 /* LoginViewController.swift in Sources */,
 				9CAE9B1A228D633F00321BA4 /* UIDevice+Ex.swift in Sources */,
 				9C5218EE22826A6600CF5F15 /* HomeViewController.swift in Sources */,
@@ -587,6 +621,7 @@
 				9C5218F32282AD0500CF5F15 /* MyViewController.swift in Sources */,
 				9CFB198C22841B6200CE3C8B /* UIViewController+Ex.swift in Sources */,
 				9C9D38BC2280479D00F73298 /* UIImage+Ex.swift in Sources */,
+				9C705914229251610050B864 /* AudioSpectrumPlayer.swift in Sources */,
 				9CF6BF6D228BB51300F2C467 /* MyTaskCell.swift in Sources */,
 				9CB1416B22896A1300875411 /* TaskSectionController.swift in Sources */,
 				9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */,
@@ -598,11 +633,14 @@
 				9CB1415A22890DDF00875411 /* ServiceModel.swift in Sources */,
 				9C6D5FEA2281799D0090EE87 /* LoginViewModel.swift in Sources */,
 				9C1FC060228A51B7008AA468 /* DateTaskSettingController.swift in Sources */,
+				9C70591E2292BD190050B864 /* DGRippleButton.swift in Sources */,
 				9CD8DBD7227F19EA00D00BE8 /* BaseNavigationController.swift in Sources */,
 				9CB14171228988FB00875411 /* AddNewAppletController.swift in Sources */,
+				9C70591822928F920050B864 /* SoundListPopViewController.swift in Sources */,
 				9C9D38AC227FCEFA00F73298 /* UIViewController+Navigation.swift in Sources */,
 				9CB141682289699D00875411 /* TaskHeaderView.swift in Sources */,
 				9CF6BF70228BEA0400F2C467 /* TaskHeaderSectionController.swift in Sources */,
+				9C70590E22924AAD0050B864 /* TaskDetailOfSoundController.swift in Sources */,
 				9CB1416D22896BF600875411 /* TaskModel.swift in Sources */,
 				9CFB198E228421F500CE3C8B /* ActionError+Ex.swift in Sources */,
 				9CFB198A2284167C00CE3C8B /* EditingNicknameController.swift in Sources */,
@@ -614,7 +652,9 @@
 				9CAE9B18228D4EAC00321BA4 /* TaskDetailViewModel.swift in Sources */,
 				9C6D5FEE228181730090EE87 /* PKHud+Rx.swift in Sources */,
 				9C5218F72282BBC600CF5F15 /* AVQuery+Rx.swift in Sources */,
+				9C70591C2292BAFD0050B864 /* PunchCardDetailController.swift in Sources */,
 				9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */,
+				9C70591A2292B3560050B864 /* PunchCardViewController.swift in Sources */,
 				9CF6BF72228C192A00F2C467 /* DGNotiBanner.swift in Sources */,
 				9CDF480C228703EB007711BA /* NSMutableAttributedString+Ex.swift in Sources */,
 				9C67D984227E896800C05161 /* AppDelegate.swift in Sources */,

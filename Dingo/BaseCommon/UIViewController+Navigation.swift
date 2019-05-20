@@ -94,7 +94,7 @@ extension UIViewController {
                 img = UIImage(named: "back_button_icon")
             }
             
-            if self is AddNewAppletController {
+            if self is AddNewAppletController || self is TaskDetailOfSoundController || self is PunchCardViewController || self is PunchCardDetailController {
                 img = UIImage(named: "back_button_icon")?.filled(withColor: UIColor.white)
             }
             

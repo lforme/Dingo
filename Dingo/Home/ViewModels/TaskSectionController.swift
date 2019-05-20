@@ -78,20 +78,43 @@ final class TaskSectionController: ListSectionController {
                 cell.decreaseLabel.text = "每当你进入或者离开\(building),叮咚就会提醒"
             }
             return cell
-        case .punchCard: return cell
+        case .punchCard:
+            
+            cell.decreaseLabel.text = "打卡任务\n\(task.remindDate!)"
+            cell.ringsLabel.text = "已经打卡\(task.usedCount.description)次"
+            
+            return cell
         case .makeSound:
             if let text = task.remindDate {
-             cell.decreaseLabel.text = "自定义提示音\(text)"
+                cell.decreaseLabel.text = "语音备忘:\n\(text)"
             }
             return cell
         }
     }
     
     override func didSelectItem(at index: Int) {
-        let taskDetailVC: TaskDetailViewController = ViewLoader.Storyboard.controller(from: "Home")
-        taskDetailVC.taskModel = task
-        taskDetailVC.descriptionText = selectedText
-        viewController?.navigationController?.pushViewController(taskDetailVC, animated: true)
+        
+        guard let taskType = AddAppletType(rawValue: task.taskType) else {
+            return
+        }
+        
+        switch taskType {
+        case .date, .local:
+            let taskDetailVC: TaskDetailViewController = ViewLoader.Storyboard.controller(from: "Home")
+            taskDetailVC.taskModel = task
+            taskDetailVC.descriptionText = selectedText
+            viewController?.navigationController?.pushViewController(taskDetailVC, animated: true)
+            
+        case .makeSound:
+            let taskDetailOfSoundVC: TaskDetailOfSoundController = ViewLoader.Storyboard.controller(from: "Home")
+            taskDetailOfSoundVC.task = task
+            viewController?.navigationController?.pushViewController(taskDetailOfSoundVC, animated: true)
+            
+        case .punchCard:
+            let punchVC: PunchCardDetailController = ViewLoader.Storyboard.controller(from: "Home")
+            punchVC.task = task
+            viewController?.navigationController?.pushViewController(punchVC, animated: true)
+        }
     }
     
     override func didUpdate(to object: Any) {

@@ -78,8 +78,8 @@ class AddNewAppletController: UITableViewController {
             configDateUI()
         case .local:
             configLocalUI()
-            
-        case .punchCard: break
+        case .punchCard:
+            configPunchCardUI()
         case .makeSound:
             configMakeSoundUI()
         }
@@ -119,7 +119,8 @@ class AddNewAppletController: UITableViewController {
             gotoDateSettingVC(index: indexPath.row)
         case .local:
             gotoLocationSettingVC(index: indexPath.row)
-        case .punchCard: break
+        case .punchCard:
+            gotoPunchCard(index: indexPath.row)
         case .makeSound:
             gotoMakeSoundVC(index: indexPath.row)
         }
@@ -149,11 +150,17 @@ extension AddNewAppletController {
     }
     
     func configMakeSoundUI() {
-        descriptionText = "制作您自己的个性推送铃声提示."
+        descriptionText = "制作一个自己的简短语音备忘."
         let item0 = AddNewAppletData(name: "录制5秒提示", index: 0)
         let item1 = AddNewAppletData(name: "录制10秒提示", index: 1)
         let item2 = AddNewAppletData(name: "录制15秒提示", index: 2)
         datasource = [item0, item1, item2]
+    }
+    
+    func configPunchCardUI() {
+        descriptionText = "制作一个属于自己的打卡任务."
+        let item0 = AddNewAppletData(name: "创建打卡", index: 0)
+        datasource = [item0]
     }
     
     func gotoDateSettingVC(index: Int) {
@@ -236,5 +243,11 @@ extension AddNewAppletController {
         makeSoundVC.addType = self.type
         makeSoundVC.type = tempType
         navigationController?.pushViewController(makeSoundVC, animated: true)
+    }
+    
+    func gotoPunchCard(index: Int) {
+        let punchCardVC: PunchCardViewController = ViewLoader.Storyboard.controller(from: "Home")
+        punchCardVC.type = AddAppletType.punchCard
+        navigationController?.pushViewController(punchCardVC, animated: true)
     }
 }

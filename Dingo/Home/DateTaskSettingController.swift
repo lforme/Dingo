@@ -39,7 +39,7 @@ class DateTaskSettingController: UITableViewController {
     @IBOutlet weak var friSwitch: UISwitch!
     @IBOutlet weak var satSwitch: UISwitch!
     @IBOutlet weak var sunSwitch: UISwitch!
-    
+    @IBOutlet weak var notiSoundLabel: UILabel!
     
     var taskType: AddAppletType!
     var dateFormatter: DateFormatter?
@@ -177,6 +177,24 @@ class DateTaskSettingController: UITableViewController {
         chooseTextfield.rightViewMode = .always
     }
     
+//    @IBAction func showSoundListTap(_ sender: UIButton) {
+//        let popVC: SoundListPopViewController = ViewLoader.Storyboard.controller(from: "Home")
+//        popVC.preferredContentSize = CGSize(width: 150, height: 320)
+//        popVC.modalPresentationStyle = .popover
+//        popVC.isModalInPopover = false
+//        let popoverPresentationController = popVC.popoverPresentationController
+//        popoverPresentationController?.sourceView = sender
+//        popoverPresentationController?.permittedArrowDirections = .up
+//        popoverPresentationController?.delegate = self
+//        popoverPresentationController?.sourceRect = CGRect(x: sender.frame.size.width / 2, y: sender.frame.size.height, width: 0, height: 0)
+//        self.present(popVC, animated: false, completion: nil)
+//
+//        popVC.didSelectSound = {[weak self] (soundName) in
+//            self?.notiSoundLabel.text = "已选择的提示音:\(soundName)"
+//            self?.vm.observerNotiSouneName.accept(soundName)
+//        }
+//    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
@@ -195,5 +213,13 @@ extension DateTaskSettingController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return false
+    }
+}
+
+
+extension DateTaskSettingController: UIPopoverPresentationControllerDelegate {
+   
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
 }

@@ -17,6 +17,7 @@ class MyTaskCell: UICollectionViewCell {
     @IBOutlet weak var isOnLabel: UILabel!
     @IBOutlet weak var ringsLabel: UILabel!
     @IBOutlet weak var effectBgView: UIView!
+    @IBOutlet weak var ringsIcon: UIImageView!
     
     override var isHighlighted: Bool {
         didSet {
@@ -46,7 +47,7 @@ class MyTaskCell: UICollectionViewCell {
     func updateAvailableIconBy(available: Bool) {
         if available {
             isOnIcon.backgroundColor = UIColor.flatGreen
-            isOnLabel.text = "运行中"
+            isOnLabel.text = "进行中"
         } else {
             isOnIcon.backgroundColor = LaunchThemeManager.currentTheme().secondaryRed
             isOnLabel.text = "已暂停"

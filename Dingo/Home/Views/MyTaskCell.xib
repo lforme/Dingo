@@ -110,6 +110,7 @@
                 <outlet property="icon" destination="cCY-AM-LPx" id="T3m-wM-vUh"/>
                 <outlet property="isOnIcon" destination="ByD-EO-U84" id="nJn-9m-S2Q"/>
                 <outlet property="isOnLabel" destination="FE7-nK-4wn" id="PMa-rl-nqz"/>
+                <outlet property="ringsIcon" destination="rvG-v9-OTP" id="vjv-H4-0dC"/>
                 <outlet property="ringsLabel" destination="lY4-Iu-Yzm" id="sGS-Qa-ndi"/>
             </connections>
             <point key="canvasLocation" x="348.55072463768118" y="150.33482142857142"/>

@@ -11,7 +11,6 @@ import RxCocoa
 import RxSwift
 import Action
 import MapKit
-import RxDataSources
 
 struct DGMapModel {
     let location: CLLocation

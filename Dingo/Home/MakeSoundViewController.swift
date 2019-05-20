@@ -115,7 +115,7 @@ class MakeSoundViewController: UITableViewController {
     func createdTaskSaveCloud() {
         guard let userId = AVUser.current()?.objectId, let name = AVUser.current()?.username else { return }
         
-        let content = "自定义提醒铃声:\n\(self.remarkObserver.value!)"
+        let content = self.remarkObserver.value!
         let task = TaskModel(userId: userId, name: name, usedCount: 0, icon: "make_noti_sound_icon", color: 1, repeat: false, taskType: self.addType.rawValue, remindDate: content, remindLocal: nil, id: nil, functionType: self.type.rawValue)
         task.saveToLeanCloud().subscribe().disposed(by: rx.disposeBag)
         NotificationCenter.default.post(name: .refreshState, object: nil)
@@ -194,7 +194,7 @@ extension MakeSoundViewController {
         } else {
             audioPlayer.delegate = self 
             audioPlayer.prepareToPlay()
-            audioPlayer.volume = 10.0
+            audioPlayer.volume = 1.0
             audioPlayer.play()
         }
     }

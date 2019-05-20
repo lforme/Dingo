@@ -104,12 +104,22 @@ extension TaskModel {
     }
     
     static func fetchServerModels(by userId: String, page: Int = 0) -> Driver<[TaskModel]> {
+        let query = AVQuery(className: "TaskModel")
+        query.whereKey("userId", equalTo: userId)
+        query.order(byDescending: "createdAt")
+        query.limit = 10
+        query.skip = 10 * page
+        return TaskModel.fetchServerModels(by: userId, query: query, page: page)
+    }
+    
+    
+    static func fetchServerModels(by userId: String, query: AVQuery, querySize: Int = 10, page: Int = 0) -> Driver<[TaskModel]> {
+        
         return Observable<[TaskModel]>.create({ (observer) -> Disposable in
             
-            let query = AVQuery(className: "TaskModel")
             query.whereKey("userId", equalTo: userId)
             query.order(byDescending: "createdAt")
-            query.limit = 10
+            query.limit = querySize
             query.skip = 10 * page
             query.findObjectsInBackground({ (objs, error) in
                 if let e = error {

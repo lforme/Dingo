@@ -50,7 +50,11 @@ final class DateTaskSettingViewModel {
         content.title = "叮咚叮咚"
         content.body = "这是一条您于\(Date().localString())设置的提醒任务"
         content.categoryIdentifier = Date().localString()
-        content.sound = UNNotificationSound.default
+        if #available(iOS 12.0, *) {
+            content.sound = UNNotificationSound.defaultCriticalSound(withAudioVolume: 1.0)
+        } else {
+            content.sound = UNNotificationSound.default
+        }
         dateType = type
         _userId = userId
         _repeats = repeats
