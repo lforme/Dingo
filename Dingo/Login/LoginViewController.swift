@@ -29,6 +29,18 @@ class LoginViewController: UIViewController {
         onboarding.delegate = self
         onboarding.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    @IBAction func startTap(_ sender: UIButton) {
+        
+        AVUser.loginAnonymously { (user, error) in
+            if let e = error {
+                print(e.localizedDescription)
+            } else {
+                print(user ?? "")
+                NotificationCenter.default.post(name: .loginStateDidChnage, object: true)
+            }
+        }
+    }
 }
 
 extension LoginViewController: PaperOnboardingDataSource {

@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     fileprivate var loginVC: LoginViewController?
     fileprivate var homeTab: UITabBarController?
     fileprivate var baseNavigationVC: BaseNavigationController?
-    fileprivate var doingLiveQuery: AVLiveQuery?
     fileprivate let userQuery = AVQuery(className: DatabaseKey.userTable)
     fileprivate var _statusBarStyle: UIStatusBarStyle = .default {
         didSet {
@@ -35,9 +34,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         checkedLogin()
         UITabBar.appearance().tintColor = LaunchThemeManager.currentTheme().textBlackColor
-        observeLoginStatu()
         
         NotificationCenter.default.rx.notification(.statuBarDidChnage)
             .takeUntil(rx.deallocated)
@@ -62,45 +61,20 @@ class ViewController: UIViewController {
     
     func checkedLogin() {
         
-        if let localUser = AVUser.current() {
+        if let _ = AVUser.current() {
             showHomeVC()
             
             // 自动登录
-            guard let username = localUser.username, let pwd = self.keychain["password"] else { return }
-            AVUser.logInWithUsername(inBackground: username, password: pwd) { (s, error) in
-                print(error?.localizedDescription ?? "")
-            }
+//            guard let username = localUser.username, let pwd = self.keychain["password"] else { return }
+//            AVUser.logInWithUsername(inBackground: username, password: pwd) { (s, error) in
+//                print(error?.localizedDescription ?? "")
+//            }
             
         } else {
             showLoginVC()
         }
     }
-    
-    
-    func observeLoginStatu() {
-        UserInfoLiveData.shared.liveDataHasChanged.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (notification) in
-            guard let block = notification else { return }
-            let (liveQuery, object, _) = block
-            guard let this = self else { return }
-            if this.userQuery.className == liveQuery.query.className {
-                guard let user = object as? AVUser else { return }
-                guard let isLogin = user.object(forKey: DatabaseKey.isLogin) as? Bool else { return }
-                guard let uuid = user.object(forKey: DatabaseKey.uuid) as? String else { return }
-                guard let currentUUID = AVUser.current()?.object(forKey: DatabaseKey.uuid) as? String else { return }
-                
-                if !isLogin || uuid != currentUUID {
-                    AVUser.current()?.setObject(false, forKey: DatabaseKey.isLogin)
-                    AVUser.current()?.saveInBackground({ (success, error) in
-                        if success {
-                            AVUser.logOut()
-                        }
-                    })
-                    this.showLoginVC()
-                }
-            }
-        }).disposed(by: rx.disposeBag)
-    }
-    
+        
     func showLoginVC() {
         
         homeTab?.view.removeFromSuperview()

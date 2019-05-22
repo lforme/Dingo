@@ -24,11 +24,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2b-fB-eAr">
                                         <rect key="frame" x="328" y="10" width="70" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="登录注册">
+                                        <state key="normal" title="开始探索">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="l4I-xH-XmP" kind="show" id="NhG-bh-cg0"/>
+                                            <action selector="startTap:" destination="li8-0o-FTr" eventType="touchUpInside" id="zNi-wZ-iJq"/>
                                         </connections>
                                     </button>
                                 </subviews>

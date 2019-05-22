@@ -99,7 +99,8 @@ class MyViewController: UIViewController {
             navigationItem.title = nickname
             self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(data: data)!)
         } else {
-            navigationItem.title = AVUser.current()?.username
+            guard let userName = AVUser.current()?.username?[0..<4] else { return }
+            navigationItem.title = "用户 \(userName)"
         }
         
         UserInfoLiveData.shared.liveDataHasChanged.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (notification) in
@@ -149,7 +150,7 @@ class MyViewController: UIViewController {
     
     @IBAction func verifyButtonTap(_ sender: UIButton) {
         guard let email = AVUser.current()?.email else {
-            HUD.flash(.label("无法获取用户邮箱"), delay: 2)
+            updateEmail()
             return
         }
         
@@ -165,7 +166,6 @@ class MyViewController: UIViewController {
             }
         }
     }
-    
     
     @IBAction func changeHeaderTap(_ sender: UIButton) {
         
@@ -205,6 +205,30 @@ class MyViewController: UIViewController {
         let privaceVC: PrivacyPolicyViewController = ViewLoader.Storyboard.controller(from: "User")
         navigationController?.pushViewController(privaceVC, animated: true)
     }
+    
 }
 
 
+extension MyViewController {
+    
+    func updateEmail() {
+        let alertVC = UIAlertController(title: "验证邮箱", message: nil, preferredStyle: .alert)
+        
+        alertVC.addTextField { (textField) in
+            textField.placeholder = "请输入邮箱"
+            textField.keyboardType = .emailAddress
+        }
+        
+        let confirmAction = UIAlertAction(title: "验证", style: .default) {[weak alertVC] (_) in
+            guard let alertController = alertVC, let textField = alertController.textFields?.first else { return }
+            
+            AVUser.current()?.email = textField.text
+            AVUser.current()?.saveInBackground()
+        }
+        
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alertVC.addAction(confirmAction)
+        alertVC.addAction(cancel)
+        present(alertVC, animated: true, completion: nil)
+    }
+}
