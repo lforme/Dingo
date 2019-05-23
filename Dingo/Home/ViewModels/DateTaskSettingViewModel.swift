@@ -89,8 +89,8 @@ final class DateTaskSettingViewModel {
                 self.task.remindDate = String(guaranteeValue.hour) + ":" + String( guaranteeValue.minute)
                 
             case .everyHourAt:
-                let date = guaranteeValue + self.observerOfset.value.minutes
-                self.task.remindDate = String(date.hour) + ":" + String( date.minute)
+                
+                self.task.remindDate = "每\(self.observerOfset.value)分钟提醒一次"
                 
             case .everyDayOfWeek:
                 var weekDay = 0
