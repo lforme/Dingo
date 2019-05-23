@@ -61,22 +61,10 @@
                                                         <constraint firstAttribute="height" constant="60" id="s4g-pJ-JQM"/>
                                                     </constraints>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOM-w8-XAz">
-                                                    <rect key="frame" x="333" y="32" width="41" height="36"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                                    <state key="normal" title="试听">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="playTap:" destination="Jln-qH-djK" eventType="touchUpInside" id="1Af-U2-veG"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="v50-yV-gE3" firstAttribute="centerX" secondItem="be1-0c-nB7" secondAttribute="centerX" id="N0U-e1-FqB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tOM-w8-XAz" secondAttribute="trailing" constant="20" id="T0a-0B-Mt8"/>
-                                                <constraint firstItem="tOM-w8-XAz" firstAttribute="centerY" secondItem="v50-yV-gE3" secondAttribute="centerY" id="rVM-TA-nzb"/>
                                                 <constraint firstItem="v50-yV-gE3" firstAttribute="centerY" secondItem="be1-0c-nB7" secondAttribute="centerY" id="zMC-Ce-3th"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -114,7 +102,6 @@
                     </tableView>
                     <connections>
                         <outlet property="countDownLabel" destination="yj1-Lf-peO" id="a8z-4y-yey"/>
-                        <outlet property="playButton" destination="tOM-w8-XAz" id="qk5-YS-ZCO"/>
                         <outlet property="recordButton" destination="v50-yV-gE3" id="l4o-Py-1Sk"/>
                         <outlet property="textfield" destination="zpD-IF-JNA" id="SM1-To-mT2"/>
                     </connections>
@@ -279,6 +266,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDi-UP-wKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3047" y="1127"/>
+        </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="UYq-MB-Ah2">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ipv-sW-bZS" customClass="PrivacyViewController" customModule="Dingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Tv-IQ-LEN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqw-Ek-JmB">
+                                <rect key="frame" x="20" y="64" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Kia-Uo-rkV"/>
+                                    <constraint firstAttribute="height" constant="40" id="frg-ef-2yv"/>
+                                </constraints>
+                                <state key="normal" title="返回">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissTap:" destination="ipv-sW-bZS" eventType="touchUpInside" id="Yy8-nf-O36"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gqw-Ek-JmB" firstAttribute="top" secondItem="3Xm-wj-7Kj" secondAttribute="top" constant="20" id="8qG-c1-oBb"/>
+                            <constraint firstItem="gqw-Ek-JmB" firstAttribute="leading" secondItem="3Xm-wj-7Kj" secondAttribute="leading" constant="20" id="twl-kd-JGO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Xm-wj-7Kj"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="gqw-Ek-JmB" id="PAz-sa-uTM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ggv-cS-47A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4630" y="157"/>
         </scene>
         <!--Task Detail Of Sound Controller-->
         <scene sceneID="N9e-fe-Lzk">

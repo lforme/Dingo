@@ -28,4 +28,5 @@ struct DatabaseKey {
     static let userTable = "_User"
     static let taskTable = "TaskModel"
     static let serviceTable = "ServiceModel"
+    static let privacyTable = "PrivacyModel"
 }

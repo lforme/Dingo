@@ -44,6 +44,7 @@
 		9C8EC755228FF2EE0088C1DB /* AddAppletType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC754228FF2EE0088C1DB /* AddAppletType.swift */; };
 		9C8EC757228FFDA90088C1DB /* MakeSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EC756228FFDA90088C1DB /* MakeSoundViewController.swift */; };
 		9C92218F227ECB0900763D35 /* LaunchTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92218E227ECB0900763D35 /* LaunchTheme.swift */; };
+		9C97AEC722967F4D00432A5B /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C97AEC622967F4D00432A5B /* PrivacyViewController.swift */; };
 		9C97D4BC228A7E080016542E /* DataPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C97D4BA228A7E080016542E /* DataPickerController.swift */; };
 		9C97D4BD228A7E080016542E /* DataPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C97D4BB228A7E080016542E /* DataPickerController.xib */; };
 		9C97D4BF228A92C20016542E /* DateTaskSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */; };
@@ -132,6 +133,7 @@
 		9C9148E8228C520D00F2B98F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9C922189227EC64100763D35 /* Dingo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dingo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C92218E227ECB0900763D35 /* LaunchTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTheme.swift; sourceTree = "<group>"; };
+		9C97AEC622967F4D00432A5B /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		9C97D4BA228A7E080016542E /* DataPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerController.swift; sourceTree = "<group>"; };
 		9C97D4BB228A7E080016542E /* DataPickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPickerController.xib; sourceTree = "<group>"; };
 		9C97D4BE228A92C20016542E /* DateTaskSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTaskSettingViewModel.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				9C70591722928F920050B864 /* SoundListPopViewController.swift */,
 				9C7059192292B3560050B864 /* PunchCardViewController.swift */,
 				9C70591B2292BAFD0050B864 /* PunchCardDetailController.swift */,
+				9C97AEC622967F4D00432A5B /* PrivacyViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 			files = (
 				9C6D5FEC22817AE90090EE87 /* String+tools.swift in Sources */,
 				9C6D5FE52281259E0090EE87 /* NSObject+Rx.swift in Sources */,
+				9C97AEC722967F4D00432A5B /* PrivacyViewController.swift in Sources */,
 				9C9D38BA228040B900F73298 /* UIButton+Ex.swift in Sources */,
 				9CAE9B27228D960000321BA4 /* DGMapViewController.swift in Sources */,
 				9C9D38B722802A4300F73298 /* LoginAndRegisterController.swift in Sources */,

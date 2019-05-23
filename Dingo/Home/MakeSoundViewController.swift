@@ -32,7 +32,6 @@ class MakeSoundViewController: UITableViewController {
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     @IBOutlet weak var countDownLabel: UILabel!
-    @IBOutlet weak var playButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +78,6 @@ class MakeSoundViewController: UITableViewController {
         let buttonImage = UIImage(named: "record_mic_icon")
         recordButton.setImage(buttonImage, for: .normal)
         recordButton.setImage(buttonImage!.filled(withColor: disableColor), for: .disabled)
-        playButton.isHidden = true
         
         guard let t = type else {
             return
@@ -107,18 +105,18 @@ class MakeSoundViewController: UITableViewController {
     }
     
     
-    @IBAction func playTap(_ sender: UIButton) {
-        play()
-    }
-    
-    
     func createdTaskSaveCloud() {
         guard let userId = AVUser.current()?.objectId, let name = AVUser.current()?.username else { return }
         
         let content = self.remarkObserver.value!
         let task = TaskModel(userId: userId, name: name, usedCount: 0, icon: "make_noti_sound_icon", color: 1, repeat: false, taskType: self.addType.rawValue, remindDate: content, remindLocal: nil, id: nil, functionType: self.type.rawValue)
-        task.saveToLeanCloud().subscribe().disposed(by: rx.disposeBag)
-        NotificationCenter.default.post(name: .refreshState, object: nil)
+        task.saveToLeanCloud().subscribe(onNext: {[unowned self] (_) in
+            NotificationCenter.default.post(name: .refreshState, object: nil)
+            self.navigationController?.popToRootViewController(animated: true)
+        }, onError: { (error) in
+            HUD.flash(.label(error.localizedDescription), delay: 2)
+        }).disposed(by: rx.disposeBag)
+        
     }
 }
 
@@ -165,7 +163,6 @@ extension MakeSoundViewController {
     func finishRecording(success: Bool) {
         audioRecorder.stop()
         audioRecorder = nil
-        playButton.isHidden = !success
         if success {
             createdTaskSaveCloud()
         }

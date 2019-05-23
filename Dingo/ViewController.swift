@@ -57,6 +57,7 @@ class ViewController: UIViewController {
                     self?.showLoginVC()
                 }
             }).disposed(by: rx.disposeBag)
+        
     }
     
     func checkedLogin() {

@@ -29,6 +29,9 @@ class HomeViewController: UIViewController {
     let notiHeaderData: [String] = ["提醒列表"]
     private var page = 0
     
+    let live = LiveData(query: AVQuery(className: DatabaseKey.privacyTable))
+    let privacyQuery = AVQuery(className: DatabaseKey.privacyTable)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +46,31 @@ class HomeViewController: UIViewController {
             .subscribeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (_) in
                 self?.collectionView.mj_header.beginRefreshing()
             }).disposed(by: rx.disposeBag)
+        
+        
+        live.liveDataHasChanged.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (notification) in
+            guard let block = notification else { return }
+            let (_, object, _) = block
+            guard let this = self else { return }
+            
+            guard let privacy = object as? AVObject, let isAlert = privacy.object(forKey: "isFirstShow") as? Bool else { return }
+            
+            if isAlert {
+                let privacyVC: PrivacyViewController = ViewLoader.Storyboard.controller(from: "Home")
+                this.present(privacyVC, animated: true, completion: nil)
+            }
+        }).disposed(by: rx.disposeBag)
+        
+        
+        privacyQuery.findObjectsInBackground {[weak self] (object, _) in
+            
+            guard let privacy = object?.first as? AVObject, let isAlert = privacy.object(forKey: "isFirstShow") as? Bool, let this = self else { return }
+            
+            if isAlert {
+                let privacyVC: PrivacyViewController = ViewLoader.Storyboard.controller(from: "Home")
+                this.present(privacyVC, animated: true, completion: nil)
+            }
+        }
     }
     
     func fetchAllServer() {

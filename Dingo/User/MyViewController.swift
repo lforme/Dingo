@@ -33,6 +33,7 @@ class MyViewController: UIViewController {
             let bgColor = UIColor(patternImage: UIImage(data: data)!)
             self.navigationController?.navigationBar.barTintColor = bgColor
         }
+
         super.viewWillAppear(animated)
     }
     
@@ -95,9 +96,11 @@ class MyViewController: UIViewController {
     
     func setupLiveData() {
         
-        if let nickname = AVUser.current()?.object(forKey: DatabaseKey.nickname) as? String, let data = AVUser.current()?.object(forKey: DatabaseKey.portrait) as? Data  {
+        if let data = AVUser.current()?.object(forKey: DatabaseKey.portrait) as? Data {
+             self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(data: data)!)
+        }
+        if let nickname = AVUser.current()?.object(forKey: DatabaseKey.nickname) as? String {
             navigationItem.title = nickname
-            self.navigationController?.navigationBar.barTintColor = UIColor(patternImage: UIImage(data: data)!)
         } else {
             guard let userName = AVUser.current()?.username?[0..<4] else { return }
             navigationItem.title = "用户 \(userName)"
@@ -129,19 +132,13 @@ class MyViewController: UIViewController {
         
         let logoutAction = UIAlertAction(title: "退出", style: .default) {(_) in
             
-            AVUser.current()?.setObject(false, forKey: DatabaseKey.isLogin)
-            AVUser.current()?.saveInBackground({ (s, e) in
-                print(s)
-                print(e?.localizedDescription ?? "")
-                
-            })
-            
+            AVUser.logOut()
             // 为了防止 socket 失效
             NotificationCenter.default.post(name: .loginStateDidChnage, object: false)
         }
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        let alertVC = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        let alertVC = UIAlertController(title: nil, message: "由于没有绑定邮箱, 退出登录将会导致数据无法恢复", preferredStyle: .actionSheet)
         alertVC.addAction(logoutAction)
         alertVC.addAction(cancelAction)
         navigationController?.present(alertVC, animated: true, completion: nil)
