@@ -76,7 +76,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.3.0)
   - LTMorphingLabel
   - MJRefresh
-  - NotificationBannerSwift
+  - NotificationBannerSwift (~> 2.2.0)
   - paper-onboarding
   - PKHUD (~> 5.2.1)
   - RxCocoa (~> 5.0.0)
@@ -163,6 +163,6 @@ SPEC CHECKSUMS:
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
   YPImagePicker: 8039f89ad79281545fa868486f32d9bf5d65ede1
 
-PODFILE CHECKSUM: 8a906aaa5490234abaa9d0f86130b3780a2d731c
+PODFILE CHECKSUM: ce28fc05700267fc8f6450392c59f87197481781
 
 COCOAPODS: 1.5.3

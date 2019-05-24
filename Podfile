@@ -30,7 +30,7 @@ target 'Dingo' do
   pod 'IGListKit', '~> 3.0'
   pod 'Then'
   pod 'MJRefresh'
-  pod 'NotificationBannerSwift'
+  pod 'NotificationBannerSwift', '~> 2.2.0'
   
   # Map
   pod 'AMap3DMap-NO-IDFA'
