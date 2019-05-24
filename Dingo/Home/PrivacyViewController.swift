@@ -32,7 +32,7 @@ class PrivacyViewController: UIViewController {
             guard let privacy = object as? AVObject, let isAlert = privacy.object(forKey: "isFirstShow") as? Bool, let isShowButton = privacy.object(forKey: "showIsBack") as? Bool else { return }
             
             if !isAlert {
-                this.dismiss(animated: true, completion: nil)
+                this.dismiss(animated: false, completion: nil)
             }
             
             this.backButton.isHidden = !isShowButton

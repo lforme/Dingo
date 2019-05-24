@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
             guard let privacy = object as? AVObject, let isAlert = privacy.object(forKey: "isFirstShow") as? Bool else { return }
             let privacyVC: PrivacyViewController = ViewLoader.Storyboard.controller(from: "Home")
             if isAlert {
-                this.present(privacyVC, animated: true, completion: nil)
+                this.present(privacyVC, animated: false, completion: nil)
             }
         }).disposed(by: rx.disposeBag)
         
@@ -67,7 +67,7 @@ class HomeViewController: UIViewController {
             
             if isAlert {
                 let privacyVC: PrivacyViewController = ViewLoader.Storyboard.controller(from: "Home")
-                this.present(privacyVC, animated: true, completion: nil)
+                this.present(privacyVC, animated: false, completion: nil)
             }
         }
     }
