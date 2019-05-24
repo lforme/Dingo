@@ -16,12 +16,28 @@ class PrivacyViewController: UIViewController {
     var privacyWeb: WKWebView!
     @IBOutlet weak var backButton: UIButton!
     let query = AVQuery(className: DatabaseKey.privacyTable)
+    let live = LiveData(query: AVQuery(className: DatabaseKey.privacyTable))
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupWebVeiw()
         queryData()
+        
+        live.liveDataHasChanged.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] (notification) in
+            guard let block = notification else { return }
+            let (_, object, _) = block
+            guard let this = self else { return }
+            
+            guard let privacy = object as? AVObject, let isAlert = privacy.object(forKey: "isFirstShow") as? Bool, let isShowButton = privacy.object(forKey: "showIsBack") as? Bool else { return }
+            
+            if !isAlert {
+                this.dismiss(animated: true, completion: nil)
+            }
+            
+            this.backButton.isHidden = !isShowButton
+            
+        }).disposed(by: rx.disposeBag)
     }
     
     func setupWebVeiw() {

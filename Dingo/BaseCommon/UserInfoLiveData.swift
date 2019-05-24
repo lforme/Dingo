@@ -84,10 +84,14 @@ class LiveData: NSObject, AVLiveQueryDelegate{
         self.doingLiveQuery = AVLiveQuery(query: query)
         self.doingLiveQuery?.subscribe(callback: { (s, error) in })
         self.doingLiveQuery?.delegate = self
+       
     }
     
-    
-    
+    func unsubscribe() {
+        self.doingLiveQuery?.unsubscribe(callback: { (_, _) in
+        })
+    }
+
     func liveQuery(_ liveQuery: AVLiveQuery, objectDidCreate object: Any) {
         liveDataHasChanged.accept((liveQuery, object as AnyObject, nil))
     }
