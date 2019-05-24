@@ -51,21 +51,26 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
+        
         if let id = response.notification.request.content.userInfo["objcId"] as? String {
             updateTaskSynchronizationNetwork(objcId: id)
+        }
+        
+        if let dateFunctionType = response.notification.request.content.userInfo["dateType"] as? Int {
+            let type = DateTaskSettingController.DateType(rawValue: dateFunctionType)
+            if type == DateTaskSettingController.DateType.everyHourAt {
+                center.add(response.notification.request, withCompletionHandler: nil)
+            }
         }
     }
     
     private func updateTaskSynchronizationNetwork(objcId: String) {
-        query.rx.getObjectInMainSchedulerBy(id: objcId).subscribe(onNext: { (task) in
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[unowned self] in
+            let task = self.query.getObjectWithId(objcId)
             task?.incrementKey("usedCount")
-            task?.saveInBackground({ (success, _) in
-                if success {
-                    NotificationCenter.default.post(name: .refreshState, object: nil)
-                }
-            })
-        }).disposed(by: rx.disposeBag)
+            task?.saveInBackground()
+        }
     }
 }
 

@@ -113,7 +113,7 @@ final class DateTaskSettingViewModel {
                     guard let this = self else {
                         return Disposables.create()
                     }
-                    this.content.userInfo = ["objcId": id]
+                    this.content.userInfo = ["objcId": id, "dateType": this.dateType.rawValue]
                     this.generateNotification(notiIdentifier: id, repeats: this._repeats)
                     obs.onNext(())
                     obs.onCompleted()
